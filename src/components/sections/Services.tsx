@@ -17,39 +17,24 @@ export default function Services() {
   return (
     <section
       id="services"
+      className="services-section"
       style={{
-        background: '#ffffff',
-        padding: '64px 32px',
+        backgroundColor: '#f8fafc', /* Light gray/blue background from image */
+        padding: '100px 32px',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        {/* Label */}
-        <span
-          style={{
-            display: 'inline-block',
-            background: '#FFF9DB',
-            border: '1px solid #FFDE59',
-            color: '#1F3C88',
-            fontSize: '11px',
-            fontWeight: 800,
-            padding: '4px 12px',
-            borderRadius: '20px',
-            marginBottom: '16px',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-          }}
-        >
-          {t('label')}
-        </span>
-
+      <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        
         {/* Headline */}
         <h2
           style={{
-            fontSize: 'clamp(22px, 3vw, 28px)',
-            fontWeight: 800,
-            color: '#111111',
-            lineHeight: 1.3,
-            margin: '0 0 8px 0',
+            fontSize: 'clamp(32px, 4vw, 48px)',
+            fontWeight: 900,
+            color: '#0f172a',
+            lineHeight: 1.15,
+            marginBottom: '16px',
+            textAlign: 'center',
+            letterSpacing: '-0.02em',
           }}
         >
           {t('headline')}
@@ -58,63 +43,76 @@ export default function Services() {
         {/* Subtext */}
         <p
           style={{
-            fontSize: '13px',
-            color: '#4A4A4A',
-            margin: '0 0 36px 0',
+            fontSize: '18px',
+            color: '#475569',
+            marginBottom: '64px',
+            textAlign: 'center',
+            maxWidth: '800px',
+            lineHeight: 1.6,
           }}
         >
           {t('subtext')}
         </p>
 
         {/* Cards grid */}
-        <div className="services-grid">
+        <div className="services-cards-grid" style={{ width: '100%' }}>
           {SERVICES.map(({ num, title, text, tag }) => (
             <div
               key={num}
               className="service-card"
               style={{
-                background: '#fcfcfc',
-                border: '1.5px solid #eeeeee',
-                borderRadius: '12px',
-                padding: '24px',
-                transition: 'all 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                ((e.currentTarget as HTMLElement).style.borderColor = '#FFDE59');
-                ((e.currentTarget as HTMLElement).style.transform = 'translateY(-4px)');
-              }}
-              onMouseLeave={(e) => {
-                ((e.currentTarget as HTMLElement).style.borderColor = '#eeeeee');
-                ((e.currentTarget as HTMLElement).style.transform = 'translateY(0)');
+                background: '#ffffff',
+                borderRadius: '16px',
+                padding: '32px',
+                boxShadow: '0 10px 40px -10px rgba(0,0,0,0.05)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                gap: '12px',
               }}
             >
               {/* Number badge */}
               <div
                 style={{
-                  width: '24px',
-                  height: '24px',
-                  background: '#1F3C88',
+                  width: '36px',
+                  height: '36px',
+                  background: '#0f172a',
                   color: '#ffffff',
-                  fontSize: '11px',
+                  fontSize: '16px',
                   fontWeight: 800,
                   borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '14px',
-                  flexShrink: 0,
+                  marginBottom: '8px',
                 }}
               >
-                {num}
+                {num}.
               </div>
+              
+              {/* Tag */}
+              <span
+                style={{
+                  display: 'inline-block',
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  background: '#FEF9C3', /* Yellowish to match the image */
+                  color: '#0f172a',
+                  padding: '4px 12px',
+                  borderRadius: '6px',
+                  marginBottom: '8px',
+                }}
+              >
+                {t(tag)}
+              </span>
 
               {/* Card title */}
               <h3
                 style={{
-                  fontSize: '14px',
-                  fontWeight: 700,
-                  color: '#111111',
-                  margin: '0 0 8px 0',
+                  fontSize: '20px',
+                  fontWeight: 800,
+                  color: '#0f172a',
+                  margin: '0',
                 }}
               >
                 {t(title)}
@@ -123,87 +121,98 @@ export default function Services() {
               {/* Card text */}
               <p
                 style={{
-                  fontSize: '12px',
-                  color: '#4A4A4A',
-                  lineHeight: 1.7,
-                  margin: '0 0 12px 0',
+                  fontSize: '15px',
+                  color: '#475569',
+                  lineHeight: 1.6,
+                  margin: 0,
                 }}
               >
                 {t(text)}
               </p>
-
-              {/* Tag */}
-              <span
-                style={{
-                  display: 'inline-block',
-                  fontSize: '10px',
-                  fontWeight: 600,
-                  background: '#FFF9DB',
-                  border: '1px solid #FFDE59',
-                  color: '#1F3C88',
-                  padding: '3px 8px',
-                  borderRadius: '4px',
-                }}
-              >
-                {t(tag)}
-              </span>
             </div>
           ))}
         </div>
 
-        {/* Report Note */}
+        {/* Report Note Banner */}
         <div
           style={{
-            marginTop: '32px',
-            padding: '16px 24px',
-            background: '#f8f9fa',
-            borderRadius: '12px',
-            border: '1px dashed #FFDE59',
+            marginTop: '40px',
+            width: '100%',
+            padding: '20px 24px',
+            background: '#fefce8',
+            borderRadius: '16px',
+            border: '2px dashed #fde047',
             display: 'flex',
             alignItems: 'center',
-            gap: '12px',
+            justifyContent: 'center',
+            gap: '16px',
           }}
         >
+          {/* Pulsing Green Dot */}
           <div
+            className="pulse-dot"
             style={{
-              width: '8px',
-              height: '8px',
-              background: '#1F3C88',
+              width: '12px',
+              height: '12px',
+              background: '#22C55E',
               borderRadius: '50%',
-              boxShadow: '0 0 8px #22C55E',
+              position: 'relative',
             }}
-          />
-          <p style={{ fontSize: '13px', color: '#111111', fontWeight: 600, margin: 0 }}>
+          >
+            <div 
+               style={{
+                 position: 'absolute',
+                 top: '-4px', left: '-4px', right: '-4px', bottom: '-4px',
+                 background: 'rgba(34, 197, 94, 0.3)',
+                 borderRadius: '50%',
+                 zIndex: 0
+               }}
+            />
+          </div>
+          <p style={{ fontSize: '16px', color: '#0f172a', fontWeight: 500, margin: 0 }}>
             {t('reportNote')}
           </p>
         </div>
 
-
-
       </div>
 
       <style>{`
-        .services-grid {
+        .services-cards-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
+          gap: 24px;
         }
-        @media (max-width: 1023px) and (min-width: 640px) {
-          .services-grid {
+
+        .pulse-dot {
+          animation: scalePulse 2s infinite;
+        }
+
+        @keyframes scalePulse {
+          0% {
+            transform: scale(0.95);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(0.95);
+          }
+        }
+
+        @media (max-width: 1024px) {
+          .services-section {
+            padding: 80px 24px !important;
+          }
+          .services-cards-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-        @media (max-width: 639px) {
-          .services-grid {
+        @media (max-width: 768px) {
+          .services-section {
+            padding: 64px 16px !important;
+          }
+          .services-cards-grid {
             grid-template-columns: 1fr;
-          }
-          .web-section {
-            padding: 32px !important;
-            text-align: center;
-            justify-content: center !important;
-          }
-           .web-section > div {
-            justify-content: center !important;
           }
         }
       `}</style>

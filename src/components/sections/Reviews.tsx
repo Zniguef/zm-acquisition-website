@@ -27,27 +27,26 @@ export default function Reviews() {
     <section
       id="reviews"
       style={{
-        background: '#ffffff',
+        backgroundColor: '#ffffff', /* Using pure white */
         padding: '100px 32px',
-        color: '#111111',
+        color: '#0f172a',
         overflow: 'hidden',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', position: 'relative' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
         {/* Label and Headline */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
           <span
             style={{
               display: 'inline-block',
-              background: '#FFF9DB',
-              border: '1px solid #FFDE59',
-              color: '#1F3C88',
-              fontSize: '11px',
+              background: '#FDE047',
+              color: '#0f172a',
+              fontSize: '12px',
               fontWeight: 800,
-              padding: '4px 12px',
+              padding: '6px 16px',
               borderRadius: '20px',
               textTransform: 'uppercase',
-              letterSpacing: '1px',
+              letterSpacing: '0.05em',
               marginBottom: '16px',
             }}
           >
@@ -55,119 +54,149 @@ export default function Reviews() {
           </span>
           <h2
             style={{
-              fontSize: 'clamp(28px, 4vw, 36px)',
-              fontWeight: 800,
-              color: '#111111',
-              lineHeight: 1.2,
+              fontSize: 'clamp(36px, 5vw, 48px)',
+              fontWeight: 900,
+              color: '#0f172a',
+              lineHeight: 1.15,
               margin: 0,
+              letterSpacing: '-0.02em',
             }}
           >
             {t('headline')}
           </h2>
         </div>
 
-        {/* Slider Container */}
-        <div style={{ position: 'relative', maxWidth: '800px', margin: '0 auto' }}>
-          {/* Navigation Arrows */}
+        {/* Carousel Container */}
+        <div className="carousel-wrapper" style={{ position: 'relative', height: '400px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          
+          {/* Nav Arrows */}
           <button
-            onClick={prevSlide}
-            className="nav-btn prev"
+            onClick={isRTL ? nextSlide : prevSlide}
+            className="carousel-btn left-btn"
             style={{
               position: 'absolute',
-              top: '50%',
-              [isRTL ? 'right' : 'left']: '-60px',
-              transform: 'translateY(-50%)',
+              [isRTL ? 'right' : 'left']: '0px',
+              zIndex: 10,
               background: '#ffffff',
-              border: '1.5px solid #eeeeee',
-              width: '44px',
-              height: '44px',
+              border: 'none',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              width: '48px',
+              height: '48px',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              zIndex: 10,
-              transition: 'all 0.2s',
+              transition: 'transform 0.2s',
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              {isRTL ? <polyline points="9 18 15 12 9 6"></polyline> : <polyline points="15 18 9 12 15 6"></polyline>}
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points={isRTL ? "9 18 15 12 9 6" : "15 18 9 12 15 6"}></polyline>
             </svg>
           </button>
 
           <button
-            onClick={nextSlide}
-            className="nav-btn next"
+            onClick={isRTL ? prevSlide : nextSlide}
+            className="carousel-btn right-btn"
             style={{
               position: 'absolute',
-              top: '50%',
-              [isRTL ? 'left' : 'right']: '-60px',
-              transform: 'translateY(-50%)',
+              [isRTL ? 'left' : 'right']: '0px',
+              zIndex: 10,
               background: '#ffffff',
-              border: '1.5px solid #eeeeee',
-              width: '44px',
-              height: '44px',
+              border: 'none',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+              width: '48px',
+              height: '48px',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              zIndex: 10,
-              transition: 'all 0.2s',
+              transition: 'transform 0.2s',
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#111111" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              {isRTL ? <polyline points="15 18 9 12 15 6"></polyline> : <polyline points="9 18 15 12 9 6"></polyline>}
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points={isRTL ? "15 18 9 12 15 6" : "9 18 15 12 9 6"}></polyline>
             </svg>
           </button>
 
-          {/* Slides Viewport */}
-          <div style={{ overflow: 'hidden', padding: '10px 0' }}>
-            <div
-              style={{
-                display: 'flex',
-                transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                transform: `translateX(${isRTL ? (activeIndex * 100) : (-activeIndex * 100)}%)`,
-              }}
-            >
-              {REVIEWS.map((review) => (
+          {/* Cards */}
+          <div className="cards-stage" style={{ position: 'relative', width: '100%', maxWidth: '900px', height: '100%' }}>
+            {REVIEWS.map((review, i) => {
+              const offset = (i - activeIndex + 3) % 3;
+              let pos = offset;
+              if (offset === 2) pos = -1;
+
+              // Absolute logical positions
+              let left = '50%';
+              let scale = 1;
+              let zIndex = 2;
+              let opacity = 1;
+              let shadow = '0 20px 40px -10px rgba(0,0,0,0.1)';
+
+              // Map position based on RTL mode
+              const logicalPos = isRTL ? -pos : pos;
+
+              if (logicalPos === -1) {
+                left = '15%';
+                scale = 0.85;
+                zIndex = 1;
+                opacity = 0.6;
+                shadow = '0 4px 15px rgba(0,0,0,0.02)';
+              } else if (logicalPos === 1) {
+                left = '85%';
+                scale = 0.85;
+                zIndex = 1;
+                opacity = 0.6;
+                shadow = '0 4px 15px rgba(0,0,0,0.02)';
+              }
+
+              return (
                 <div
                   key={review.id}
+                  className="review-card-wrapper"
                   style={{
-                    flex: '0 0 100%',
-                    padding: '0 10px',
-                    boxSizing: 'border-box',
+                    position: 'absolute',
+                    top: '50%',
+                    left: left,
+                    transform: `translate(-50%, -50%) scale(${scale})`,
+                    zIndex: zIndex,
+                    opacity: opacity,
+                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                    width: '100%',
+                    maxWidth: '420px',
                   }}
                 >
                   <div
                     style={{
-                      background: '#fcfcfc',
-                      border: '1.5px solid #eeeeee',
+                      background: '#ffffff',
                       borderRadius: '24px',
-                      padding: '48px',
-                      textAlign: 'center',
+                      padding: '40px 32px',
                       display: 'flex',
                       flexDirection: 'column',
+                      alignItems: 'center',
                       gap: '24px',
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.02)',
+                      boxShadow: shadow,
+                      border: '1px solid #f1f5f9',
                     }}
                   >
                     {/* Stars */}
-                    <div style={{ display: 'flex', justifyContent: 'center', gap: '6px' }}>
+                    <div style={{ display: 'flex', gap: '4px' }}>
                       {[...Array(5)].map((_, i) => (
-                        <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#FFDE59" stroke="#FFDE59" strokeWidth="1">
+                        <svg key={i} width="24" height="24" viewBox="0 0 24 24" fill="#FACC15" stroke="#FACC15" strokeWidth="1">
                           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                         </svg>
                       ))}
                     </div>
 
-                    {/* Text */}
+                    {/* Review Text */}
                     <p
                       style={{
-                        fontSize: 'clamp(16px, 2vw, 20px)',
-                        color: '#111111',
+                        fontSize: '18px',
+                        color: '#0f172a',
                         lineHeight: 1.6,
                         fontStyle: 'italic',
+                        textAlign: 'center',
                         margin: 0,
                         fontWeight: 500,
                       }}
@@ -176,54 +205,60 @@ export default function Reviews() {
                     </p>
 
                     {/* Author */}
-                    <div>
-                      <p style={{ fontSize: '18px', fontWeight: 800, color: '#111111', margin: '0 0 4px 0' }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <p style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: '0 0 4px 0' }}>
                         {t(review.name)}
                       </p>
-                      <p style={{ fontSize: '14px', color: '#1F3C88', fontWeight: 700, margin: 0, textTransform: 'uppercase', letterSpacing: '1px' }}>
+                      <p style={{ fontSize: '13px', color: '#64748b', fontWeight: 700, margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                         {t(review.role)}
                       </p>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
+        </div>
 
-          {/* Pagination Dots */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '32px' }}>
-            {REVIEWS.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveIndex(idx)}
-                style={{
-                  width: activeIndex === idx ? '24px' : '8px',
-                  height: '8px',
-                  borderRadius: '10px',
-                  background: activeIndex === idx ? '#1F3C88' : '#dddddd',
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  padding: 0,
-                }}
-              />
-            ))}
-          </div>
+        {/* Pagination Bars */}
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '48px' }}>
+          {REVIEWS.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveIndex(idx)}
+              style={{
+                width: '64px',
+                height: '6px',
+                borderRadius: '8px',
+                background: activeIndex === idx ? '#0f172a' : '#cbd5e1',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                padding: 0,
+              }}
+            />
+          ))}
         </div>
       </div>
 
       <style>{`
-        .nav-btn:hover {
-          background: #111111 !important;
-          border-color: #111111 !important;
-          transform: translateY(-50%) scale(1.1);
+        .carousel-btn:hover {
+          transform: scale(1.1);
         }
-        .nav-btn:hover svg {
-          stroke: #ffffff !important;
+        @media (max-width: 1024px) {
+          .cards-stage {
+            max-width: 700px !important;
+          }
         }
-        @media (max-width: 1023px) {
-          .nav-btn {
+        @media (max-width: 768px) {
+          .carousel-wrapper {
+            height: 480px !important;
+          }
+          .carousel-btn {
             display: none !important;
+          }
+          .review-card-wrapper {
+            max-width: 320px !important;
           }
         }
       `}</style>

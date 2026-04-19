@@ -46,8 +46,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir} className={poppins.variable}>
-      <body className="min-h-screen bg-white font-sans antialiased">
+    <html lang={locale} dir={dir} className={poppins.variable} suppressHydrationWarning>
+      <body className="min-h-screen bg-white font-sans antialiased" suppressHydrationWarning>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>

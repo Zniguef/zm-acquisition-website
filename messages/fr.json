@@ -8,10 +8,10 @@
   },
   "hero": {
     "badge": "Système d'acquisition clients — Lead Gen System",
-    "headline1": "Arrêtez d'attendre.",
-    "headline2": "Construisez un système qui attire",
-    "headline3": "des clients en continu",
-    "subtext": "La plupart des entreprises de services dépendent des recommandations et du hasard. Nous construisons un système complet — de la recherche marché à la publicité en passant par la landing page — pour obtenir des clients prêts à acheter.",
+    "headline1": "Construisez un système automatisé",
+    "headline2": "qui attire des clients",
+    "headline3": "prêts à acheter",
+    "subtext": "Nous construisons un système complet et automatisé — de la recherche marché à la création de funnels et landing pages — qui fournit en continu des clients prêts à acheter.",
     "cta": "Réserver votre appel stratégique gratuit",
     "ctaNote": "Sans engagement — session stratégique de 30 minutes",
     "stat1Number": "+1700",
@@ -20,7 +20,7 @@
     "stat2Label": "Coût par lead le plus bas",
     "stat3Number": "5+",
     "stat3Label": "Secteurs de services",
-    "check1": "Publicités payantes sur Meta",
+    "check1": "Publicités payantes (Meta, Google, TikTok, LinkedIn)",
     "check2": "Stratégie et construction de funnel",
     "check3": "Landing pages à fort taux de conversion",
     "check4": "Recherche et analyse de marché",
@@ -137,8 +137,9 @@
     "a4": "Nous travaillons avec des budgets commençant à 50 $/mois. Ce qui compte n'est pas la taille, pas le budget global, mais le bon ciblage et le bon système."
   },
   "contact": {
-    "headline": "Prêt à obtenir des clients {highlight} ?",
+    "headlinePrefix": "Prêt à obtenir des clients ",
     "highlight": "régulièrement",
+    "headlineSuffix": " ?",
     "subtext": "Réservez votre séance stratégique gratuite — 30 minutes pour analyser votre situation et proposer l'étape suivante",
     "benefit1": "Séance 100% gratuite sans engagement",
     "benefit2": "Analyse complète de votre situation actuelle",
@@ -172,9 +173,22 @@
     "r3Role": "Business Coach",
     "r3Text": "J'étais sceptique au début, mais les résultats parlent d'eux-mêmes. La landing page et la stratégie de funnel sont de premier ordre. Hautement recommandé pour toute entreprise de services."
   },
+  "privacyPage": {
+    "title": "Politique de Confidentialité",
+    "lastUpdated": "Dernière mise à jour : 10 Avril 2026",
+    "intro": "Chez ZM Acquisition, nous prenons votre vie privée très au sérieux. Cette politique de confidentialité décrit comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez notre site et nos services.",
+    "section1Title": "1. Informations que nous collectons",
+    "section1Text": "Nous collectons les informations que vous nous fournissez directement, par exemple lorsque vous remplissez un formulaire de contact, réservez une consultation ou vous connectez à nos services. Cela peut inclure votre nom, adresse e-mail, numéro de téléphone et détails sur votre entreprise.",
+    "section2Title": "2. Comment nous utilisons vos informations",
+    "section2Text": "Nous utilisons les informations que nous collectons pour fournir, maintenir et améliorer nos services, communiquer avec vous, analyser l'utilisation de nos services et respecter nos obligations légales.",
+    "section3Title": "3. Sécurité des données",
+    "section3Text": "Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos informations personnelles contre tout accès, altération, divulgation ou destruction non autorisés.",
+    "section4Title": "4. Nous contacter",
+    "section4Text": "Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter."
+  },
   "footer": {
     "brand": "ZM ACQUISITION",
-    "copyright": "© 2024 ZM Acquisition. Tous droits réservés.",
+    "copyright": "© 2026 ZM Acquisition. Tous droits réservés.",
     "terms": "Conditions Générales",
     "privacy": "Politique de Confidentialité"
   }

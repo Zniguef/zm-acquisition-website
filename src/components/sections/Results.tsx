@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 
 const RESULTS_DATA = [
   {
@@ -11,15 +12,17 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c1Stat2Value',
     stat2Label: 'c1Stat2Label',
+    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=120&q=80',
   },
   {
     id: 2,
     nameKey: 'c2Name',
     subKey: 'c2Industry',
     stat1: 'c2Stat1Value',
-    stat1Label: 'c1Stat1Label', // Reusing 'Qualified Leads' label key
+    stat1Label: 'c1Stat1Label',
     stat2: 'c2Stat2Value',
     stat2Label: 'c2Stat2Label',
+    image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=120&q=80',
   },
   {
     id: 3,
@@ -29,6 +32,7 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c3Stat2Value',
     stat2Label: 'c3Stat2Label',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=120&q=80',
   },
   {
     id: 4,
@@ -38,50 +42,37 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c4Stat2Value',
     stat2Label: 'c4Stat2Label',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80',
   },
 ];
 
 export default function Results() {
   const t = useTranslations('results');
 
+  function scrollToContact() {
+    const el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <section
       id="results"
       style={{
-        background: '#ffffff',
-        padding: '64px 32px',
-        color: '#111111',
+        backgroundColor: '#ffffff',
+        padding: '100px 32px',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        {/* Label */}
-        <span
-          style={{
-            display: 'inline-block',
-            background: '#FFF9DB',
-            border: '1px solid #FFDE59',
-            color: '#1F3C88',
-            fontSize: '11px',
-            fontWeight: 800,
-            padding: '4px 12px',
-            borderRadius: '20px',
-            marginBottom: '16px',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-          }}
-        >
-          {t('label')}
-        </span>
-
+      <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
         {/* Headline */}
         <h2
           style={{
-            fontSize: 'clamp(28px, 4vw, 36px)',
-            fontWeight: 800,
-            color: '#111111',
-            lineHeight: 1.2,
-            marginBottom: '8px',
-            margin: '0 0 8px 0',
+            fontSize: 'clamp(36px, 5vw, 48px)',
+            fontWeight: 900,
+            color: '#0f172a',
+            lineHeight: 1.15,
+            marginBottom: '16px',
+            textAlign: 'center',
+            letterSpacing: '-0.02em',
           }}
         >
           {t('headline')}
@@ -90,10 +81,10 @@ export default function Results() {
         {/* Subtext */}
         <p
           style={{
-            fontSize: '13px',
-            color: '#4A4A4A',
-            marginBottom: '36px',
-            margin: '0 0 36px 0',
+            fontSize: '18px',
+            color: '#64748b',
+            marginBottom: '56px',
+            textAlign: 'center',
           }}
         >
           {t('subtext')}
@@ -105,70 +96,80 @@ export default function Results() {
             <div
               key={card.id}
               style={{
-                background: '#fcfcfc',
-                border: '1.5px solid #eeeeee',
+                background: '#ffffff',
+                border: '1px solid #f1f5f9',
                 borderRadius: '12px',
-                padding: '24px',
-                transition: 'border-color 0.2s',
+                padding: '32px',
+                boxShadow: '0 10px 40px -10px rgba(0,0,0,0.06)',
+                display: 'flex',
+                flexDirection: 'column',
               }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.borderColor = '#FFDE59')
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.borderColor = '#eeeeee')
-              }
             >
-              {/* Card Label */}
-              <h3
-                style={{
-                  fontSize: '11px',
-                  fontWeight: 800,
-                  color: '#1F3C88',
-                  textTransform: 'uppercase',
-                  marginBottom: '4px',
-                  margin: '0 0 4px 0',
-                }}
-              >
-                {t(card.nameKey)}
-              </h3>
-
-              {/* Card Sub-label */}
-              <p
-                style={{
-                  fontSize: '12px',
-                  color: '#888888',
-                  marginBottom: '24px',
-                  margin: '0 0 24px 0',
-                }}
-              >
-                {t(card.subKey)}
-              </p>
-
-              {/* Data Row */}
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                {/* Stat 1 */}
-                <div style={{ flex: 1 }}>
-                  <p
+              {/* Header row */}
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '32px', gap: '16px' }}>
+                <Image
+                  src={card.image}
+                  alt="Industry Icon"
+                  width={64}
+                  height={64}
+                  style={{
+                    width: '64px',
+                    height: '64px',
+                    borderRadius: '50%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    border: '1px solid #e2e8f0',
+                  }}
+                  unoptimized
+                />
+                <div>
+                  <h3
                     style={{
-                      fontSize: '32px',
+                      fontSize: '20px',
                       fontWeight: 800,
-                      color: '#111111',
-                      lineHeight: 1,
-                      marginBottom: '4px',
+                      color: '#0f172a',
+                      textTransform: 'uppercase',
                       margin: '0 0 4px 0',
                     }}
                   >
-                    {t(card.stat1)}
-                  </p>
+                    {t(card.nameKey)}
+                  </h3>
                   <p
                     style={{
-                      fontSize: '10px',
-                      color: '#666666',
-                      textTransform: 'uppercase',
+                      fontSize: '16px',
+                      color: '#64748b',
                       margin: 0,
                     }}
                   >
+                    {t(card.subKey)}
+                  </p>
+                </div>
+              </div>
+
+              {/* Data Row */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {/* Stat 1 */}
+                <div style={{ flex: 1, textAlign: 'center' }}>
+                  <p
+                    style={{
+                      fontSize: '15px',
+                      color: '#0f172a',
+                      fontWeight: 500,
+                      margin: '0 0 12px 0',
+                    }}
+                  >
                     {t(card.stat1Label)}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '40px',
+                      fontWeight: 900,
+                      color: '#0f172a',
+                      lineHeight: 1,
+                      margin: 0,
+                    }}
+                  >
+                    {t(card.stat1)}
                   </p>
                 </div>
 
@@ -176,35 +177,34 @@ export default function Results() {
                 <div
                   style={{
                     width: '1px',
-                    height: '40px',
-                    background: '#eeeeee',
-                    margin: '0 24px',
+                    height: '60px',
+                    background: '#e2e8f0',
+                    margin: '0 16px',
                   }}
                 />
 
                 {/* Stat 2 */}
-                <div style={{ flex: 1 }}>
+                <div style={{ flex: 1, textAlign: 'center' }}>
                   <p
                     style={{
-                      fontSize: '32px',
-                      fontWeight: 800,
-                      color: '#111111',
-                      lineHeight: 1,
-                      marginBottom: '4px',
-                      margin: '0 0 4px 0',
-                    }}
-                  >
-                    {t(card.stat2)}
-                  </p>
-                  <p
-                    style={{
-                      fontSize: '10px',
-                      color: '#666666',
-                      textTransform: 'uppercase',
-                      margin: 0,
+                      fontSize: '15px',
+                      color: '#0f172a',
+                      fontWeight: 500,
+                      margin: '0 0 12px 0',
                     }}
                   >
                     {t(card.stat2Label)}
+                  </p>
+                  <p
+                    style={{
+                      fontSize: '40px',
+                      fontWeight: 900,
+                      color: '#0f172a',
+                      lineHeight: 1,
+                      margin: 0,
+                    }}
+                  >
+                    {t(card.stat2)}
                   </p>
                 </div>
               </div>
@@ -216,23 +216,25 @@ export default function Results() {
         <div style={{ textAlign: 'center', marginTop: '48px' }}>
           <button
             style={{
-              background: '#FFDE59',
-              color: '#111111',
-              fontSize: '15px',
+              background: '#FDE047',
+              color: '#0f172a',
+              fontSize: '16px',
               fontWeight: 700,
               padding: '16px 32px',
               borderRadius: '8px',
               border: 'none',
               cursor: 'pointer',
-              transition: 'transform 0.2s, background 0.2s',
+              transition: 'all 0.2s ease',
+              boxShadow: '0 4px 14px rgba(253, 224, 71, 0.4)',
             }}
+            onClick={scrollToContact}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.transform = 'scale(1.02)';
-              (e.currentTarget as HTMLElement).style.background = '#ffd633';
+              (e.currentTarget as HTMLElement).style.background = '#facc15';
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
-              (e.currentTarget as HTMLElement).style.background = '#FFDE59';
+              (e.currentTarget as HTMLElement).style.background = '#FDE047';
             }}
           >
             {t('cta')}
@@ -244,9 +246,9 @@ export default function Results() {
         .results-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 16px;
+          gap: 24px;
         }
-        @media (max-width: 639px) {
+        @media (max-width: 768px) {
           .results-grid {
             grid-template-columns: 1fr;
           }

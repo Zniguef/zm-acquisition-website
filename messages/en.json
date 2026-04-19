@@ -8,19 +8,19 @@
   },
   "hero": {
     "badge": "Client Acquisition System — Lead Gen System",
-    "headline1": "Stop waiting.",
-    "headline2": "Build a system that brings",
-    "headline3": "clients consistently",
-    "subtext": "Most service businesses rely on referrals and luck. We build you a complete system — from market research to ads to landing page — so you get clients ready to buy.",
+    "headline1": "Build an Automated",
+    "headline2": "System That Attracts",
+    "headline3": "Ready-to-Buy Clients",
+    "subtext": "We construct a complete, automated system—from market research to funnel building and landing pages—that consistently delivers clients ready to purchase.",
     "cta": "Book Your Free Strategy Call",
-    "ctaNote": "No commitment — 30 minute strategy session",
+    "ctaNote": "Sans engagement — session stratégique de 30 minutes",
     "stat1Number": "+1700",
     "stat1Label": "Qualified Leads Generated",
     "stat2Number": "$0.74",
     "stat2Label": "Lowest Cost Per Lead",
     "stat3Number": "5+",
     "stat3Label": "Service Industries",
-    "check1": "Paid Ads on Meta",
+    "check1": "Paid Ads (Meta, Google, TikTok, LinkedIn)",
     "check2": "Full Funnel Strategy & Build",
     "check3": "High-Converting Landing Pages",
     "check4": "Market Research & Analysis",
@@ -137,8 +137,9 @@
     "a4": "We work with budgets starting as low as $50/month. What matters isn't the size, but the right targeting and the right system."
   },
   "contact": {
-    "headline": "Ready to get clients {highlight}?",
+    "headlinePrefix": "Ready to get clients ",
     "highlight": "consistently",
+    "headlineSuffix": "?",
     "subtext": "Book your free strategy session — 30 minutes where we analyze your situation and propose the next step",
     "benefit1": "100% free session without commitment",
     "benefit2": "Comprehensive analysis of your current situation",
@@ -172,9 +173,22 @@
     "r3Role": "Business Coach",
     "r3Text": "I was skeptical at first, but the results speak for themselves. The landing page and funnel strategy are top-notch. Highly recommended for any service business."
   },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: April 10, 2026",
+    "intro": "At ZM Acquisition, we take your privacy seriously. This privacy policy describes how we collect, use, and protect your personal information when you use our website and services.",
+    "section1Title": "1. Information We Collect",
+    "section1Text": "We collect information you provide directly to us, such as when you fill out a contact form, book a consultation, or connect with our services. This may include your name, email address, phone number, and business details.",
+    "section2Title": "2. How We Use Your Information",
+    "section2Text": "We use the information we collect to provide, maintain, and improve our services, communicate with you, analyze how our services are used, and to comply with legal obligations.",
+    "section3Title": "3. Data Security",
+    "section3Text": "We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.",
+    "section4Title": "4. Contact Us",
+    "section4Text": "If you have any questions about this Privacy Policy, please contact us."
+  },
   "footer": {
     "brand": "ZM ACQUISITION",
-    "copyright": "© 2024 ZM Acquisition. All rights reserved.",
+    "copyright": "© 2026 ZM Acquisition. All rights reserved.",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy"
   }

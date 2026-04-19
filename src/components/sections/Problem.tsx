@@ -2,10 +2,30 @@
 
 import { useTranslations } from 'next-intl';
 
+const ICONS = {
+  card1Title: (
+    <svg width="48" height="48" fill="none" stroke="#eab308" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+    </svg>
+  ),
+  card2Title: (
+    <svg width="48" height="48" fill="none" stroke="#eab308" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+    </svg>
+  ),
+  card3Title: (
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#eab308" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+       <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+       <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+  ),
+};
+
 const CARDS = [
-  { title: 'card1Title', text: 'card1Text', icon: '📉' },
-  { title: 'card2Title', text: 'card2Text', icon: '🤝' },
-  { title: 'card3Title', text: 'card3Text', icon: '📢' },
+  { title: 'card1Title', text: 'card1Text', fullWidth: false },
+  { title: 'card2Title', text: 'card2Text', fullWidth: false },
+  { title: 'card3Title', text: 'card3Text', fullWidth: true },
 ] as const;
 
 export default function Problem() {
@@ -14,107 +34,109 @@ export default function Problem() {
   return (
     <section
       id="problem"
+      className="problem-section"
       style={{
-        background: '#ffffff',
-        padding: '64px 32px',
-        color: '#111111',
+        backgroundColor: '#ffffff',
+        backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
+        backgroundSize: '24px 24px',
+        padding: '100px 32px',
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        {/* Label */}
-        <span
-          style={{
-            display: 'inline-block',
-            background: '#FFF9DB',
-            border: '1px solid #FFDE59',
-            color: '#1F3C88',
-            fontSize: '11px',
-            fontWeight: 800,
-            padding: '4px 12px',
-            borderRadius: '20px',
-            marginBottom: '16px',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-          }}
-        >
-          {t('label')}
-        </span>
+      <div 
+        className="problem-container"
+        style={{
+          maxWidth: '1200px', 
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'minmax(300px, 1fr) minmax(400px, 1.2fr)',
+          gap: '80px',
+          alignItems: 'center'
+        }}
+      >
+        {/* Left Column: Text */}
+        <div className="problem-content">
+          <span
+            style={{
+              display: 'inline-block',
+              background: '#FEF9C3', /* Yellowish to match the image */
+              border: '1px solid #FDE047',
+              color: '#0f172a', /* Dark slate navy */
+              fontSize: '12px',
+              fontWeight: 800,
+              padding: '6px 16px',
+              borderRadius: '24px',
+              marginBottom: '24px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+            }}
+          >
+            {t('label')}
+          </span>
 
-        {/* Headline */}
-        <h2
-          style={{
-            fontSize: 'clamp(22px, 3vw, 28px)',
-            fontWeight: 800,
-            color: '#111111',
-            lineHeight: 1.3,
-            marginBottom: '8px',
-            margin: '0 0 8px 0',
-          }}
-        >
-          {t('headline')}
-        </h2>
+          <h2
+            style={{
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontWeight: 900,
+              color: '#0f172a',
+              lineHeight: 1.15,
+              marginBottom: '24px',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            {t('headline')}
+          </h2>
 
-        {/* Subtext */}
-        <p
-          style={{
-            fontSize: '13px',
-            color: '#4A4A4A',
-            marginBottom: '36px',
-            margin: '0 0 36px 0',
-          }}
-        >
-          {t('subtext')}
-        </p>
+          <p
+            style={{
+              fontSize: '18px',
+              color: '#334155',
+              lineHeight: 1.6,
+              margin: '0',
+            }}
+          >
+            {t('subtext')}
+          </p>
+        </div>
 
-        {/* Cards grid */}
-        <div className="problem-grid">
-          {CARDS.map(({ title, text, icon }) => (
+        {/* Right Column: Cards Grid */}
+        <div className="problem-cards-grid">
+          {CARDS.map(({ title, text, fullWidth }) => (
             <div
               key={title}
+              className={`problem-card ${fullWidth ? 'full-width' : ''}`}
               style={{
-                background: '#f9f9f9',
-                border: '1.5px solid #eeeeee',
-                borderRadius: '10px',
-                padding: '24px',
-                transition: 'border-color 0.2s',
+                background: '#ffffff',
+                border: '1px solid #f1f5f9',
+                borderRadius: '16px',
+                padding: '32px',
+                boxShadow: '0 10px 40px -10px rgba(0,0,0,0.08)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px'
               }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLElement).style.borderColor = '#FFDE59')
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLElement).style.borderColor = '#eeeeee')
-              }
             >
-              {/* Yellow accent dot */}
-              <div
-                style={{
-                  width: '8px',
-                  height: '8px',
-                  background: '#FFDE59',
-                  borderRadius: '50%',
-                  marginBottom: '16px',
-                }}
-              />
+              <div className="problem-card-icon" style={{ marginBottom: '8px' }}>
+                {ICONS[title]}
+              </div>
 
-              {/* Card title */}
               <h3
                 style={{
-                  fontSize: '14px',
-                  fontWeight: 700,
-                  color: '#111111',
-                  marginBottom: '8px',
-                  margin: '0 0 8px 0',
+                  fontSize: '18px',
+                  fontWeight: 800,
+                  color: '#0f172a',
+                  margin: '0',
                 }}
               >
                 {t(title)}
               </h3>
 
-              {/* Card text */}
               <p
                 style={{
-                  fontSize: '12px',
-                  color: '#4A4A4A',
-                  lineHeight: 1.7,
+                  fontSize: '14px',
+                  color: '#475569',
+                  lineHeight: 1.6,
                   margin: 0,
                 }}
               >
@@ -126,14 +148,38 @@ export default function Problem() {
       </div>
 
       <style>{`
-        .problem-grid {
+        .problem-cards-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 24px;
         }
-        @media (max-width: 767px) {
-          .problem-grid {
-            grid-template-columns: 1fr;
+        .problem-card.full-width {
+          grid-column: 1 / -1;
+        }
+
+        @media (max-width: 1024px) {
+          .problem-section {
+            padding: 80px 24px !important;
+          }
+          .problem-container {
+            grid-template-columns: 1fr !important;
+            gap: 64px !important;
+          }
+          .problem-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+          }
+        }
+        @media (max-width: 640px) {
+          .problem-section {
+            padding: 64px 16px !important;
+          }
+          .problem-cards-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .problem-card.full-width {
+            grid-column: auto;
           }
         }
       `}</style>

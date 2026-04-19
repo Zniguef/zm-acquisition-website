@@ -19,6 +19,12 @@ const nextConfig: NextConfig = {
   // next/image optimisation requires a Node server; always disable for portability.
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
 };
 

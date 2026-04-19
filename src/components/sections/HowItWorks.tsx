@@ -3,10 +3,50 @@
 import { useTranslations } from 'next-intl';
 
 const STEPS = [
-  { id: 1, title: 'step1Title', text: 'step1Text' },
-  { id: 2, title: 'step2Title', text: 'step2Text' },
-  { id: 3, title: 'step3Title', text: 'step3Text' },
-  { id: 4, title: 'step4Title', text: 'step4Text' },
+  { 
+    id: 1, 
+    titleKey: 'step1Title', 
+    textKey: 'step1Text', 
+    icon: (
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+        {/* Magnifying Glass overlaying document */}
+        <circle cx="16" cy="16" r="4" fill="#ffffff" strokeWidth="1.5" />
+        <line x1="18.8" y1="18.8" x2="22" y2="22" strokeWidth="2.5" />
+      </svg>
+    )
+  },
+  { 
+    id: 2, 
+    titleKey: 'step2Title', 
+    textKey: 'step2Text', 
+    icon: (
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 11l18-5v12L3 14v-3z"></path>
+        <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
+        <line x1="2" y1="12" x2="2" y2="12"></line>
+        <path d="M19 8v8"></path>
+      </svg>
+    )
+  },
+  { 
+    id: 3, 
+    titleKey: 'step3Title', 
+    textKey: 'step3Text', 
+    icon: (
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+        {/* Simple funnel symbol over browser */}
+        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" fill="#ffffff" strokeWidth="1.5" />
+      </svg>
+    )
+  },
 ];
 
 export default function HowItWorks() {
@@ -16,115 +56,89 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       style={{
-        background: '#ffffff',
-        padding: '64px 32px',
+        backgroundColor: '#ffffff',
+        padding: '100px 32px',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        {/* Label */}
-        <span
-          style={{
-            display: 'inline-block',
-            background: '#FFF9DB',
-            border: '1px solid #FFDE59',
-            color: '#1F3C88',
-            fontSize: '11px',
-            fontWeight: 800,
-            padding: '4px 12px',
-            borderRadius: '20px',
-            marginBottom: '16px',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-          }}
-        >
-          {t('label')}
-        </span>
-
-        {/* Headline */}
+      <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
+        
+        {/* Headline (No label based on mockup) */}
         <h2
           style={{
-            fontSize: 'clamp(28px, 4vw, 36px)',
-            fontWeight: 800,
-            color: '#111111',
-            lineHeight: 1.2,
-            marginBottom: '8px',
-            margin: '0 0 8px 0',
+            fontSize: 'clamp(36px, 5vw, 48px)',
+            fontWeight: 900,
+            color: '#0f172a',
+            lineHeight: 1.15,
+            marginBottom: '80px',
+            textAlign: 'center',
+            letterSpacing: '-0.02em',
           }}
         >
           {t('headline')}
         </h2>
 
-        {/* Subtext */}
-        <p
-          style={{
-            fontSize: '13px',
-            color: '#4A4A4A',
-            marginBottom: '48px',
-            margin: '0 0 48px 0',
-          }}
-        >
-          {t('subtext')}
-        </p>
-
         {/* Steps container */}
-        <div className="steps-container">
-          {STEPS.map((step, index) => (
+        <div className="steps-container" style={{ position: 'relative' }}>
+          
+          {/* Dashed Connector Line */}
+          <div className="step-connector" />
+
+          {STEPS.map((step) => (
             <div key={step.id} className="step-wrapper">
-              <div className="step-content">
-                {/* Step circle */}
-                <div
-                  style={{
-                    width: '64px',
-                    height: '64px',
-                    background: '#1F3C88',
-                    color: '#ffffff',
-                    fontSize: '24px',
-                    fontWeight: 800,
-                    borderRadius: '50%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: '0 auto 20px auto',
-                    position: 'relative',
-                    zIndex: 2,
-                  }}
-                >
-                  {step.id}
-                </div>
-
-                {/* Title */}
-                <h3
-                  style={{
-                    fontSize: '15px',
-                    fontWeight: 700,
-                    color: '#111111',
-                    marginBottom: '8px',
-                    margin: '0 0 8px 0',
-                    textAlign: 'center',
-                  }}
-                >
-                  {t(step.title)}
-                </h3>
-
-                {/* Description */}
-                <p
-                  style={{
-                    fontSize: '12px',
-                    color: '#4A4A4A',
-                    lineHeight: 1.6,
-                    textAlign: 'center',
-                    maxWidth: '180px',
-                    margin: '0 auto',
-                  }}
-                >
-                  {t(step.text)}
-                </p>
+              
+              {/* Step circle */}
+              <div
+                style={{
+                  width: '96px',
+                  height: '96px',
+                  backgroundColor: '#0f172a',
+                  color: '#ffffff',
+                  fontSize: '40px',
+                  fontWeight: 900,
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto',
+                  position: 'relative',
+                  zIndex: 2,
+                  boxShadow: '0 8px 24px rgba(15, 23, 42, 0.2)',
+                }}
+              >
+                {step.id}
               </div>
 
-              {/* Connector line (Horizontal on desktop, hidden or vertical on mobile) */}
-              {index < STEPS.length - 1 && (
-                <div className="step-divider" />
-              )}
+              {/* Step Icon */}
+              <div style={{ margin: '48px auto 24px auto', display: 'flex', justifyContent: 'center' }}>
+                {step.icon}
+              </div>
+
+              {/* Title */}
+              <h3
+                style={{
+                  fontSize: '22px',
+                  fontWeight: 800,
+                  color: '#0f172a',
+                  marginBottom: '16px',
+                  textAlign: 'center',
+                }}
+              >
+                {t(step.titleKey)}
+              </h3>
+
+              {/* Description */}
+              <p
+                style={{
+                  fontSize: '16px',
+                  color: '#475569',
+                  lineHeight: 1.6,
+                  textAlign: 'center',
+                  maxWidth: '280px',
+                  margin: '0 auto',
+                }}
+              >
+                {t(step.textKey)}
+              </p>
             </div>
           ))}
         </div>
@@ -135,43 +149,38 @@ export default function HowItWorks() {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          gap: 20px;
+          position: relative;
         }
 
         .step-wrapper {
           flex: 1;
           display: flex;
-          align-items: center;
+          flex-direction: column;
           position: relative;
+          z-index: 2;
         }
 
-        .step-content {
-          flex: 1;
+        .step-connector {
+          position: absolute;
+          top: 48px; /* half of the 96px circle */
+          left: 16%;
+          right: 16%;
+          height: 2px;
+          border-top: 2px dashed #fde047;
+          z-index: 1;
         }
 
-        .step-divider {
-          width: 40px;
-          height: 3px;
-          background: #FFDE59;
-          margin: 0 10px;
-          margin-top: -85px; /* Adjust based on circle center */
-        }
-
-        @media (max-width: 1023px) {
+        @media (max-width: 768px) {
           .steps-container {
             flex-direction: column;
-            gap: 40px;
+            gap: 64px;
             align-items: center;
           }
           .step-wrapper {
-            flex-direction: column;
             width: 100%;
           }
-          .step-divider {
-            width: 3px;
-            height: 30px;
-            margin: 10px 0;
-            margin-top: 0;
+          .step-connector {
+            display: none;
           }
         }
       `}</style>
