@@ -12,7 +12,7 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c1Stat2Value',
     stat2Label: 'c1Stat2Label',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=120&q=80',
+    image: 'https://a4b4ff22885fa8925abe601e10903fce.cdn.bubble.io/cdn-cgi/image/w=96,h=96,f=auto,dpr=1.25,fit=contain/f1772740427257x804213727305202200/Logo%20Klu%CC%88b.png',
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c4Stat2Value',
     stat2Label: 'c4Stat2Label',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80',
+    image: 'https://www.chorfiformation.com/wp-content/themes/twentytwelve/images/logo_chorfi.png',
   },
 ];
 

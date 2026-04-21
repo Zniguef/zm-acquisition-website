@@ -101,14 +101,14 @@
     "label": "Comment ça marche",
     "headline": "4 étapes de zéro au client",
     "subtext": "Un système éprouvé qui fonctionne de manière répétée dans différents secteurs",
-    "step1Title": "La Publicité",
-    "step1Text": "Ciblage précis de votre client idéal sur les plateformes Meta",
-    "step2Title": "Landing Page",
-    "step2Text": "Convertir l'intérêt en une réelle intention de vous contacter",
-    "step3Title": "Qualification",
-    "step3Text": "Un processus de filtrage qui distingue les prospects sérieux des curieux",
-    "step4Title": "Suivi",
-    "step4Text": "Transformer le prospect qualifié en un rendez-vous réel"
+    "step1Title": "Recherche de marché",
+    "step1Text": "Analyse approfondie de votre marché, concurrents et audience avant tout lancement de campagne",
+    "step2Title": "La Publicité",
+    "step2Text": "Ciblage précis de votre client idéal sur les plateformes Meta",
+    "step3Title": "Landing Page",
+    "step3Text": "Convertir l'intérêt en une réelle intention de vous contacter",
+    "step4Title": "Qualification",
+    "step4Text": "Un processus de filtrage qui distingue les prospects sérieux des curieux"
   },
   "about": {
     "label": "À propos de nous",
@@ -120,8 +120,7 @@
     "tag1": "Meta Ads",
     "tag2": "Funnel Strategy",
     "tag3": "Lead Qualification",
-    "tag4": "WhatsApp Follow-up",
-    "tag5": "Landing Pages"
+    "tag4": "Landing Pages"
   },
   "faq": {
     "label": "FAQ",
@@ -134,7 +133,7 @@
     "q3": "Travaillez-vous avec tous les secteurs ?",
     "a3": "Nous nous spécialisons dans les entreprises de services : salles de sport, centres de formation, comptables, coachs et studios. Si vous vendez un service, nous pouvons vous aider.",
     "q4": "Quel est le budget publicitaire requis ?",
-    "a4": "Nous travaillons avec des budgets commençant à 50 $/mois. Ce qui compte n'est pas la taille, pas le budget global, mais le bon ciblage et le bon système."
+    "a4": "Nous travaillons avec des budgets commençant à 200 $/mois. Ce qui compte n'est pas la taille, pas le budget global, mais le bon ciblage et le bon système."
   },
   "contact": {
     "headlinePrefix": "Prêt à obtenir des clients ",

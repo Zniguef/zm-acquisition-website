@@ -39,6 +39,18 @@ const STEPS = [
     textKey: 'step3Text', 
     icon: (
       <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="3" y1="9" x2="21" y2="9"></line>
+        <path d="M9 21V9"></path>
+      </svg>
+    )
+  },
+  { 
+    id: 4, 
+    titleKey: 'step4Title', 
+    textKey: 'step4Text', 
+    icon: (
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
         <line x1="8" y1="21" x2="16" y2="21"></line>
         <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -163,8 +175,8 @@ export default function HowItWorks() {
         .step-connector {
           position: absolute;
           top: 48px; /* half of the 96px circle */
-          left: 16%;
-          right: 16%;
+          left: 12.5%;
+          right: 12.5%;
           height: 2px;
           border-top: 2px dashed #fde047;
           z-index: 1;

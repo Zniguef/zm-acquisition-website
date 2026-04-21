@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-const TAGS = ['tag1', 'tag2', 'tag3', 'tag4', 'tag5'];
+const TAGS = ['tag1', 'tag2', 'tag3', 'tag4'];
 
 export default function About() {
   const t = useTranslations('about');
@@ -20,16 +20,16 @@ export default function About() {
       }}
     >
       {/* Optional: subtle background dotted pattern on left side to match mockup */}
-      <div 
-         style={{
-           position: 'absolute',
-           top: 0, left: 0, bottom: 0,
-           width: '300px',
-           backgroundSize: '20px 20px',
-           backgroundImage: 'radial-gradient(circle, #e2e8f0 1px, transparent 1px)',
-           opacity: 0.5,
-           zIndex: 0,
-         }}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0, left: 0, bottom: 0,
+          width: '300px',
+          backgroundSize: '20px 20px',
+          backgroundImage: 'radial-gradient(circle, #e2e8f0 1px, transparent 1px)',
+          opacity: 0.5,
+          zIndex: 0,
+        }}
       />
 
       <div
@@ -58,8 +58,8 @@ export default function About() {
         >
           {/* Animated Blob Background */}
           <div className="blob-bg">
-            <Image
-              src="/logo.png"
+            {/* <Image
+              src=""
               alt="ZM Logo"
               width={200}
               height={200}
@@ -70,7 +70,7 @@ export default function About() {
                 position: 'relative',
                 zIndex: 2,
               }}
-            />
+            /> */}
           </div>
 
           <h3
@@ -131,7 +131,7 @@ export default function About() {
               fontWeight: 400,
             }}
           >
-             {/* If original used text1, text2. Mockup has 3 paragraphs but we map whatever we have */}
+            {/* If original used text1, text2. Mockup has 3 paragraphs but we map whatever we have */}
             <p style={{ margin: 0 }}>{t('text1')}</p>
             <p style={{ margin: 0 }}>{t('text2')}</p>
           </div>

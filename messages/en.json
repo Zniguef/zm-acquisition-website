@@ -101,14 +101,14 @@
     "label": "How It Works",
     "headline": "4 steps from zero to client",
     "subtext": "A proven system that works repeatedly across multiple industries",
-    "step1Title": "The Advertisement",
-    "step1Text": "Precise targeting of your ideal customer on Meta platforms",
-    "step2Title": "Landing Page",
-    "step2Text": "Converting interest into a real intent to contact you",
-    "step3Title": "Qualifying",
-    "step3Text": "A filtering process that separates serious leads from browsers",
-    "step4Title": "Follow-up",
-    "step4Text": "Turning the qualified lead into an actual booked appointment"
+    "step1Title": "Market Research",
+    "step1Text": "Deep analysis of your market, competitors, and audience before any campaign launches",
+    "step2Title": "The Advertisement",
+    "step2Text": "Precise targeting of your ideal customer on Meta platforms",
+    "step3Title": "Landing Page",
+    "step3Text": "Converting interest into a real intent to contact you",
+    "step4Title": "Qualifying",
+    "step4Text": "A filtering process that separates serious leads from browsers"
   },
   "about": {
     "label": "About Us",
@@ -120,8 +120,7 @@
     "tag1": "Meta Ads",
     "tag2": "Funnel Strategy",
     "tag3": "Lead Qualification",
-    "tag4": "WhatsApp Follow-up",
-    "tag5": "Landing Pages"
+    "tag4": "Landing Pages"
   },
   "faq": {
     "label": "FAQ",
@@ -134,7 +133,7 @@
     "q3": "Do you work with all industries?",
     "a3": "We specialize in service businesses: gyms, training centers, accountants, coaches, and studios. If you sell a service, we can help you.",
     "q4": "What is the required advertising budget?",
-    "a4": "We work with budgets starting as low as $50/month. What matters isn't the size, but the right targeting and the right system."
+    "a4": "We work with budgets starting as low as $200/month. What matters isn't the size, but the right targeting and the right system."
   },
   "contact": {
     "headlinePrefix": "Ready to get clients ",
