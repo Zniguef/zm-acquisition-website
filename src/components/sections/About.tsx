@@ -57,7 +57,7 @@ export default function About() {
           }}
         >
           <Image
-            src="/images/logo.png"
+            src="/images/Logo.png"
             alt="ZM Logo"
             width={350}
             height={350}
