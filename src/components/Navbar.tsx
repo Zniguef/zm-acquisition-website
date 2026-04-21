@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname, useRouter, Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
+import Image from 'next/image';
 
 const LOCALE_LABELS: Record<string, string> = {
   ar: 'AR',
@@ -53,11 +54,11 @@ export default function Navbar() {
 
   // Helper text flags per locale to match mockup
   const getRegionText = (loc: string) => {
-    switch(loc) {
-       case 'fr': return 'FR';
-       case 'en': return 'US';
-       case 'ar': return 'AR';
-       default: return 'GL';
+    switch (loc) {
+      case 'fr': return 'FR';
+      case 'en': return 'US';
+      case 'ar': return 'AR';
+      default: return 'GL';
     }
   }
 
@@ -68,7 +69,7 @@ export default function Navbar() {
         background: 'rgba(255, 255, 255, 0.9)',
         backdropFilter: 'blur(12px)',
         borderBottom: '1px solid #f1f5f9',
-        height: '80px', // slightly taller for elegant feel
+        height: '90px', // slightly taller for elegant feel
         position: 'sticky',
         top: 0,
         zIndex: 50,
@@ -92,18 +93,20 @@ export default function Navbar() {
             href="/"
             style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}
           >
-            {/* Brand name */}
-            <span
+            {/* Brand Logo */}
+            <Image
+              src="/images/Header-Logo.png"
+              alt="ZM Acquisition"
+              width={200}
+              height={50}
               style={{
-                fontWeight: 900,
-                fontSize: '22px', // scaled up
-                letterSpacing: '-0.02em',
-                color: '#0f172a',
-                whiteSpace: 'nowrap',
+                height: '70px',
+                width: 'auto',
+                objectFit: 'contain',
+                display: 'block'
               }}
-            >
-              ZM ACQUISITION
-            </span>
+              priority
+            />
           </Link>
         </div>
 
@@ -233,41 +236,41 @@ export default function Navbar() {
                 const isActive = loc === locale;
                 return (
                   <button
-                     key={loc}
-                     onClick={() => switchLocale(loc)}
-                     style={{
-                       display: 'flex',
-                       alignItems: 'center',
-                       justifyContent: 'flex-start', // Fixed to left/right align
-                       gap: '12px',
-                       width: '100%',
-                       padding: '10px 14px',
-                       borderRadius: '8px',
-                       border: 'none',
-                       background: isActive ? '#f8fafc' : 'transparent',
-                       color: isActive ? '#0f172a' : '#475569',
-                       fontSize: '15px',
-                       fontWeight: isActive ? 700 : 500,
-                       cursor: 'pointer',
-                       textAlign: 'left',
-                       transition: 'all 0.1s',
-                     }}
-                     onMouseEnter={(e) => {
-                       if (!isActive) {
-                         e.currentTarget.style.background = '#f1f5f9';
-                         e.currentTarget.style.color = '#0f172a';
-                       }
-                     }}
-                     onMouseLeave={(e) => {
-                       if (!isActive) {
-                         e.currentTarget.style.background = 'transparent';
-                         e.currentTarget.style.color = '#475569';
-                       }
-                     }}
+                    key={loc}
+                    onClick={() => switchLocale(loc)}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'flex-start', // Fixed to left/right align
+                      gap: '12px',
+                      width: '100%',
+                      padding: '10px 14px',
+                      borderRadius: '8px',
+                      border: 'none',
+                      background: isActive ? '#f8fafc' : 'transparent',
+                      color: isActive ? '#0f172a' : '#475569',
+                      fontSize: '15px',
+                      fontWeight: isActive ? 700 : 500,
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      transition: 'all 0.1s',
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.background = '#f1f5f9';
+                        e.currentTarget.style.color = '#0f172a';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.background = 'transparent';
+                        e.currentTarget.style.color = '#475569';
+                      }
+                    }}
                   >
                     <span style={{ fontWeight: 800, width: '24px' }}>{getRegionText(loc)}</span>
                     <span style={{ display: 'flex', flexDirection: 'column' }}>
-                       <span>{loc === 'en' ? 'English' : loc === 'ar' ? 'العربية' : 'Français'}</span>
+                      <span>{loc === 'en' ? 'English' : loc === 'ar' ? 'العربية' : 'Français'}</span>
                     </span>
                   </button>
                 );
@@ -287,22 +290,22 @@ export default function Navbar() {
               fontWeight: 700,
               padding: '12px 24px',
               borderRadius: '8px',
-              background: '#facc15',
-              color: '#0f172a',
+              background: '#0D3EA6',
+              color: '#ffffff',
               textDecoration: 'none',
               whiteSpace: 'nowrap',
               transition: 'all 0.15s',
-              boxShadow: '0 4px 14px rgba(250, 204, 21, 0.2)' // matching mockups
+              boxShadow: '0 4px 14px rgba(13, 62, 166, 0.25)' // matching mockups
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#fde047';
+              (e.currentTarget as HTMLElement).style.background = '#1e40af';
               (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)';
-              (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(250, 204, 21, 0.3)';
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 20px rgba(13, 62, 166, 0.35)';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = '#facc15';
+              (e.currentTarget as HTMLElement).style.background = '#0D3EA6';
               (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-              (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 14px rgba(250, 204, 21, 0.2)';
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 14px rgba(13, 62, 166, 0.25)';
             }}
           >
             {t('cta')}
@@ -337,7 +340,7 @@ export default function Navbar() {
           className="lg:hidden flex"
           style={{
             position: 'absolute',
-            top: '80px',
+            top: '90px',
             left: 0,
             width: '100%',
             background: 'rgba(255, 255, 255, 0.98)',
@@ -377,7 +380,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          
+
           <Link
             href="/#contact-form"
             onClick={(e) => {
@@ -389,8 +392,8 @@ export default function Navbar() {
               fontWeight: 800,
               padding: '16px 24px',
               borderRadius: '12px',
-              background: '#facc15',
-              color: '#0f172a',
+              background: '#0D3EA6',
+              color: '#ffffff',
               textDecoration: 'none',
               textAlign: 'center',
             }}

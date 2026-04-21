@@ -96,8 +96,8 @@ export default function Hero() {
                 id="hero-cta"
                 style={{
                   display: 'inline-block',
-                  background: '#FDE047', /* Bright yellow from image */
-                  color: '#0f172a',
+                  background: '#0D3EA6', /* Deep blue requested */
+                  color: '#ffffff',
                   fontSize: '16px',
                   fontWeight: 700,
                   padding: '16px 32px',
@@ -105,14 +105,14 @@ export default function Hero() {
                   textDecoration: 'none',
                   marginBottom: '12px',
                   transition: 'all 0.2s ease',
-                  boxShadow: '0 4px 14px rgba(253, 224, 71, 0.4)',
+                  boxShadow: '0 4px 14px rgba(13, 62, 166, 0.4)',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = '#facc15';
+                  (e.currentTarget as HTMLElement).style.background = '#1e40af';
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = '#FDE047';
+                  (e.currentTarget as HTMLElement).style.background = '#0D3EA6';
                   (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
                 }}
               >

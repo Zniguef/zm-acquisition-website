@@ -216,8 +216,8 @@ export default function Results() {
         <div style={{ textAlign: 'center', marginTop: '48px' }}>
           <button
             style={{
-              background: '#FDE047',
-              color: '#0f172a',
+              background: '#0D3EA6',
+              color: '#ffffff',
               fontSize: '16px',
               fontWeight: 700,
               padding: '16px 32px',
@@ -225,16 +225,16 @@ export default function Results() {
               border: 'none',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
-              boxShadow: '0 4px 14px rgba(253, 224, 71, 0.4)',
+              boxShadow: '0 4px 14px rgba(13, 62, 166, 0.4)',
             }}
             onClick={scrollToContact}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.transform = 'scale(1.02)';
-              (e.currentTarget as HTMLElement).style.background = '#facc15';
+              (e.currentTarget as HTMLElement).style.background = '#1e40af';
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
-              (e.currentTarget as HTMLElement).style.background = '#FDE047';
+              (e.currentTarget as HTMLElement).style.background = '#0D3EA6';
             }}
           >
             {t('cta')}

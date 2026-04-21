@@ -175,7 +175,7 @@ export default function Contact() {
               className="form-submit-btn"
               style={{
                 width: '100%',
-                background: '#0f172a',
+                background: '#0D3EA6',
                 color: '#ffffff',
                 fontSize: '16px',
                 fontWeight: 700,
@@ -283,7 +283,7 @@ export default function Contact() {
 
       <style>{`
         .form-submit-btn:hover {
-          background: #1e293b !important;
+          background: #1e40af !important;
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }

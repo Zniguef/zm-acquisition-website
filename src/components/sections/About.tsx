@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-const TAGS = ['tag1', 'tag2', 'tag3', 'tag4'];
+const TAGS = ['tag1', 'tag2', 'tag3'];
 
 export default function About() {
   const t = useTranslations('about');
@@ -56,41 +56,27 @@ export default function About() {
             alignItems: 'center',
           }}
         >
-          {/* Animated Blob Background */}
-          <div className="blob-bg">
-            {/* <Image
-              src=""
-              alt="ZM Logo"
-              width={200}
-              height={200}
-              style={{
-                width: '60%',
-                height: '60%',
-                objectFit: 'contain',
-                position: 'relative',
-                zIndex: 2,
-              }}
-            /> */}
-          </div>
-
-          <h3
+          <Image
+            src="/images/logo.png"
+            alt="ZM Logo"
+            width={350}
+            height={350}
             style={{
-              fontSize: '40px',
-              fontWeight: 900,
-              color: '#0f172a',
-              marginBottom: '4px',
-              marginTop: '40px',
-              letterSpacing: '-0.02em',
+              width: '100%',
+              maxWidth: '320px',
+              height: 'auto',
+              objectFit: 'contain',
+              marginBottom: '0px',
             }}
-          >
-            {t('name')}
-          </h3>
+          />
+
           <p
             style={{
               fontSize: '18px',
               fontWeight: 500,
               color: '#2563eb', // Nice bright blue like mockup
               margin: 0,
+              marginTop: '-15px',
             }}
           >
             {t('role')}
@@ -175,7 +161,7 @@ export default function About() {
         </div>
       </div>
 
-      <style>{`
+      {/*<style>{`
         .blob-bg {
           position: relative;
           width: 300px;
@@ -209,7 +195,7 @@ export default function About() {
             justify-content: center;
           }
         }
-      `}</style>
+      `}</style> */}
     </section>
   );
 }
