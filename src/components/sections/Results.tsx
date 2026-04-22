@@ -59,17 +59,20 @@ export default function Results() {
       id="results"
       style={{
         backgroundColor: '#ffffff',
-        padding: '100px 32px',
+        padding: '120px 32px',
+        position: 'relative',
+        backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
+        backgroundSize: '24px 24px',
       }}
     >
-      <div style={{ maxWidth: '1024px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Headline */}
         <h2
           style={{
-            fontSize: 'clamp(36px, 5vw, 48px)',
+            fontSize: 'clamp(36px, 5vw, 56px)',
             fontWeight: 900,
             color: '#0f172a',
-            lineHeight: 1.15,
+            lineHeight: 1.1,
             marginBottom: '16px',
             textAlign: 'center',
             letterSpacing: '-0.02em',
@@ -83,8 +86,11 @@ export default function Results() {
           style={{
             fontSize: '18px',
             color: '#64748b',
-            marginBottom: '56px',
+            marginBottom: '64px',
             textAlign: 'center',
+            maxWidth: '800px',
+            margin: '0 auto 64px auto',
+            lineHeight: 1.6,
           }}
         >
           {t('subtext')}
@@ -95,49 +101,64 @@ export default function Results() {
           {RESULTS_DATA.map((card) => (
             <div
               key={card.id}
+              className="result-card"
               style={{
                 background: '#ffffff',
-                border: '1px solid #f1f5f9',
-                borderRadius: '12px',
+                border: '1px solid #e2e8f0',
+                borderRadius: '16px',
                 padding: '32px',
-                boxShadow: '0 10px 40px -10px rgba(0,0,0,0.06)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
                 display: 'flex',
                 flexDirection: 'column',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               }}
             >
               {/* Header row */}
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '32px', gap: '16px' }}>
-                <Image
-                  src={card.image}
-                  alt="Industry Icon"
-                  width={64}
-                  height={64}
-                  style={{
-                    width: '64px',
-                    height: '64px',
-                    borderRadius: '50%',
-                    objectFit: 'cover',
-                    display: 'block',
-                    border: '1px solid #e2e8f0',
-                  }}
-                  unoptimized
-                />
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '32px', gap: '20px' }}>
+                <div style={{ 
+                  width: '96px',
+                  height: '96px',
+                  borderRadius: '50%',
+                  border: '1px solid #f1f5f9',
+                  overflow: 'hidden',
+                  flexShrink: 0,
+                  background: '#fff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '4px'
+                }}>
+                  <Image
+                    src={card.image}
+                    alt={t(card.nameKey)}
+                    width={88}
+                    height={88}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                    }}
+                    unoptimized
+                  />
+                </div>
                 <div>
                   <h3
                     style={{
-                      fontSize: '20px',
+                      fontSize: '24px',
                       fontWeight: 800,
                       color: '#0f172a',
-                      textTransform: 'uppercase',
                       margin: '0 0 4px 0',
+                      letterSpacing: '-0.01em'
                     }}
                   >
                     {t(card.nameKey)}
                   </h3>
                   <p
                     style={{
-                      fontSize: '16px',
+                      fontSize: '18px',
                       color: '#64748b',
+                      fontWeight: 400,
                       margin: 0,
                     }}
                   >
@@ -147,22 +168,29 @@ export default function Results() {
               </div>
 
               {/* Data Row */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'flex-start',
+                paddingTop: '24px',
+                borderTop: '1px solid #f1f5f9'
+              }}>
                 {/* Stat 1 */}
-                <div style={{ flex: 1, textAlign: 'center' }}>
+                <div style={{ flex: 1 }}>
                   <p
                     style={{
-                      fontSize: '15px',
-                      color: '#0f172a',
-                      fontWeight: 500,
-                      margin: '0 0 12px 0',
+                      fontSize: '13px',
+                      color: '#94a3b8',
+                      fontWeight: 600,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      marginBottom: '8px',
                     }}
                   >
                     {t(card.stat1Label)}
                   </p>
                   <p
                     style={{
-                      fontSize: '40px',
+                      fontSize: '36px',
                       fontWeight: 900,
                       color: '#0f172a',
                       lineHeight: 1,
@@ -177,27 +205,29 @@ export default function Results() {
                 <div
                   style={{
                     width: '1px',
-                    height: '60px',
-                    background: '#e2e8f0',
-                    margin: '0 16px',
+                    height: '50px',
+                    background: '#f1f5f9',
+                    margin: '0 24px',
                   }}
                 />
 
                 {/* Stat 2 */}
-                <div style={{ flex: 1, textAlign: 'center' }}>
+                <div style={{ flex: 1 }}>
                   <p
                     style={{
-                      fontSize: '15px',
-                      color: '#0f172a',
-                      fontWeight: 500,
-                      margin: '0 0 12px 0',
+                      fontSize: '13px',
+                      color: '#94a3b8',
+                      fontWeight: 600,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      marginBottom: '8px',
                     }}
                   >
                     {t(card.stat2Label)}
                   </p>
                   <p
                     style={{
-                      fontSize: '40px',
+                      fontSize: '36px',
                       fontWeight: 900,
                       color: '#0f172a',
                       lineHeight: 1,
@@ -213,8 +243,9 @@ export default function Results() {
         </div>
 
         {/* CTA Button */}
-        <div style={{ textAlign: 'center', marginTop: '48px' }}>
+        <div style={{ textAlign: 'center', marginTop: '64px' }}>
           <button
+            className="results-cta-btn"
             style={{
               background: '#0D3EA6',
               color: '#ffffff',
@@ -225,17 +256,9 @@ export default function Results() {
               border: 'none',
               cursor: 'pointer',
               transition: 'all 0.2s ease',
-              boxShadow: '0 4px 14px rgba(13, 62, 166, 0.4)',
+              boxShadow: '0 10px 20px -5px rgba(13, 62, 166, 0.3)',
             }}
             onClick={scrollToContact}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = 'scale(1.02)';
-              (e.currentTarget as HTMLElement).style.background = '#1e40af';
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
-              (e.currentTarget as HTMLElement).style.background = '#0D3EA6';
-            }}
           >
             {t('cta')}
           </button>
@@ -248,9 +271,23 @@ export default function Results() {
           grid-template-columns: repeat(2, 1fr);
           gap: 24px;
         }
+        .result-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        }
+        .results-cta-btn:hover {
+          background: #09328a;
+          transform: scale(1.02);
+        }
         @media (max-width: 768px) {
+          #results {
+            padding: 80px 20px !important;
+          }
           .results-grid {
             grid-template-columns: 1fr;
+          }
+          .result-card {
+            padding: 24px !important;
           }
         }
       `}</style>

@@ -156,6 +156,8 @@
     "emailPlaceholder": "your@email.com",
     "businessType": "Type of Business",
     "businessTypePlaceholder": "Select your industry",
+    "otherServiceLabel": "Specific Service",
+    "otherServicePlaceholder": "Describe your service...",
     "cta": "Book My Free Strategy Call",
     "disclaimer": "Your information is private and will never be shared with third parties."
   },
@@ -187,6 +189,7 @@
   },
   "footer": {
     "brand": "ZM ACQUISITION",
+    "tagline": "Your partner in systematic growth",
     "copyright": "© 2026 ZM Acquisition. All rights reserved.",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy"

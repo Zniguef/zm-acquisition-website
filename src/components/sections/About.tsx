@@ -134,7 +134,7 @@ export default function About() {
               <span
                 key={tagKey}
                 style={{
-                  background: '#fef08a', // Mockup soft yellow
+                  background: '#ffd441', // Mockup soft yellow
                   border: '1.5px solid #0f172a', // Mockup dark border
                   color: '#0f172a',
                   fontSize: '14px',
@@ -161,7 +161,7 @@ export default function About() {
         </div>
       </div>
 
-      {/*<style>{`
+      <style>{`
         .blob-bg {
           position: relative;
           width: 300px;
@@ -183,6 +183,9 @@ export default function About() {
         }
 
         @media (max-width: 1024px) {
+          #about {
+            padding: 64px 24px !important;
+          }
           .about-container {
             flex-direction: column !important;
             text-align: center;
@@ -195,7 +198,12 @@ export default function About() {
             justify-content: center;
           }
         }
-      `}</style> */}
+        @media (max-width: 768px) {
+          #about {
+            padding: 48px 16px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

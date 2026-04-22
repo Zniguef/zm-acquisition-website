@@ -156,6 +156,8 @@
     "emailPlaceholder": "your@email.com",
     "businessType": "نوع العمل",
     "businessTypePlaceholder": "اختر قطاعك",
+    "otherServiceLabel": "خدمة محددة",
+    "otherServicePlaceholder": "صف خدمتك...",
     "cta": "احجز مكالمتي الاستراتيجية المجانية",
     "disclaimer": "معلوماتك خاصة وسرية ولن تُشارك مع أي طرف ثالث."
   },
@@ -187,6 +189,7 @@
   },
   "footer": {
     "brand": "ZM ACQUISITION",
+    "tagline": "شريكك في النمو المنهجي",
     "copyright": "© 2026 ZM Acquisition. جميع الحقوق محفوظة.",
     "terms": "الشروط والأحكام",
     "privacy": "سياسة الخصوصية"

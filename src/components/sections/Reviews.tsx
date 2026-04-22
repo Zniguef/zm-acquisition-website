@@ -39,8 +39,8 @@ export default function Reviews() {
           <span
             style={{
               display: 'inline-block',
-              background: '#FDE047',
-              color: '#0f172a',
+              background: '#0000ff',
+              color: '#ffffff',
               fontSize: '12px',
               fontWeight: 800,
               padding: '6px 16px',
@@ -68,7 +68,7 @@ export default function Reviews() {
 
         {/* Carousel Container */}
         <div className="carousel-wrapper" style={{ position: 'relative', height: '400px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          
+
           {/* Nav Arrows */}
           <button
             onClick={isRTL ? nextSlide : prevSlide}

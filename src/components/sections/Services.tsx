@@ -76,7 +76,7 @@ export default function Services() {
                 style={{
                   width: '36px',
                   height: '36px',
-                  background: '#0f172a',
+                  background: '#ffd441',
                   color: '#ffffff',
                   fontSize: '16px',
                   fontWeight: 800,
@@ -96,8 +96,9 @@ export default function Services() {
                   display: 'inline-block',
                   fontSize: '11px',
                   fontWeight: 800,
-                  background: '#FEF9C3', /* Yellowish to match the image */
-                  color: '#0f172a',
+                  background: '#0000ff',
+                  border: '1px solid #3f3aff',
+                  color: '#ffffff',
                   padding: '4px 12px',
                   borderRadius: '6px',
                   marginBottom: '8px',
@@ -209,7 +210,7 @@ export default function Services() {
         }
         @media (max-width: 768px) {
           .services-section {
-            padding: 64px 16px !important;
+            padding: 48px 16px !important;
           }
           .services-cards-grid {
             grid-template-columns: 1fr;

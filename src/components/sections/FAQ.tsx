@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 const FAQS = [
-  { 
-    id: 1, 
-    q: 'q1', 
+  {
+    id: 1,
+    q: 'q1',
     a: 'a1',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -16,9 +16,9 @@ const FAQS = [
       </svg>
     )
   },
-  { 
-    id: 2, 
-    q: 'q2', 
+  {
+    id: 2,
+    q: 'q2',
     a: 'a2',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -27,21 +27,21 @@ const FAQS = [
       </svg>
     )
   },
-  { 
-    id: 3, 
-    q: 'q3', 
+  {
+    id: 3,
+    q: 'q3',
     a: 'a3',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-         <path d="M3 13h4l5-5c1.66-1.66 4.34-1.66 6 0s1.66 4.34 0 6l-5 5H6l-3-3v-3z"></path>
-         <path d="M14 8l6 6"></path>
-         <path d="M9 13l6 6"></path>
+        <path d="M3 13h4l5-5c1.66-1.66 4.34-1.66 6 0s1.66 4.34 0 6l-5 5H6l-3-3v-3z"></path>
+        <path d="M14 8l6 6"></path>
+        <path d="M9 13l6 6"></path>
       </svg>
     )
   },
-  { 
-    id: 4, 
-    q: 'q4', 
+  {
+    id: 4,
+    q: 'q4',
     a: 'a4',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -76,8 +76,8 @@ export default function FAQ() {
           <span
             style={{
               display: 'inline-block',
-              background: '#fde047',
-              color: '#0f172a',
+              background: '#0000ff',
+              color: '#ffffff',
               fontSize: '12px',
               fontWeight: 800,
               padding: '6px 16px',
@@ -131,8 +131,8 @@ export default function FAQ() {
                   marginBottom: '16px',
                   overflow: 'hidden',
                   transition: 'all 0.3s ease',
-                  boxShadow: isOpen 
-                    ? '0 10px 40px -10px rgba(0,0,0,0.1)' 
+                  boxShadow: isOpen
+                    ? '0 10px 40px -10px rgba(0,0,0,0.1)'
                     : '0 4px 10px rgba(0,0,0,0.03)',
                   borderLeft: isOpen ? '4px solid #facc15' : '1px solid #f1f5f9', // Active state Left Border
                   position: 'relative',
@@ -160,7 +160,7 @@ export default function FAQ() {
                       style={{
                         width: '36px',
                         height: '36px',
-                        background: '#0f172a',
+                        background: '#ffd441',
                         color: '#ffffff',
                         borderRadius: '50%',
                         display: 'flex',
@@ -229,6 +229,13 @@ export default function FAQ() {
           })}
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          #faq {
+            padding: 48px 16px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

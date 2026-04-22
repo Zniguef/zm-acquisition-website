@@ -81,7 +81,7 @@ export default function HowItWorks() {
             fontWeight: 900,
             color: '#0f172a',
             lineHeight: 1.15,
-            marginBottom: '80px',
+            marginBottom: '48px',
             textAlign: 'center',
             letterSpacing: '-0.02em',
           }}
@@ -103,7 +103,7 @@ export default function HowItWorks() {
                 style={{
                   width: '96px',
                   height: '96px',
-                  backgroundColor: '#0f172a',
+                  backgroundColor: '#ffd441',
                   color: '#ffffff',
                   fontSize: '40px',
                   fontWeight: 900,
@@ -128,10 +128,10 @@ export default function HowItWorks() {
               {/* Title */}
               <h3
                 style={{
-                  fontSize: '22px',
+                  fontSize: '18px',
                   fontWeight: 800,
                   color: '#0f172a',
-                  marginBottom: '16px',
+                  marginBottom: '12px',
                   textAlign: 'center',
                 }}
               >
@@ -141,11 +141,11 @@ export default function HowItWorks() {
               {/* Description */}
               <p
                 style={{
-                  fontSize: '16px',
+                  fontSize: '14px',
                   color: '#475569',
                   lineHeight: 1.6,
                   textAlign: 'center',
-                  maxWidth: '280px',
+                  maxWidth: '100%',
                   margin: '0 auto',
                 }}
               >
@@ -160,8 +160,9 @@ export default function HowItWorks() {
         .steps-container {
           display: flex;
           justify-content: space-between;
-          align-items: flex-start;
+          align-items: stretch;
           position: relative;
+          gap: 24px;
         }
 
         .step-wrapper {
@@ -170,19 +171,26 @@ export default function HowItWorks() {
           flex-direction: column;
           position: relative;
           z-index: 2;
+          background: #ffffff;
+          padding: 32px 24px;
+          border-radius: 20px;
+          border: 1px solid #f1f5f9;
+          box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+          transition: transform 0.3s ease;
+        }
+
+        .step-wrapper:hover {
+          transform: translateY(-5px);
         }
 
         .step-connector {
-          position: absolute;
-          top: 48px; /* half of the 96px circle */
-          left: 12.5%;
-          right: 12.5%;
-          height: 2px;
-          border-top: 2px dashed #fde047;
-          z-index: 1;
+          display: none;
         }
 
         @media (max-width: 768px) {
+          #how-it-works {
+            padding: 48px 16px !important;
+          }
           .steps-container {
             flex-direction: column;
             gap: 64px;

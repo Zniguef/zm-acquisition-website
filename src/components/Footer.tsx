@@ -38,7 +38,7 @@ export default function Footer() {
               textTransform: 'uppercase',
             }}
           >
-            ZM ACQUISITION
+            {t('brand')}
           </h4>
           <p
             style={{
@@ -48,7 +48,7 @@ export default function Footer() {
               fontWeight: 400,
             }}
           >
-            Your partner in systematic growth
+            {t('tagline')}
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -94,10 +94,10 @@ export default function Footer() {
                 color: '#0f172a',
                 textDecoration: 'none',
                 fontWeight: 400,
-                transition: 'opacity 0.2s',
+                transition: 'color 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.7')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#2563eb')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
             >
               {link.label}
             </a>

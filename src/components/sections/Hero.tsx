@@ -77,6 +77,7 @@ export default function Hero() {
 
             {/* Subtext */}
             <p
+              className="hero-description"
               style={{
                 fontSize: '18px',
                 color: '#475569',
@@ -89,7 +90,7 @@ export default function Hero() {
             </p>
 
             {/* CTA Button */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <div className="hero-cta-group" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <a
                 href="#contact-form"
                 onClick={scrollToContact}
@@ -139,6 +140,7 @@ export default function Hero() {
               alt="Workspace stats"
               width={800}
               height={500}
+              priority
               style={{
                 width: '100%',
                 height: 'auto',
@@ -168,7 +170,8 @@ export default function Hero() {
               <div
                 key={number}
                 style={{
-                  background: '#FEF9C3', /* Light pastel yellow/beige as in the image */
+                  background: '#0000ff',
+                  border: '1px solid #3f3aff',
                   borderRadius: '16px',
                   padding: '24px 32px',
                   display: 'flex',
@@ -181,7 +184,7 @@ export default function Hero() {
                   style={{
                     fontSize: '40px',
                     fontWeight: 800,
-                    color: '#0f172a',
+                    color: '#ffffff',
                     lineHeight: 1,
                   }}
                 >
@@ -191,7 +194,7 @@ export default function Hero() {
                   style={{
                     fontSize: '18px',
                     fontWeight: 500,
-                    color: '#334155',
+                    color: '#ffffff',
                     lineHeight: 1.2,
                   }}
                 >
@@ -244,7 +247,7 @@ export default function Hero() {
             ))}
           </div>
         </div>
-        
+
         {/* Decorative N Logo at bottom */}
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', opacity: 0.15 }}>
           <Image src="/images/iconLogo.png" alt="N" width={40} height={40} />
@@ -270,7 +273,7 @@ export default function Hero() {
         }
         @media (max-width: 768px) {
           .hero-section {
-            padding: 48px 16px 32px !important;
+            padding: 48px 16px !important;
           }
           .hero-top-grid {
             grid-template-columns: 1fr !important;
@@ -282,8 +285,13 @@ export default function Hero() {
             flex-direction: column;
             align-items: center;
           }
-          .hero-content p {
-            text-align: center;
+          .hero-description {
+            text-align: center !important;
+            margin-inline: auto !important;
+          }
+          .hero-cta-group {
+            align-items: center !important;
+            text-align: center !important;
           }
           .stats-row {
             grid-template-columns: 1fr !important;
@@ -292,7 +300,8 @@ export default function Hero() {
           .checklist-row {
             gap: 16px !important;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
+            text-align: left !important;
           }
         }
       `}</style>

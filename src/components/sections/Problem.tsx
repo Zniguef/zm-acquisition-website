@@ -60,9 +60,9 @@ export default function Problem() {
           <span
             style={{
               display: 'inline-block',
-              background: '#FEF9C3', /* Yellowish to match the image */
-              border: '1px solid #FDE047',
-              color: '#0f172a', /* Dark slate navy */
+              background: '#0000ff',
+              border: '1px solid #3f3aff',
+              color: '#ffffff',
               fontSize: '12px',
               fontWeight: 800,
               padding: '6px 16px',
@@ -173,7 +173,7 @@ export default function Problem() {
         }
         @media (max-width: 640px) {
           .problem-section {
-            padding: 64px 16px !important;
+            padding: 48px 16px !important;
           }
           .problem-cards-grid {
             grid-template-columns: 1fr !important;

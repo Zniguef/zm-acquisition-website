@@ -156,6 +156,8 @@
     "emailPlaceholder": "votre@email.com",
     "businessType": "Type d'entreprise",
     "businessTypePlaceholder": "Sélectionnez votre secteur",
+    "otherServiceLabel": "Service spécifique",
+    "otherServicePlaceholder": "Décrivez votre service...",
     "cta": "Réserver mon appel stratégique gratuit",
     "disclaimer": "Vos informations sont confidentielles et ne seront jamais partagées avec des tiers."
   },
@@ -187,6 +189,7 @@
   },
   "footer": {
     "brand": "ZM ACQUISITION",
+    "tagline": "Votre partenaire pour une croissance systématique",
     "copyright": "© 2026 ZM Acquisition. Tous droits réservés.",
     "terms": "Conditions générales",
     "privacy": "Politique de confidentialité"
