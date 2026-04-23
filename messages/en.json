@@ -159,6 +159,10 @@
     "otherServiceLabel": "Specific Service",
     "otherServicePlaceholder": "Describe your service...",
     "cta": "Book My Free Strategy Call",
+    "type_gym": "Gym / Fitness",
+    "type_coaching": "Coaching / Training",
+    "type_agency": "Real Estate / Agency",
+    "type_other": "Other Service",
     "disclaimer": "Your information is private and will never be shared with third parties."
   },
   "reviews": {

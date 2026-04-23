@@ -159,6 +159,10 @@
     "otherServiceLabel": "Service spécifique",
     "otherServicePlaceholder": "Décrivez votre service...",
     "cta": "Réserver mon appel stratégique gratuit",
+    "type_gym": "Salle de sport / Fitness",
+    "type_coaching": "Coaching / Formation",
+    "type_agency": "Immobilier / Agence",
+    "type_other": "Autre service",
     "disclaimer": "Vos informations sont confidentielles et ne seront jamais partagées avec des tiers."
   },
   "reviews": {

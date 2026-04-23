@@ -176,10 +176,10 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
                 >
                   <option value="">{t('businessTypePlaceholder')}</option>
-                  <option value="gym">Gym / Fitness</option>
-                  <option value="coaching">Coaching / Training</option>
-                  <option value="agency">Real Estate / Agency</option>
-                  <option value="other">Other Service</option>
+                  <option value="gym">{t('type_gym')}</option>
+                  <option value="coaching">{t('type_coaching')}</option>
+                  <option value="agency">{t('type_agency')}</option>
+                  <option value="other">{t('type_other')}</option>
                 </select>
                 <div
                   style={{
