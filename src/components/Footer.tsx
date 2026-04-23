@@ -10,7 +10,7 @@ export default function Footer() {
     <footer
       style={{
         backgroundColor: '#f8fafc',
-        padding: '120px 32px 80px 32px',
+        padding: '50px 32px 80px 32px',
         color: '#0f172a',
       }}
     >
@@ -23,11 +23,10 @@ export default function Footer() {
           alignItems: 'flex-start',
           flexWrap: 'wrap',
           gap: '64px',
-          direction: 'ltr',
         }}
       >
         {/* Left: Brand & Copy */}
-        <div style={{ textAlign: 'left', flex: '1', minWidth: '300px' }} className="brand-section">
+        <div style={{ textAlign: 'start', flex: '1', minWidth: '300px' }} className="brand-section">
           <h4
             style={{
               fontSize: '32px',
@@ -51,7 +50,7 @@ export default function Footer() {
             {t('tagline')}
           </p>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div className="footer-copyright" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <p
               style={{
                 fontSize: '15px',
@@ -60,7 +59,7 @@ export default function Footer() {
                 fontWeight: 500,
               }}
             >
-              © {new Date().getFullYear()} ZM Acquisition. All rights reserved.
+              {t('copyright')}
             </p>
             <Link
               href="/privacy"
@@ -79,12 +78,12 @@ export default function Footer() {
         </div>
 
         {/* Center: Navigation Links */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: '1', minWidth: '200px' }}>
+        <div className="footer-links" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: '1', minWidth: '200px', alignItems: 'center', marginTop: "10px" }}>
           {[
-            { label: 'Services', href: '#services' },
-            { label: 'Case Studies', href: '#results' },
-            { label: 'FAQ', href: '#faq' },
-            { label: 'Contact', href: '#contact' },
+            { label: t('menu_services'), href: '#services' },
+            { label: t('menu_caseStudies'), href: '#results' },
+            { label: t('menu_faq'), href: '#faq' },
+            { label: t('menu_contact'), href: '#contact' },
           ].map((link) => (
             <a
               key={link.label}
@@ -105,7 +104,7 @@ export default function Footer() {
         </div>
 
         {/* Right: Social Icons */}
-        <div style={{ display: 'flex', gap: '16px' }}>
+        <div style={{ display: 'flex', gap: '16px', marginBottom: "40px", flex: '1', justifyContent: 'flex-end', minWidth: '200px', marginTop: "10px" }}>
           {[
             {
               key: 'fb',
@@ -160,12 +159,19 @@ export default function Footer() {
         @media (max-width: 768px) {
           footer > div {
             flex-direction: column !important;
-            text-align: left !important;
-            align-items: flex-start !important;
+            text-align: center !important;
+            align-items: center !important;
             gap: 48px !important;
           }
           .brand-section {
-            text-align: left !important;
+            text-align: center !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .footer-links,
+          .footer-copyright {
+            align-items: center !important;
           }
         }
       `}</style>

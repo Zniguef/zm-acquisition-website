@@ -42,6 +42,7 @@ export default function Contact() {
       >
         {/* Left Column: Form Card */}
         <div
+          className="contact-form-card"
           style={{
             flex: '1',
             minWidth: '320px',
@@ -180,19 +181,19 @@ export default function Contact() {
                   <option value="agency">Real Estate / Agency</option>
                   <option value="other">Other Service</option>
                 </select>
-                <div 
-                  style={{ 
-                    position: 'absolute', 
-                    right: '16px', 
-                    top: '50%', 
-                    transform: 'translateY(-50%)', 
+                <div
+                  style={{
+                    position: 'absolute',
+                    right: '16px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
                     pointerEvents: 'none',
                     display: 'flex',
                     alignItems: 'center'
                   }}
                 >
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.5 4.5L6 8L9.5 4.5" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2.5 4.5L6 8L9.5 4.5" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </div>
@@ -290,7 +291,7 @@ export default function Contact() {
 
           {/* Checklist */}
           <div className="contact-checklist" style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '64px' }}>
-            {[1, 2, 3, 4, 5].map((i) => (
+            {[1, 2, 3, 4].map((i) => (
               <div key={i} className="checklist-item" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -320,7 +321,7 @@ export default function Contact() {
                 },
                 {
                   key: 'google',
-                  icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+                  icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" /></svg>
                 }
               ].map((item) => (
                 <div
@@ -364,6 +365,21 @@ export default function Contact() {
              text-align: center;
              gap: 64px !important;
            }
+           .contact-form-card {
+             width: 100% !important;
+             max-width: 100% !important;
+             text-align: start !important;
+           }
+           .contact-form-card h3, 
+           .contact-form-card p {
+             text-align: center !important;
+           }
+           .contact-form-card form {
+             text-align: start !important;
+           }
+           .contact-form-card label {
+             text-align: start !important;
+           }
            .contact-content-column {
              display: flex;
              flex-direction: column;
@@ -390,7 +406,16 @@ export default function Contact() {
         }
         @media (max-width: 768px) {
            #contact {
-             padding: 48px 16px !important;
+             padding: 48px 0px !important;
+           }
+           .contact-content-column {
+             padding: 0 16px !important;
+           }
+           .contact-form-card {
+             padding: 32px 16px !important;
+             border-radius: 0px !important;
+             border-left: none !important;
+             border-right: none !important;
            }
         }
       `}</style>

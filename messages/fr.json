@@ -11,10 +11,10 @@
     "headline1": "Votre prochain client",
     "headline2": "est déjà là.",
     "headline3": "Nous construisons le système qui le trouve.",
-    "subtext": "Arrêtez de dépendre des recommandations et du hasard. Nous concevons un système d'acquisition complet — recherche de marché, stratégie de funnel, pages de destination et publicités payantes — pour que des clients qualifiés viennent à vous, chaque mois.",
+    "subtext": "Arrêtez de dépendre des recommandations et du hasard. Nous concevons un système d'acquisition complet — Etude de marché, stratégie de funnel, pages de destination et publicités payantes — pour que des clients qualifiés viennent à vous, chaque mois.",
     "cta": "Réserver votre appel stratégique gratuit",
     "ctaNote": "Sans engagement — session stratégique de 30 minutes, 100% gratuite",
-    "stat1Number": "+1700",
+    "stat1Number": "+2000",
     "stat1Label": "Leads qualifiés générés",
     "stat2Number": "$0.74",
     "stat2Label": "Coût par lead le plus bas",
@@ -23,7 +23,7 @@
     "check1": "Publicités payantes — Meta, Google, TikTok, LinkedIn",
     "check2": "Stratégie et construction de funnel complet",
     "check3": "Pages de destination à fort taux de conversion",
-    "check4": "Recherche de marché & analyse concurrentielle",
+    "check4": "Etude de marché & analyse concurrentielle",
     "check5": "Contenu publicitaire & créatifs statiques",
     "check6": "Message marketing & positionnement"
   },
@@ -42,9 +42,9 @@
     "label": "Ce que nous construisons pour vous",
     "headline": "Un système complet — pas seulement des publicités",
     "subtext": "Chaque élément est conçu pour fonctionner avec les autres. Retirez-en un seul et tout le système perd en efficacité.",
-    "s1Title": "Recherche de marché",
+    "s1Title": "Etude de marché",
     "s1Text": "Nous commençons par comprendre votre marché en profondeur — qui est votre client idéal, ce qu'il craint, ce qu'il veut, et comment vos concurrents se positionnent.",
-    "s1Tag": "Recherche de marché",
+    "s1Tag": "Etude de marché",
     "s2Title": "Stratégie & construction de funnel",
     "s2Text": "Nous architecturons le parcours client complet — du premier contact publicitaire jusqu'au moment où il est prêt à acheter. Pas d'improvisation, juste un système.",
     "s2Tag": "Funnel Strategy",
@@ -127,7 +127,7 @@
     "headline": "Des questions qui méritent des réponses",
     "subtext": "Les questions les plus fréquentes que nous posent les propriétaires d'entreprises de services avant de commencer",
     "q1": "Quelle est votre différence avec une agence publicitaire classique ?",
-    "a1": "La plupart des agences s'arrêtent à la publicité. Nous construisons le système complet — recherche de marché, funnel, landing page, créatifs et gestion de campagne. Nous ne mesurons pas le succès en clics. Nous le mesurons en clients.",
+    "a1": "La plupart des agences s'arrêtent à la publicité. Nous construisons le système complet — Etude de marché, funnel, landing page, créatifs et gestion de campagne. Nous ne mesurons pas le succès en clics. Nous le mesurons en clients.",
     "q2": "Combien de temps avant de voir des résultats ?",
     "a2": "Le système prend 7 à 14 jours à construire et lancer. La plupart de nos clients voient des leads qualifiés dès la première semaine de mise en ligne. Les résultats s'améliorent significativement durant les 30 premiers jours grâce à l'optimisation.",
     "q3": "Avec quels types d'entreprises travaillez-vous ?",
@@ -170,7 +170,7 @@
     "r2Name": "Karim B.",
     "r2Role": "Propriétaire de club de fitness",
     "r2Text": "Le ROI était visible dès le premier mois. Ce qui m'a le plus impressionné, c'est la qualité des leads — des personnes déjà intéressées, pas de simples clics au hasard.",
-    "r3Name": "Marc D.",
+    "r3Name": "Mohamed",
     "r3Role": "Coach d'affaires",
     "r3Text": "J'avais déjà essayé d'autres agences. La différence ici, c'est le funnel — avoir une landing page qui convertit vraiment a tout changé. Mon coût par client a diminué de plus de moitié."
   },
@@ -192,6 +192,10 @@
     "tagline": "Votre partenaire pour une croissance systématique",
     "copyright": "© 2026 ZM Acquisition. Tous droits réservés.",
     "terms": "Conditions générales",
-    "privacy": "Politique de confidentialité"
+    "privacy": "Politique de confidentialité",
+    "menu_services": "Services",
+    "menu_caseStudies": "Études de cas",
+    "menu_faq": "FAQ",
+    "menu_contact": "Contact"
   }
 }

@@ -175,9 +175,11 @@ export default function Hero() {
                   borderRadius: '16px',
                   padding: '24px 32px',
                   display: 'flex',
-                  alignItems: 'baseline',
+                  flexDirection: 'column',
+                  alignItems: 'center',
                   justifyContent: 'center',
                   gap: '12px',
+                  textAlign: 'center',
                 }}
               >
                 <div

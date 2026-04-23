@@ -14,7 +14,7 @@
     "subtext": "Stop depending on referrals and luck. We engineer a complete acquisition system — market research, funnel strategy, landing pages, and paid ads — so qualified clients come to you, every single month.",
     "cta": "Book Your Free Strategy Call",
     "ctaNote": "No commitment — 30-minute strategy session, 100% free",
-    "stat1Number": "+1700",
+    "stat1Number": "+2000",
     "stat1Label": "Qualified Leads Generated",
     "stat2Number": "$0.74",
     "stat2Label": "Lowest Cost Per Lead",
@@ -192,6 +192,10 @@
     "tagline": "Your partner in systematic growth",
     "copyright": "© 2026 ZM Acquisition. All rights reserved.",
     "terms": "Terms & Conditions",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy Policy",
+    "menu_services": "Services",
+    "menu_caseStudies": "Case Studies",
+    "menu_faq": "FAQ",
+    "menu_contact": "Contact"
   }
 }
