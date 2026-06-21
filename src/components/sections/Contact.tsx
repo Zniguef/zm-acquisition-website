@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from '@/i18n/navigation';
 
 export default function Contact() {
   const t = useTranslations('contact');
@@ -14,10 +15,11 @@ export default function Contact() {
     otherService: '',
   });
 
+  const router = useRouter();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you! We will contact you soon.');
+    router.push('/thank-you');
   };
 
   return (

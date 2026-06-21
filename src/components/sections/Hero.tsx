@@ -62,7 +62,7 @@ export default function Hero() {
             {/* Headline */}
             <h1
               style={{
-                fontSize: 'clamp(40px, 5vw, 64px)',
+                fontSize: 'clamp(35px, 5vw, 60px)',
                 fontWeight: 900,
                 lineHeight: 1.1,
                 color: '#0f172a', /* Dark slate navy color exactly like the image */

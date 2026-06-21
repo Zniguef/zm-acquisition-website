@@ -22,7 +22,7 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c2Stat2Value',
     stat2Label: 'c2Stat2Label',
-    image: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=120&q=80',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&q=80',
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c3Stat2Value',
     stat2Label: 'c3Stat2Label',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=120&q=80',
+    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=120&q=80',
   },
   {
     id: 4,

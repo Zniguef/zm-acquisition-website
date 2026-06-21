@@ -14,7 +14,7 @@ const LOCALE_LABELS: Record<string, string> = {
 
 const NAV_LINKS = [
   { key: 'services' as const, href: '/#services' },
-  { key: 'results' as const, href: '/#results' },
+  { key: 'results' as const, href: '/case-studies' },
   { key: 'about' as const, href: '/#about' },
   { key: 'faq' as const, href: '/#faq' },
 ] as const;

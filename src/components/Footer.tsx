@@ -80,26 +80,44 @@ export default function Footer() {
         {/* Center: Navigation Links */}
         <div className="footer-links" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: '1', minWidth: '200px', alignItems: 'center', marginTop: "10px" }}>
           {[
-            { label: t('menu_services'), href: '#services' },
-            { label: t('menu_caseStudies'), href: '#results' },
-            { label: t('menu_faq'), href: '#faq' },
-            { label: t('menu_contact'), href: '#contact' },
+            { label: t('menu_services'), href: '#services', isAnchor: true },
+            { label: t('menu_caseStudies'), href: '/case-studies', isAnchor: false },
+            { label: t('menu_faq'), href: '#faq', isAnchor: true },
+            { label: t('menu_contact'), href: '#contact', isAnchor: true },
           ].map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              style={{
-                fontSize: '18px',
-                color: '#0f172a',
-                textDecoration: 'none',
-                fontWeight: 400,
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#2563eb')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
-            >
-              {link.label}
-            </a>
+            link.isAnchor ? (
+              <a
+                key={link.label}
+                href={link.href}
+                style={{
+                  fontSize: '18px',
+                  color: '#0f172a',
+                  textDecoration: 'none',
+                  fontWeight: 400,
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#2563eb')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href as '/case-studies'}
+                style={{
+                  fontSize: '18px',
+                  color: '#0f172a',
+                  textDecoration: 'none',
+                  fontWeight: 400,
+                  transition: 'color 0.2s',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#2563eb')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </div>
 
