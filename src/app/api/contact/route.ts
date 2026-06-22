@@ -5,8 +5,17 @@ import { NextRequest } from 'next/server';
 // The private key is stored with literal \n sequences in .env.local so we
 // replace them back into real newlines at runtime.
 function getAuthClient() {
-  const privateKey = (process.env.GOOGLE_PRIVATE_KEY ?? '').replace(/\\n/g, '\n');
-  const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ?? '';
+  let privateKey = process.env.GOOGLE_PRIVATE_KEY || '';
+  
+  // If the key was pasted with surrounding quotes in the Vercel dashboard, remove them
+  if (privateKey.startsWith('"') && privateKey.endsWith('"')) {
+    privateKey = privateKey.slice(1, -1);
+  }
+  
+  // Replace escaped newlines with literal newlines
+  privateKey = privateKey.replace(/\\n/g, '\n');
+  
+  const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || '';
 
   return new google.auth.GoogleAuth({
     credentials: {
