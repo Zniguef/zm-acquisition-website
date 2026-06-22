@@ -2,6 +2,7 @@
 
 import { Link } from '@/i18n/navigation';
 import type { CaseStudy } from '@/data/caseStudies';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   study: CaseStudy;
@@ -17,6 +18,18 @@ const ACCENT_COLORS = [
 
 export default function CaseStudyCard({ study, index }: Props) {
   const accent = ACCENT_COLORS[index % ACCENT_COLORS.length];
+  const t = useTranslations('caseStudyDetail');
+  const tData = useTranslations('caseStudiesData');
+
+  const getMetricKey = (label: string) => {
+    switch (label) {
+      case 'Leads générés': return 'leads';
+      case 'Coût par lead': return 'cpl';
+      case 'ROAS (M1)': return 'roas_m1';
+      case 'ROAS': return 'roas';
+      default: return null;
+    }
+  };
 
   return (
     <article
@@ -47,6 +60,10 @@ export default function CaseStudyCard({ study, index }: Props) {
           background: accent.bg,
           borderBottom: `1px solid ${accent.border}`,
           padding: '24px 28px 20px 28px',
+          minHeight: '120px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
         }}
       >
         <div
@@ -67,7 +84,7 @@ export default function CaseStudyCard({ study, index }: Props) {
                 letterSpacing: '0.08em',
               }}
             >
-              Étude de cas {study.number}
+              {t('caseStudyPrefix')} {study.number}
             </span>
             <h2
               style={{
@@ -100,9 +117,10 @@ export default function CaseStudyCard({ study, index }: Props) {
               padding: '4px 10px',
               borderRadius: '100px',
               whiteSpace: 'nowrap',
+              flexShrink: 0,
             }}
           >
-            {study.industry}
+            {tData(`${study.slug}.industry`)}
           </span>
         </div>
       </div>
@@ -112,7 +130,7 @@ export default function CaseStudyCard({ study, index }: Props) {
 
         {/* Tagline */}
         <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
-          {study.tagline}
+          {tData(`${study.slug}.tagline`)}
         </p>
 
         {/* Key metrics row */}
@@ -147,7 +165,7 @@ export default function CaseStudyCard({ study, index }: Props) {
               <div
                 style={{ fontSize: '11px', color: '#94a3b8', marginTop: '3px', lineHeight: 1.3 }}
               >
-                {m.label}
+                {getMetricKey(m.label) ? tData(`metrics.${getMetricKey(m.label)}`) : m.label}
               </div>
             </div>
           ))}
@@ -164,11 +182,11 @@ export default function CaseStudyCard({ study, index }: Props) {
           }}
         >
           <span style={{ fontSize: '12px', color: '#64748b' }}>
-            <strong style={{ color: '#374151' }}>Durée :</strong> {study.period}
+            <strong style={{ color: '#374151' }}>{t('cardDuration')} </strong> {tData(`${study.slug}.period`)}
           </span>
           <span style={{ color: '#e2e8f0' }}>·</span>
           <span style={{ fontSize: '12px', color: '#64748b' }}>
-            <strong style={{ color: '#374151' }}>Plateforme :</strong> {study.platform}
+            <strong style={{ color: '#374151' }}>{t('cardPlatform')} </strong> {study.platform}
           </span>
         </div>
 
@@ -211,7 +229,7 @@ export default function CaseStudyCard({ study, index }: Props) {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.88')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
-            Voir l&apos;étude complète →
+            {t('cardViewFull')}
           </Link>
         </div>
       </div>

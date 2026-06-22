@@ -311,6 +311,121 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
   },
+
+  // ── Case Study #003 — KLÜB Studio ────────────────────────────────────────
+  {
+    slug: 'klub-studio-ghita',
+    number: '#003',
+    clientName: 'Ghita',
+    companyName: 'KLÜB Studio',
+    companyFullName: 'KLÜB Studio — Studio de Pilates',
+    industry: 'Studio de Pilates',
+    tagline: 'Studio Pilates premium au Maroc — acquisition de clientes via Meta Ads',
+    description:
+      'KLÜB Studio est un studio de Pilates premium. En 2 mois (Mars & Avril 2026), 3 campagnes Meta Ads ont généré 679 leads qualifiés pour un budget de $599 — soit un CPL de $0.88. 23 clientes ont été converties, avec un taux de conversion global de 3.39%.',
+    period: 'Mars & Avril 2026',
+    platform: 'Meta Ads (Facebook & Instagram)',
+    tags: ['Meta Ads', 'Studio Pilates', 'Maroc', 'Lead Generation', 'Fitness'],
+
+    cardMetrics: [
+      { value: '679', label: 'Leads générés' },
+      { value: '$0.88', label: 'Coût par lead' },
+      { value: '~1.97×', label: 'ROAS (M1)' },
+    ],
+
+    metrics: [
+      { value: '679', label: 'Leads générés', sublabel: 'Mars & Avril 2026 · 3 campagnes', color: '#4f46e5' },
+      { value: '$0.88', label: 'Coût par lead', sublabel: 'Budget total : $599.49', color: '#16a34a' },
+      { value: '23', label: 'Clientes converties', sublabel: 'Taux de conversion 3.39%', color: '#db2777' },
+      { value: '$26.07', label: 'Coût par cliente', sublabel: '$599.49 ÷ 23 clientes', color: '#ea580c' },
+      { value: '~1.97×', label: 'ROAS (mois 1)', sublabel: '~$1 185 estimé ÷ $599', color: '#ca8a04' },
+      { value: '1.30%', label: 'CTR moyen', sublabel: 'CPM $1.83 · CPC $0.14', color: '#0891b2' },
+    ],
+
+    services: [
+      { name: 'Séance d\'essai', icon: '🧘', type: '150 MAD' },
+      { name: 'Abonnement direct', icon: '📋', type: 'Forfait' },
+      { name: 'Pack découverte', icon: '🎁', type: 'Pack' },
+    ],
+    priceRange: '150 MAD — ~850 MAD',
+    priceNote: 'Séance essai 150 MAD · Forfait moy. ~850 MAD',
+
+    audience: [
+      'Femmes actives 25–45 ans',
+      'Intérêt bien-être & fitness',
+      'Milieu urbain au Maroc',
+      'Profil premium / lifestyle',
+    ],
+
+    strategy: [
+      {
+        phase: 'Phase 1',
+        title: 'Recherche & Positionnement',
+        description:
+          'Analyse du marché du Pilates au Maroc, définition du profil de la cliente idéale. Positionnement autour de l\'expérience premium et du bien-être féminin. Message centré sur l\'essai sans engagement pour réduire la friction.',
+        tags: ['Market Research', 'Audience Analysis', 'Messaging'],
+        icon: '🔍',
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Funnel & Offre d\'essai',
+        description:
+          'Construction d\'un funnel basé sur une offre d\'entrée à friction nulle — la séance d\'essai à 150 MAD. Landing page optimisée pour maximiser les conversions et qualifier les prospects avant le contact.',
+        tags: ['Landing Page', 'Funnel Build', 'Offre d\'essai'],
+        icon: '🏗️',
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Lancement 3 Campagnes Meta',
+        description:
+          'Déploiement de 3 campagnes complémentaires sur Facebook & Instagram. Ciblage géographique et démographique précis sur la clientèle féminine marocaine, avec des créatifs adaptés au studio.',
+        tags: ['Meta Ads', 'Facebook', 'Instagram', '3 Campagnes'],
+        icon: '🚀',
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Optimisation & Conversion',
+        description:
+          'Suivi des parcours de conversion : séance d\'essai → abonnement. 4 upgrades identifiés (Noussaiba, Hosana, Rabia, Aziza) sur 15 séances d\'essai = 26.7% de taux d\'upgrade. Optimisation continue pour maintenir le CPL sous $1.',
+        tags: ['Optimization', 'Conversion Tracking', 'Upsell'],
+        icon: '📈',
+      },
+    ],
+
+    roiBreakdown: [
+      { label: 'Budget ads investi', value: '$599.49', color: '#ea580c' },
+      { label: 'Leads générés', value: '679', color: '#4f46e5' },
+      { label: 'Clientes converties', value: '23', color: '#db2777' },
+      { label: 'Revenu estimé (M1)', value: '~$1 185', color: '#16a34a' },
+      { label: 'ROAS (mois 1 estimé)', value: '~1.97×', color: '#ca8a04' },
+      { label: 'Coût par cliente', value: '$26.07', color: '#0891b2' },
+    ],
+    roiDisclaimer:
+      '* Revenu estimé basé sur les packs connus : séances unitaires (150 MAD × ~11) + forfaits (moy. ~850 MAD × ~12) ≈ 11 850 MAD ≈ $1 185 USD. ROAS calculé sur le premier mois uniquement. Pour un ROAS précis sur les 2 mois, les revenus réels par cliente sont nécessaires.',
+
+    insights: [
+      {
+        icon: '💎',
+        title: '$0.88 par lead',
+        text: 'Un CPL de $0.88 pour un studio de Pilates premium est exceptionnel — obtenu grâce à un ciblage précis et une offre d\'entrée à faible friction (séance d\'essai 150 MAD).',
+      },
+      {
+        icon: '🎯',
+        title: 'Stratégie séance d\'essai',
+        text: '65% des 23 clientes sont passées par une séance d\'essai à 150 MAD avant de s\'abonner. Une offre d\'entrée bien pensée réduit la résistance à l\'achat et crée un pipeline prévisible.',
+      },
+      {
+        icon: '🔄',
+        title: '26.7% d\'upgrade',
+        text: '4 clientes sur 15 ayant fait une séance d\'essai ont upgradé vers un forfait — soit un taux d\'upgrade de 26.7%, signe d\'une expérience studio de qualité.',
+      },
+      {
+        icon: '📊',
+        title: '679 leads · 3 campagnes',
+        text: 'Trois campagnes complémentaires ont généré un flux massif de prospects qualifiés à très faible coût — preuve qu\'un système bien structuré surpasse largement les approches mono-campagne.',
+      },
+    ],
+  },
 ];
 
 // Helper to get a case study by slug

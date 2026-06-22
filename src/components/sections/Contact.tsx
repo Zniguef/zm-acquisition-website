@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 
@@ -14,12 +14,47 @@ export default function Contact() {
     businessType: '',
     otherService: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [selectOpen, setSelectOpen] = useState(false);
+
+  // Close the custom dropdown when clicking outside
+  useEffect(() => {
+    if (!selectOpen) return;
+    const handleOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.custom-select-trigger') && !target.closest('.custom-select-panel')) {
+        setSelectOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutside);
+    return () => document.removeEventListener('mousedown', handleOutside);
+  }, [selectOpen]);
 
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    router.push('/thank-you');
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, locale }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error ?? 'Submission failed. Please try again.');
+      }
+
+      router.push('/thank-you');
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : 'Something went wrong.');
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -154,52 +189,122 @@ export default function Contact() {
               />
             </div>
 
-            {/* Business Type */}
-            <div>
+            {/* Business Type — Custom Dropdown */}
+            <div style={{ position: 'relative' }}>
               <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, marginBottom: '8px', color: '#0f172a' }}>
                 {t('businessType')} <span style={{ color: '#ef4444', marginLeft: '4px' }}>*</span>
               </label>
-              <div style={{ position: 'relative' }}>
-                <select
-                  required
-                  style={{
-                    width: '100%',
-                    padding: '14px 40px 14px 16px',
-                    borderRadius: '8px',
-                    border: '1px solid #cbd5e1',
-                    background: '#ffffff',
-                    fontSize: '15px',
-                    outline: 'none',
-                    appearance: 'none',
-                    color: '#0f172a',
-                    cursor: 'pointer',
-                  }}
-                  value={formData.businessType}
-                  onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
+
+              {/* Hidden native input for form validation */}
+              <input
+                type="text"
+                required
+                readOnly
+                tabIndex={-1}
+                value={formData.businessType}
+                style={{ position: 'absolute', opacity: 0, width: '1px', height: '1px', pointerEvents: 'none' }}
+              />
+
+              {/* Trigger button */}
+              <button
+                type="button"
+                className="custom-select-trigger"
+                onClick={() => setSelectOpen((o) => !o)}
+                style={{
+                  width: '100%',
+                  padding: '14px 40px 14px 16px',
+                  borderRadius: '8px',
+                  border: `1px solid ${selectOpen ? '#0D3EA6' : '#cbd5e1'}`,
+                  background: '#ffffff',
+                  fontSize: '15px',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  color: formData.businessType ? '#0f172a' : '#94a3b8',
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  outline: 'none',
+                  boxShadow: selectOpen ? '0 0 0 3px rgba(13,62,166,0.12)' : 'none',
+                  transition: 'border-color 0.15s, box-shadow 0.15s',
+                }}
+              >
+                <span>
+                  {formData.businessType
+                    ? t(`type_${formData.businessType}` as Parameters<typeof t>[0])
+                    : t('businessTypePlaceholder')}
+                </span>
+                <svg
+                  width="12" height="12" viewBox="0 0 12 12" fill="none"
+                  style={{ flexShrink: 0, transition: 'transform 0.2s', transform: selectOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
                 >
-                  <option value="">{t('businessTypePlaceholder')}</option>
-                  <option value="gym">{t('type_gym')}</option>
-                  <option value="coaching">{t('type_coaching')}</option>
-                  <option value="agency">{t('type_agency')}</option>
-                  <option value="other">{t('type_other')}</option>
-                </select>
+                  <path d="M2.5 4.5L6 8L9.5 4.5" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              {/* Dropdown panel */}
+              {selectOpen && (
                 <div
+                  className="custom-select-panel"
                   style={{
                     position: 'absolute',
-                    right: '16px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    pointerEvents: 'none',
-                    display: 'flex',
-                    alignItems: 'center'
+                    top: 'calc(100% + 6px)',
+                    left: 0,
+                    right: 0,
+                    background: '#ffffff',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '10px',
+                    boxShadow: '0 10px 30px -5px rgba(0,0,0,0.12)',
+                    zIndex: 50,
+                    overflow: 'hidden',
+                    animation: 'dropdownFadeIn 0.15s ease',
                   }}
                 >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2.5 4.5L6 8L9.5 4.5" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                  {[
+                    { value: 'gym',      label: t('type_gym') },
+                    { value: 'coaching', label: t('type_coaching') },
+                    { value: 'agency',   label: t('type_agency') },
+                    { value: 'training', label: t('type_training') },
+                    { value: 'finance',  label: t('type_finance') },
+                    { value: 'other',    label: t('type_other') },
+                  ].map((opt) => (
+                    <button
+                      key={opt.value}
+                      type="button"
+                      className="custom-select-option"
+                      onClick={() => {
+                        setFormData({ ...formData, businessType: opt.value, otherService: '' });
+                        setSelectOpen(false);
+                      }}
+                      style={{
+                        width: '100%',
+                        padding: '12px 16px',
+                        textAlign: 'left',
+                        background: formData.businessType === opt.value ? '#f0f5ff' : 'transparent',
+                        border: 'none',
+                        borderBottom: '1px solid #f1f5f9',
+                        fontSize: '15px',
+                        color: formData.businessType === opt.value ? '#0D3EA6' : '#0f172a',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        fontWeight: formData.businessType === opt.value ? 600 : 400,
+                        transition: 'background 0.1s',
+                      }}
+                    >
+                      {opt.label}
+                      {formData.businessType === opt.value && (
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M3 8L6.5 11.5L13 5" stroke="#0D3EA6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
                 </div>
-              </div>
+              )}
             </div>
+
 
             {/* Conditional Other Service Input */}
             {formData.businessType === 'other' && (
@@ -226,25 +331,62 @@ export default function Contact() {
               </div>
             )}
 
+            {/* Error message */}
+            {submitError && (
+              <div
+                style={{
+                  background: '#fef2f2',
+                  border: '1px solid #fecaca',
+                  borderRadius: '8px',
+                  padding: '12px 16px',
+                  color: '#dc2626',
+                  fontSize: '14px',
+                  marginTop: '4px',
+                }}
+              >
+                {submitError}
+              </div>
+            )}
+
             {/* CTA Button */}
             <button
               type="submit"
+              disabled={isSubmitting}
               className="form-submit-btn"
               style={{
                 width: '100%',
-                background: '#0D3EA6',
+                background: isSubmitting ? '#6b8fd4' : '#0D3EA6',
                 color: '#ffffff',
                 fontSize: '16px',
                 fontWeight: 700,
                 padding: '16px',
                 borderRadius: '8px',
                 border: 'none',
-                cursor: 'pointer',
+                cursor: isSubmitting ? 'not-allowed' : 'pointer',
                 marginTop: '12px',
                 transition: 'all 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
               }}
             >
-              {t('cta')}
+              {isSubmitting && (
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{ animation: 'spin 0.8s linear infinite' }}
+                >
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                </svg>
+              )}
+              {isSubmitting ? '...' : t('cta')}
             </button>
 
             <p style={{ fontSize: '12px', color: '#64748b', textAlign: 'center', lineHeight: 1.5, marginTop: '8px' }}>
@@ -349,12 +491,26 @@ export default function Contact() {
       </div>
 
       <style>{`
-        .form-submit-btn:hover {
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+        @keyframes dropdownFadeIn {
+          from { opacity: 0; transform: translateY(-6px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .custom-select-option:last-child {
+          border-bottom: none !important;
+        }
+        .custom-select-option:hover {
+          background: #f8faff !important;
+        }
+        .form-submit-btn:hover:not(:disabled) {
           background: #1e40af !important;
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .form-submit-btn:active {
+        .form-submit-btn:active:not(:disabled) {
           transform: translateY(0);
         }
 

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Link } from '@/i18n/navigation';
 import type { CaseStudy } from '@/data/caseStudies';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   study: CaseStudy;
@@ -12,6 +13,7 @@ type Tab = 'overview' | 'strategy' | 'results';
 
 export default function CaseStudyDetailView({ study }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
+  const t = useTranslations('caseStudyDetail');
 
   return (
     <div style={{ background: '#f8fafc', minHeight: '100vh' }}>
@@ -27,7 +29,7 @@ export default function CaseStudyDetailView({ study }: Props) {
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', color: '#64748b' }}>
             <Link href="/case-studies" style={{ color: '#2563eb', textDecoration: 'none', fontWeight: 600 }}>
-              Études de cas
+              {t('breadcrumbList')}
             </Link>
             <span>›</span>
             <span style={{ color: '#374151', fontWeight: 500 }}>{study.companyName}</span>
@@ -70,7 +72,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                   marginBottom: '16px',
                 }}
               >
-                Étude de cas {study.number}
+                {t('caseStudyPrefix')} {study.number}
               </span>
 
               <h1
@@ -135,10 +137,10 @@ export default function CaseStudyDetailView({ study }: Props) {
               }}
             >
               {[
-                { label: 'Client', value: study.clientName },
-                { label: 'Durée', value: study.period },
-                { label: 'Plateforme', value: study.platform },
-                { label: 'Secteur', value: study.industry },
+                { label: t('client'), value: study.clientName },
+                { label: t('duration'), value: study.period },
+                { label: t('platform'), value: study.platform },
+                { label: t('industry'), value: study.industry },
               ].map((item) => (
                 <div key={item.label}>
                   <p
@@ -179,9 +181,9 @@ export default function CaseStudyDetailView({ study }: Props) {
         >
           {(
             [
-              { id: 'overview', label: 'Vue d\'ensemble' },
-              { id: 'strategy', label: 'Stratégie' },
-              { id: 'results', label: 'Résultats & ROI' },
+              { id: 'overview', label: t('tabOverview') },
+              { id: 'strategy', label: t('tabStrategy') },
+              { id: 'results', label: t('tabResults') },
             ] as { id: Tab; label: string }[]
           ).map((tab) => (
             <button
@@ -223,7 +225,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                   margin: '0 0 20px 0',
                 }}
               >
-                Métriques clés de la campagne
+                {t('keyMetrics')}
               </h2>
               <div
                 style={{
@@ -306,7 +308,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                     margin: '0 0 16px 0',
                   }}
                 >
-                  Services promus
+                  {t('promotedServices')}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {study.services.map((s) => (
@@ -353,7 +355,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                         margin: '0 0 2px 0',
                       }}
                     >
-                      Gamme de prix
+                      {t('priceRange')}
                     </p>
                     <p style={{ fontSize: '16px', fontWeight: 900, color: '#78350f', margin: 0 }}>
                       {study.priceRange}
@@ -387,7 +389,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                     margin: '0 0 16px 0',
                   }}
                 >
-                  Audience ciblée
+                  {t('targetAudience')}
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {study.audience.map((role) => (
@@ -429,7 +431,7 @@ export default function CaseStudyDetailView({ study }: Props) {
             <h2
               style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: '0 0 32px 0' }}
             >
-              Stratégie mise en place
+              {t('strategyImplemented')}
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {study.strategy.map((phase, idx) => (
@@ -566,7 +568,7 @@ export default function CaseStudyDetailView({ study }: Props) {
               <h2
                 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: '0 0 24px 0' }}
               >
-                Retour sur investissement
+                {t('roi')}
               </h2>
               <div
                 style={{
@@ -622,7 +624,7 @@ export default function CaseStudyDetailView({ study }: Props) {
               <h2
                 style={{ fontSize: '18px', fontWeight: 800, color: '#0f172a', margin: '0 0 20px 0' }}
               >
-                Points clés
+                {t('keyInsights')}
               </h2>
               <div
                 style={{
@@ -686,7 +688,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                   letterSpacing: '-0.02em',
                 }}
               >
-                Vous voulez des résultats similaires ?
+                {t('ctaHeadline')}
               </h3>
               <p
                 style={{
@@ -699,8 +701,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                   lineHeight: 1.6,
                 }}
               >
-                Réservez un appel stratégique gratuit de 30 minutes et découvrez ce que
-                nous pouvons construire pour votre entreprise.
+                {t('ctaSubtext')}
               </p>
               <Link
                 href="/#contact"
@@ -718,7 +719,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                 onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
               >
-                Réserver mon appel gratuit →
+                {t('ctaButton')}
               </Link>
             </div>
           </div>

@@ -73,9 +73,9 @@
     "subtext": "Ce sont des résultats documentés de vrais clients — des secteurs différents, le même système, des résultats constants",
     "c1Name": "KLUB STUDIO",
     "c1Industry": "Studio Pilates",
-    "c1Stat1Value": "380",
+    "c1Stat1Value": "916",
     "c1Stat1Label": "Leads qualifiés",
-    "c1Stat2Value": "$300",
+    "c1Stat2Value": "$840",
     "c1Stat2Label": "Budget publicitaire",
     "c2Name": "UGR",
     "c2Industry": "Gazon Naturel en Rouleau",
@@ -162,21 +162,26 @@
     "type_gym": "Salle de sport / Fitness",
     "type_coaching": "Coaching / Formation",
     "type_agency": "Immobilier / Agence",
+    "type_training": "Centre de formation",
+    "type_finance": "Cabinet conseil / Finance",
     "type_other": "Autre service",
     "disclaimer": "Vos informations sont confidentielles et ne seront jamais partagées avec des tiers."
   },
   "reviews": {
     "label": "Avis clients",
     "headline": "Ce qui se passe après la mise en ligne du système",
-    "r1Name": "Sara L.",
-    "r1Role": "Propriétaire de studio Pilates",
-    "r1Text": "Avant ZM Acquisition, je dépendais entièrement du bouche-à-oreille. Trois semaines après le lancement du funnel, j'avais plus de leads que je ne pouvais en gérer. Le système fonctionne, tout simplement.",
-    "r2Name": "Karim B.",
-    "r2Role": "Propriétaire de club de fitness",
-    "r2Text": "Le ROI était visible dès le premier mois. Ce qui m'a le plus impressionné, c'est la qualité des leads — des personnes déjà intéressées, pas de simples clics au hasard.",
-    "r3Name": "Mohamed",
-    "r3Role": "Coach d'affaires",
-    "r3Text": "J'avais déjà essayé d'autres agences. La différence ici, c'est le funnel — avoir une landing page qui convertit vraiment a tout changé. Mon coût par client a diminué de plus de moitié."
+    "r1Name": "Mohamed Chorfi",
+    "r1Role": "Expert en Fiscalité & Formateur",
+    "r1Text": "Pour nos séminaires et formations, nous avions besoin d'un système capable d'attirer des professionnels réellement intéressés, pas seulement de générer des clics. ZM Acquisition a mis en place une stratégie claire qui nous a permis d'obtenir des leads qualifiés et de mieux remplir nos sessions. Leur approche est structurée et orientée résultats.",
+    "r2Name": "Mohamed Rismy",
+    "r2Role": "Consultant & Formateur en Finance",
+    "r2Text": "Nous cherchions un partenaire capable de promouvoir nos programmes de formation avec une approche professionnelle. Les campagnes mises en place nous ont apporté des inscriptions qualifiées pour nos séminaires, avec un excellent suivi tout au long du projet. Ce n'est pas seulement de la publicité, c'est une vraie stratégie d'acquisition.",
+    "r3Name": "Ghita — KLUB Studio",
+    "r3Role": "Fondatrice, KLÜB Studio",
+    "r3Text": "Avant de travailler avec ZM Acquisition, nous dépendions principalement du bouche-à-oreille. En quelques semaines, nous avons commencé à recevoir un flux régulier de nouvelles demandes grâce aux campagnes Meta. Les leads étaient qualifiés et correspondaient parfaitement au profil de nos clientes idéales. Aujourd'hui, notre acquisition est beaucoup plus prévisible.",
+    "r4Name": "Équipe UGR",
+    "r4Role": "Universe Gazon en Rouleaux",
+    "r4Text": "Nous avions besoin de développer notre visibilité et de générer davantage de demandes qualifiées. ZM Acquisition a construit un système simple mais efficace qui nous a permis d'obtenir des leads pertinents et d'améliorer nos résultats. Leur disponibilité, leur suivi et leur capacité d'optimisation ont fait toute la différence."
   },
   "privacyPage": {
     "title": "Politique de confidentialité",
@@ -209,6 +214,56 @@
     "heroSubtext": "Chaque étude de cas documente une campagne réelle — budget, stratégie, résultats et retour sur investissement. Pas de promesses, que des preuves.",
     "ctaHeadline": "Vous voulez des résultats similaires ?",
     "ctaSubtext": "Réservez un appel stratégique gratuit de 30 minutes. Nous analyserons votre situation et vous montrerons exactement ce que nous pouvons construire pour votre entreprise.",
-    "ctaButton": "Réserver mon appel stratégique gratuit →"
+    "ctaButton": "Réserver mon appel stratégique gratuit →",
+    "stat1Label": "Études de cas",
+    "stat2Label": "Leads générés",
+    "stat3Label": "Meilleur CPL"
+  },
+  "caseStudyDetail": {
+    "breadcrumbList": "Études de cas",
+    "caseStudyPrefix": "Étude de cas",
+    "client": "Client",
+    "duration": "Durée",
+    "platform": "Plateforme",
+    "industry": "Secteur",
+    "tabOverview": "Vue d'ensemble",
+    "tabStrategy": "Stratégie",
+    "tabResults": "Résultats & ROI",
+    "keyMetrics": "Métriques clés de la campagne",
+    "promotedServices": "Services promus",
+    "priceRange": "Gamme de prix",
+    "targetAudience": "Audience ciblée",
+    "strategyImplemented": "Stratégie mise en place",
+    "roi": "Retour sur investissement",
+    "keyInsights": "Points clés",
+    "ctaHeadline": "Vous voulez des résultats similaires ?",
+    "ctaSubtext": "Réservez un appel stratégique gratuit de 30 minutes et découvrez ce que nous pouvons construire pour votre entreprise.",
+    "ctaButton": "Réserver mon appel gratuit →",
+    "cardDuration": "Durée :",
+    "cardPlatform": "Plateforme :",
+    "cardViewFull": "Voir l'étude complète →"
+  },
+  "caseStudiesData": {
+    "cabinet-cm2f-chorfi": {
+      "industry": "Expertise Comptable & Formation",
+      "tagline": "Formation comptable, fiscale et séminaires professionnels au Maroc",
+      "period": "2 mois"
+    },
+    "costless-rismy": {
+      "industry": "Conseil Financier & Formation",
+      "tagline": "Conseil en optimisation des coûts et formation professionnelle",
+      "period": "06 Mai 2026 — 09 Juin 2026"
+    },
+    "klub-studio-ghita": {
+      "industry": "Studio de Pilates",
+      "tagline": "Studio Pilates premium au Maroc — acquisition de clientes via Meta Ads",
+      "period": "Mars & Avril 2026"
+    },
+    "metrics": {
+      "leads": "Leads générés",
+      "cpl": "Coût par lead",
+      "roas": "ROAS",
+      "roas_m1": "ROAS (M1)"
+    }
   }
 }

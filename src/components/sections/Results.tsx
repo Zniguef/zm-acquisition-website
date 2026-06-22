@@ -22,7 +22,7 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c2Stat2Value',
     stat2Label: 'c2Stat2Label',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=120&q=80',
+    image: 'https://a5ed361a0fe354c28675b91939f7ae8b.cdn.bubble.io/cdn-cgi/image/w=64,h=64,f=auto,dpr=1.25,fit=contain/f1775950902906x332108057836529660/Logo%20UGR.png',
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const RESULTS_DATA = [
     stat1Label: 'c1Stat1Label',
     stat2: 'c3Stat2Value',
     stat2Label: 'c3Stat2Label',
-    image: 'https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=120&q=80',
+    image: 'https://www.costless.ma/wp-content/uploads/2024/06/logo-costless-1.png',
   },
   {
     id: 4,
@@ -116,28 +116,28 @@ export default function Results() {
               {/* Header row */}
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '32px', gap: '20px' }}>
                 <div style={{ 
-                  width: '96px',
-                  height: '96px',
-                  borderRadius: '50%',
-                  border: '1px solid #f1f5f9',
+                  width: '88px',
+                  height: '88px',
+                  borderRadius: '12px',
+                  border: '1px solid #e2e8f0',
                   overflow: 'hidden',
                   flexShrink: 0,
                   background: '#fff',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '4px'
+                  padding: '8px'
                 }}>
                   <Image
                     src={card.image}
                     alt={t(card.nameKey)}
-                    width={88}
-                    height={88}
+                    width={72}
+                    height={72}
                     style={{
                       width: '100%',
                       height: '100%',
-                      borderRadius: '50%',
-                      objectFit: 'cover',
+                      borderRadius: '4px',
+                      objectFit: 'contain',
                     }}
                     unoptimized
                   />

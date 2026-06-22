@@ -7,6 +7,7 @@ const REVIEWS = [
   { id: 1, name: 'r1Name', role: 'r1Role', text: 'r1Text' },
   { id: 2, name: 'r2Name', role: 'r2Role', text: 'r2Text' },
   { id: 3, name: 'r3Name', role: 'r3Role', text: 'r3Text' },
+  { id: 4, name: 'r4Name', role: 'r4Role', text: 'r4Text' },
 ];
 
 export default function Reviews() {
@@ -67,7 +68,7 @@ export default function Reviews() {
         </div>
 
         {/* Carousel Container */}
-        <div className="carousel-wrapper" style={{ position: 'relative', height: '400px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="carousel-wrapper" style={{ position: 'relative', height: '440px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
           {/* Nav Arrows */}
           <button
@@ -123,9 +124,25 @@ export default function Reviews() {
           {/* Cards */}
           <div className="cards-stage" style={{ position: 'relative', width: '100%', maxWidth: '900px', height: '100%' }}>
             {REVIEWS.map((review, i) => {
-              const offset = (i - activeIndex + 3) % 3;
-              let pos = offset;
-              if (offset === 2) pos = -1;
+              const n = REVIEWS.length;
+              const offset = (i - activeIndex + n) % n;
+
+              // offset 0   → center
+              // offset 1   → right ghost
+              // offset n-1 → left ghost
+              // anything else → hidden (avoids double-stacking with 4+ reviews)
+              let pos = 0;
+              let visible = true;
+
+              if (offset === 0) {
+                pos = 0;
+              } else if (offset === 1) {
+                pos = 1;
+              } else if (offset === n - 1) {
+                pos = -1;
+              } else {
+                visible = false;
+              }
 
               // Absolute logical positions
               let left = '50%';
@@ -160,8 +177,9 @@ export default function Reviews() {
                     top: '50%',
                     left: left,
                     transform: `translate(-50%, -50%) scale(${scale})`,
-                    zIndex: zIndex,
-                    opacity: opacity,
+                    zIndex: visible ? zIndex : -1,
+                    opacity: visible ? opacity : 0,
+                    pointerEvents: visible ? 'auto' : 'none',
                     transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                     width: '100%',
                     maxWidth: '420px',
@@ -252,7 +270,7 @@ export default function Reviews() {
         }
         @media (max-width: 768px) {
           .carousel-wrapper {
-            height: 480px !important;
+            height: 520px !important;
           }
           .carousel-btn {
             display: none !important;

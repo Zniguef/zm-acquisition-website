@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CaseStudyCard from "@/components/case-studies/CaseStudyCard";
 import { CASE_STUDIES } from "@/data/caseStudies";
+import { getTranslations } from "next-intl/server";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -19,6 +20,7 @@ export async function generateMetadata() {
 export default async function CaseStudiesPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations("caseStudiesPage");
 
   return (
     <>
@@ -50,7 +52,7 @@ export default async function CaseStudiesPage({ params }: Props) {
                 marginBottom: "20px",
               }}
             >
-              Études de cas
+              {t("heroLabel")}
             </span>
 
             <h1
@@ -63,8 +65,8 @@ export default async function CaseStudiesPage({ params }: Props) {
                 lineHeight: 1.1,
               }}
             >
-              Des résultats réels.{" "}
-              <span style={{ color: "#2563eb" }}>Des chiffres vérifiables.</span>
+              {t("heroHeadline1")}{" "}
+              <span style={{ color: "#2563eb" }}>{t("heroHeadline2")}</span>
             </h1>
 
             <p
@@ -76,8 +78,7 @@ export default async function CaseStudiesPage({ params }: Props) {
                 lineHeight: 1.7,
               }}
             >
-              Chaque étude de cas documente une campagne réelle — budget, stratégie,
-              résultats et retour sur investissement. Pas de promesses, que des preuves.
+              {t("heroSubtext")}
             </p>
 
             {/* Aggregate stats */}
@@ -90,9 +91,9 @@ export default async function CaseStudiesPage({ params }: Props) {
               }}
             >
               {[
-                { value: `${CASE_STUDIES.length}`, label: "Études de cas" },
-                { value: "423+", label: "Leads générés" },
-                { value: "$1.32", label: "Meilleur CPL" },
+                { value: `${CASE_STUDIES.length}`, label: t("stat1Label") },
+                { value: "1 102+", label: t("stat2Label") },
+                { value: "$0.88", label: t("stat3Label") },
               ].map((stat) => (
                 <div key={stat.label} style={{ textAlign: "center" }}>
                   <div
@@ -152,7 +153,7 @@ export default async function CaseStudiesPage({ params }: Props) {
                 letterSpacing: "-0.02em",
               }}
             >
-              Vous voulez des résultats similaires ?
+              {t("ctaHeadline")}
             </h2>
             <p
               style={{
@@ -162,8 +163,7 @@ export default async function CaseStudiesPage({ params }: Props) {
                 lineHeight: 1.6,
               }}
             >
-              Réservez un appel stratégique gratuit de 30 minutes. Analyse complète de
-              votre situation, sans engagement.
+              {t("ctaSubtext")}
             </p>
             <a
               href="/#contact"
@@ -180,7 +180,7 @@ export default async function CaseStudiesPage({ params }: Props) {
                 transition: "opacity 0.15s",
               }}
             >
-              Réserver mon appel gratuit →
+              {t("ctaButton")}
             </a>
           </div>
         </section>

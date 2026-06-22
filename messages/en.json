@@ -162,21 +162,26 @@
     "type_gym": "Gym / Fitness",
     "type_coaching": "Coaching / Training",
     "type_agency": "Real Estate / Agency",
+    "type_training": "Training Center",
+    "type_finance": "Consulting / Finance",
     "type_other": "Other Service",
     "disclaimer": "Your information is private and will never be shared with third parties."
   },
   "reviews": {
     "label": "Client Reviews",
     "headline": "What happens after the system goes live",
-    "r1Name": "Sara L.",
-    "r1Role": "Pilates Studio Owner",
-    "r1Text": "Before ZM Acquisition, I was fully dependent on word of mouth. Within 3 weeks of launching the funnel, I had more leads than I could handle. The system just works.",
-    "r2Name": "Karim B.",
-    "r2Role": "Fitness Club Owner",
-    "r2Text": "The ROI was visible within the first month. What impressed me most was how targeted the leads were — people who were already interested, not just random clicks.",
-    "r3Name": "Mohamed Ch.",
-    "r3Role": "Business Coach",
-    "r3Text": "I've tried other agencies before. The difference here is the funnel — having a landing page that actually converts changed everything. My cost per client dropped by more than half."
+    "r1Name": "Mohamed Chorfi",
+    "r1Role": "Tax Expert & Trainer",
+    "r1Text": "For our seminars and training sessions, we needed a system that could attract genuinely interested professionals, not just generate clicks. ZM Acquisition put in place a clear strategy that helped us get qualified leads and fill our sessions more consistently. Their approach is structured and results-driven.",
+    "r2Name": "Mohamed Rismy",
+    "r2Role": "Consultant & Finance Trainer",
+    "r2Text": "We were looking for a partner who could promote our training programs with a professional approach. The campaigns delivered qualified registrations for our seminars, with excellent follow-up throughout the project. It's not just advertising — it's a real acquisition strategy.",
+    "r3Name": "Ghita — KLUB Studio",
+    "r3Role": "Founder, KLÜB Studio",
+    "r3Text": "Before working with ZM Acquisition, we relied mainly on word of mouth. Within a few weeks, we started receiving a steady flow of new enquiries through Meta campaigns. The leads were qualified and matched our ideal client profile perfectly. Our acquisition is now much more predictable.",
+    "r4Name": "UGR Team",
+    "r4Role": "Universe Gazon en Rouleaux",
+    "r4Text": "We needed to grow our visibility and generate more qualified requests. ZM Acquisition built a simple but effective system that helped us get relevant leads and improve our results. Their availability, follow-up, and ability to optimize made all the difference."
   },
   "privacyPage": {
     "title": "Privacy Policy",
@@ -209,6 +214,56 @@
     "heroSubtext": "Every case study documents a real campaign — budget, strategy, results and return on investment. No promises, just proof.",
     "ctaHeadline": "Want similar results?",
     "ctaSubtext": "Book a free 30-minute strategy call. We'll analyze your situation and show you exactly what we can build for your business.",
-    "ctaButton": "Book my free strategy call →"
+    "ctaButton": "Book my free strategy call →",
+    "stat1Label": "Case Studies",
+    "stat2Label": "Leads Generated",
+    "stat3Label": "Best CPL"
+  },
+  "caseStudyDetail": {
+    "breadcrumbList": "Case Studies",
+    "caseStudyPrefix": "Case Study",
+    "client": "Client",
+    "duration": "Duration",
+    "platform": "Platform",
+    "industry": "Industry",
+    "tabOverview": "Overview",
+    "tabStrategy": "Strategy",
+    "tabResults": "Results & ROI",
+    "keyMetrics": "Key Campaign Metrics",
+    "promotedServices": "Promoted Services",
+    "priceRange": "Price Range",
+    "targetAudience": "Target Audience",
+    "strategyImplemented": "Strategy Implemented",
+    "roi": "Return on Investment",
+    "keyInsights": "Key Insights",
+    "ctaHeadline": "Want similar results?",
+    "ctaSubtext": "Book a free 30-minute strategy call and discover what we can build for your business.",
+    "ctaButton": "Book my free call →",
+    "cardDuration": "Duration:",
+    "cardPlatform": "Platform:",
+    "cardViewFull": "View full case study →"
+  },
+  "caseStudiesData": {
+    "cabinet-cm2f-chorfi": {
+      "industry": "Accounting & Training",
+      "tagline": "Accounting, tax training and professional seminars in Morocco",
+      "period": "2 months"
+    },
+    "costless-rismy": {
+      "industry": "Financial Consulting & Training",
+      "tagline": "Cost optimization consulting and professional training",
+      "period": "May 06, 2026 — June 09, 2026"
+    },
+    "klub-studio-ghita": {
+      "industry": "Pilates Studio",
+      "tagline": "Premium Pilates studio in Morocco — client acquisition via Meta Ads",
+      "period": "March & April 2026"
+    },
+    "metrics": {
+      "leads": "Leads Generated",
+      "cpl": "Cost per Lead",
+      "roas": "ROAS",
+      "roas_m1": "ROAS (M1)"
+    }
   }
 }
