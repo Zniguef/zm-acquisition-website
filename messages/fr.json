@@ -60,7 +60,7 @@
     "s6Title": "Lancement & gestion de campagne",
     "s6Text": "Nous lançons, surveillons et optimisons vos campagnes chaque jour — pour que votre budget travaille plus fort chaque semaine, pas seulement le premier jour.",
     "s6Tag": "Meta Ads",
-    "reportNote": "Tous les 7 jours, vous recevez un rapport de performance détaillé — chiffres transparents, insights clairs, zéro jargon.",
+    "reportNote": "Tous les 30 jours, vous recevez un rapport de performance détaillé — chiffres transparents, insights clairs, zéro jargon.",
     "webServiceTitle": "Création de site web",
     "webServiceSubtext": "Rapide, professionnel et optimisé pour les résultats.",
     "webServiceDisclaimer": "(Non inclus dans le service Lead Gen — disponible en tant que service séparé)",
@@ -73,28 +73,28 @@
     "subtext": "Ce sont des résultats documentés de vrais clients — des secteurs différents, le même système, des résultats constants",
     "c1Name": "KLUB STUDIO",
     "c1Industry": "Studio Pilates",
-    "c1Stat1Value": "916",
+    "c1Stat1Value": "1035",
     "c1Stat1Label": "Leads qualifiés",
-    "c1Stat2Value": "$840",
-    "c1Stat2Label": "Budget publicitaire",
+    "c1Stat2Value": "4 mois",
+    "c1Stat2Label": "Période",
     "c2Name": "UGR",
     "c2Industry": "Gazon Naturel en Rouleau",
-    "c2Stat1Value": "283",
+    "c2Stat1Value": "684",
     "c2Stat1Label": "Leads qualifiés",
-    "c2Stat2Value": "$460",
-    "c2Stat2Label": "Budget publicitaire",
+    "c2Stat2Value": "3 mois",
+    "c2Stat2Label": "Période",
     "c3Name": "CABINET COSTLESS",
     "c3Industry": "Conseil en Optimisation des Coûts",
     "c3Stat1Value": "242",
     "c3Stat1Label": "Leads qualifiés",
-    "c3Stat2Value": "$320",
-    "c3Stat2Label": "Budget publicitaire",
+    "c3Stat2Value": "35 jours",
+    "c3Stat2Label": "Période",
     "c4Name": "CABINET CM2F",
     "c4Industry": "Expertise Comptable & Formation",
     "c4Stat1Value": "181",
     "c4Stat1Label": "Leads qualifiés",
-    "c4Stat2Value": "$370",
-    "c4Stat2Label": "Budget publicitaire",
+    "c4Stat2Value": "2 mois",
+    "c4Stat2Label": "Période",
     "cta": "Obtenir des résultats similaires — Réserver mon appel"
   },
   "howItWorks": {
@@ -133,7 +133,7 @@
     "q3": "Avec quels types d'entreprises travaillez-vous ?",
     "a3": "Nous travaillons exclusivement avec des entreprises de services — salles de sport, studios, coachs, centres de formation, consultants et cliniques. Si votre activité dépend d'un flux régulier de clients, ce système a été conçu pour vous.",
     "q4": "Quel budget publicitaire faut-il pour démarrer ?",
-    "a4": "Nous recommandons un minimum de 200$/mois en budget publicitaire. Ce n'est pas le budget qui génère les résultats — c'est la stratégie et le funnel derrière lui. Nous avons généré des centaines de leads avec moins de 300$ de budget."
+    "a4": "Nous recommandons un minimum de 3 000$/mois en budget publicitaire. Ce n'est pas le budget qui génère les résultats — c'est la stratégie et le funnel derrière lui."
   },
   "contact": {
     "headlinePrefix": "Prêt à arrêter de tâtonner et à commencer à ",
@@ -170,16 +170,16 @@
   "reviews": {
     "label": "Avis clients",
     "headline": "Ce qui se passe après la mise en ligne du système",
-    "r1Name": "Mohamed Chorfi",
+    "r1Name": "Mohamed. C",
     "r1Role": "Expert en Fiscalité & Formateur",
     "r1Text": "Pour nos séminaires et formations, nous avions besoin d'un système capable d'attirer des professionnels réellement intéressés, pas seulement de générer des clics. ZM Acquisition a mis en place une stratégie claire qui nous a permis d'obtenir des leads qualifiés et de mieux remplir nos sessions. Leur approche est structurée et orientée résultats.",
-    "r2Name": "Mohamed Rismy",
+    "r2Name": "Mohamed. R",
     "r2Role": "Consultant & Formateur en Finance",
     "r2Text": "Nous cherchions un partenaire capable de promouvoir nos programmes de formation avec une approche professionnelle. Les campagnes mises en place nous ont apporté des inscriptions qualifiées pour nos séminaires, avec un excellent suivi tout au long du projet. Ce n'est pas seulement de la publicité, c'est une vraie stratégie d'acquisition.",
-    "r3Name": "Ghita — KLUB Studio",
+    "r3Name": "KLUB Studio",
     "r3Role": "Fondatrice, KLÜB Studio",
     "r3Text": "Avant de travailler avec ZM Acquisition, nous dépendions principalement du bouche-à-oreille. En quelques semaines, nous avons commencé à recevoir un flux régulier de nouvelles demandes grâce aux campagnes Meta. Les leads étaient qualifiés et correspondaient parfaitement au profil de nos clientes idéales. Aujourd'hui, notre acquisition est beaucoup plus prévisible.",
-    "r4Name": "Équipe UGR",
+    "r4Name": "UGR",
     "r4Role": "Universe Gazon en Rouleaux",
     "r4Text": "Nous avions besoin de développer notre visibilité et de générer davantage de demandes qualifiées. ZM Acquisition a construit un système simple mais efficace qui nous a permis d'obtenir des leads pertinents et d'améliorer nos résultats. Leur disponibilité, leur suivi et leur capacité d'optimisation ont fait toute la différence."
   },
@@ -257,7 +257,12 @@
     "klub-studio-ghita": {
       "industry": "Studio de Pilates",
       "tagline": "Studio Pilates premium au Maroc — acquisition de clientes via Meta Ads",
-      "period": "Mars & Avril 2026"
+      "period": "4 mois"
+    },
+    "ugr-universe-gazon": {
+      "industry": "Gazon Naturel en Rouleau",
+      "tagline": "Acquisition B2B & B2C via Meta Ads — particuliers et professionnels du paysage",
+      "period": "3 mois"
     },
     "metrics": {
       "leads": "Leads générés",

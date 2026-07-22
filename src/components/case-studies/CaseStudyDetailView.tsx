@@ -335,38 +335,7 @@ export default function CaseStudyDetailView({ study }: Props) {
                   ))}
                 </div>
 
-                {study.priceRange && (
-                  <div
-                    style={{
-                      marginTop: '16px',
-                      background: '#fffbeb',
-                      border: '1px solid #fde68a',
-                      borderRadius: '10px',
-                      padding: '12px 14px',
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        color: '#92400e',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                        margin: '0 0 2px 0',
-                      }}
-                    >
-                      {t('priceRange')}
-                    </p>
-                    <p style={{ fontSize: '16px', fontWeight: 900, color: '#78350f', margin: 0 }}>
-                      {study.priceRange}
-                    </p>
-                    {study.priceNote && (
-                      <p style={{ fontSize: '12px', color: '#a16207', margin: '2px 0 0 0' }}>
-                        {study.priceNote}
-                      </p>
-                    )}
-                  </div>
-                )}
+
               </div>
 
               {/* Audience */}

@@ -92,7 +92,7 @@ export default async function CaseStudiesPage({ params }: Props) {
             >
               {[
                 { value: `${CASE_STUDIES.length}`, label: t("stat1Label") },
-                { value: "1 102+", label: t("stat2Label") },
+                { value: "+2142", label: t("stat2Label") },
                 { value: "$0.88", label: t("stat3Label") },
               ].map((stat) => (
                 <div key={stat.label} style={{ textAlign: "center" }}>

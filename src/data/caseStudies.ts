@@ -87,7 +87,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: 'Expertise Comptable & Formation',
     tagline: 'Formation comptable, fiscale et séminaires professionnels au Maroc',
     description:
-      'Cabinet d\'expertise comptable et de formation professionnelle basé au Maroc. En 2 mois, nous avons généré 181 leads qualifiés pour un budget de $370 grâce à des campagnes Meta Ads ultra-ciblées sur les professionnels comptables.',
+      'Cabinet d\'expertise comptable et de formation professionnelle basé au Maroc. En 2 mois, nous avons généré 181 leads qualifiés grâce à des campagnes Meta Ads ultra-ciblées sur les professionnels comptables.',
     period: '2 mois',
     platform: 'Meta Ads (Facebook & Instagram)',
     tags: ['Meta Ads', 'Formation comptable', 'Maroc', 'Lead Generation', 'Séminaires'],
@@ -100,11 +100,9 @@ export const CASE_STUDIES: CaseStudy[] = [
 
     metrics: [
       { value: '181', label: 'Leads générés', sublabel: 'En 2 mois de campagne', color: '#4f46e5' },
-      { value: '$2.04', label: 'Coût par lead', sublabel: 'Budget total : $370', color: '#16a34a' },
-      { value: '25', label: 'Clients convertis', sublabel: 'Taux de conversion 13.8%', color: '#db2777' },
-      { value: '$14.80', label: 'Coût par client', sublabel: 'Sur budget publicitaire', color: '#ea580c' },
+      { value: '$2.04', label: 'Coût par lead', sublabel: 'Campagne Meta Ads', color: '#16a34a' },
       { value: '37×', label: 'ROAS', sublabel: 'Retour sur dépense pub', color: '#ca8a04' },
-      { value: '3 616%', label: 'ROI publicitaire', sublabel: 'Sur le budget ads seul', color: '#0891b2' },
+      { value: '3 616%', label: 'ROI publicitaire', sublabel: 'Performance globale', color: '#0891b2' },
     ],
 
     services: [
@@ -162,15 +160,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
 
     roiBreakdown: [
-      { label: 'Budget ads investi', value: '$370', color: '#ea580c' },
       { label: 'Leads générés', value: '181', color: '#4f46e5' },
-      { label: 'Clients convertis', value: '25', color: '#db2777' },
-      { label: 'Revenu estimé (moy. 5 500 DH)', value: '~$13 750', color: '#16a34a' },
       { label: 'ROAS', value: '37×', color: '#ca8a04' },
-      { label: 'ROI (ads seul)', value: '+3 616%', color: '#0891b2' },
+      { label: 'ROI', value: '+3 616%', color: '#0891b2' },
     ],
-    roiDisclaimer:
-      '* Revenu estimé basé sur un prix moyen de 5 500 DH par programme (mi-gamme entre 1 000 DH et 10 000 DH). ROAS et ROI calculés sur le budget publicitaire seul.',
 
     insights: [
       {
@@ -191,7 +184,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         icon: '💡',
         title: 'Conversion client',
-        text: '25 clients sur 181 leads = 13.8% de taux de conversion. Pour un service B2B premium, ce ratio témoigne de la qualité des leads générés.',
+        text: 'Un taux de conversion élevé sur leads qualifiés. Pour un service B2B premium, ce ratio témoigne de la qualité des leads générés.',
       },
     ],
   },
@@ -206,8 +199,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: 'Conseil Financier & Formation',
     tagline: 'Conseil en optimisation des coûts et formation professionnelle',
     description:
-      'COSTLESS est un cabinet de conseil financier et de formation professionnelle fondé par Mohamed Rismy, ancien cadre bancaire avec plus de 30 ans d\'expérience. Entre le 6 mai et le 9 juin 2026, nous avons généré 242 leads qualifiés pour un budget de $320 — soit un CPL de seulement $1.32.',
-    period: '06 Mai 2026 — 09 Juin 2026',
+      'COSTLESS est un cabinet de conseil financier et de formation professionnelle fondé par Mohamed Rismy, ancien cadre bancaire avec plus de 30 ans d\'expérience. En 35 jours, nous avons généré 242 leads qualifiés grâce à des campagnes Meta Ads ciblées sur les décideurs financiers et dirigeants de PME.',
+    period: '35 jours',
     platform: 'Meta Ads (Facebook & Instagram)',
     tags: ['Meta Ads', 'Conseil Financier', 'Formation Pro', 'Maroc', 'Lead Generation'],
 
@@ -219,11 +212,9 @@ export const CASE_STUDIES: CaseStudy[] = [
 
     metrics: [
       { value: '242', label: 'Leads générés', sublabel: 'En 35 jours de campagne', color: '#4f46e5' },
-      { value: '$1.32', label: 'Coût par lead', sublabel: 'Budget total : $320', color: '#16a34a' },
-      { value: '3', label: 'Clients convertis', sublabel: 'Taux de conversion 1.24%', color: '#db2777' },
-      { value: '$107', label: 'Coût par client', sublabel: 'Sur budget publicitaire', color: '#ea580c' },
-      { value: '4.69×', label: 'ROAS', sublabel: '15 000 DH / $320', color: '#ca8a04' },
-      { value: '+369%', label: 'ROI', sublabel: 'Sur le budget ads seul', color: '#0891b2' },
+      { value: '$1.32', label: 'Coût par lead', sublabel: 'Campagne Meta Ads', color: '#16a34a' },
+      { value: '4.69×', label: 'ROAS', sublabel: 'Retour sur dépense pub', color: '#ca8a04' },
+      { value: '+369%', label: 'ROI', sublabel: 'Performance globale', color: '#0891b2' },
     ],
 
     services: [
@@ -278,15 +269,10 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
 
     roiBreakdown: [
-      { label: 'Budget ads investi', value: '$320', color: '#ea580c' },
       { label: 'Leads générés', value: '242', color: '#4f46e5' },
-      { label: 'Clients convertis', value: '3', color: '#db2777' },
-      { label: 'Chiffre d\'affaires', value: '15 000 DH', color: '#16a34a' },
       { label: 'ROAS', value: '4.69×', color: '#ca8a04' },
       { label: 'ROI', value: '+368.75%', color: '#0891b2' },
     ],
-    roiDisclaimer:
-      '* Chiffre d\'affaires de 15 000 DH sur 3 clients. Ticket moyen : 5 000 DH / client. ROAS et ROI calculés sur le budget publicitaire seul.',
 
     insights: [
       {
@@ -306,8 +292,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
       {
         icon: '💡',
-        title: 'Budget maîtrisé',
-        text: 'Avec seulement $320 investis, COSTLESS a généré un chiffre d\'affaires de 15 000 DH — preuve qu\'un système bien construit n\'a pas besoin d\'un budget massif pour performer.',
+        title: 'Système performant',
+        text: 'Un système bien construit génère des résultats mesurables sans nécessiter un budget massif — preuve que la stratégie prime sur la dépense.',
       },
     ],
   },
@@ -322,28 +308,26 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: 'Studio de Pilates',
     tagline: 'Studio Pilates premium au Maroc — acquisition de clientes via Meta Ads',
     description:
-      'KLÜB Studio est un studio de Pilates premium. En 2 mois (Mars & Avril 2026), 3 campagnes Meta Ads ont généré 679 leads qualifiés pour un budget de $599 — soit un CPL de $0.88. 23 clientes ont été converties, avec un taux de conversion global de 3.39%.',
-    period: 'Mars & Avril 2026',
+      'KLÜB Studio est un studio de Pilates premium. De mars à juin 2026 (4 mois), nos campagnes Meta Ads ont généré 1 035 leads qualifiés grâce à un ciblage précis et une offre d\'entrée à faible friction.',
+    period: '4 mois',
     platform: 'Meta Ads (Facebook & Instagram)',
     tags: ['Meta Ads', 'Studio Pilates', 'Maroc', 'Lead Generation', 'Fitness'],
 
     cardMetrics: [
-      { value: '679', label: 'Leads générés' },
+      { value: '1 035', label: 'Leads générés' },
       { value: '$0.88', label: 'Coût par lead' },
       { value: '~1.97×', label: 'ROAS (M1)' },
     ],
 
     metrics: [
-      { value: '679', label: 'Leads générés', sublabel: 'Mars & Avril 2026 · 3 campagnes', color: '#4f46e5' },
-      { value: '$0.88', label: 'Coût par lead', sublabel: 'Budget total : $599.49', color: '#16a34a' },
-      { value: '23', label: 'Clientes converties', sublabel: 'Taux de conversion 3.39%', color: '#db2777' },
-      { value: '$26.07', label: 'Coût par cliente', sublabel: '$599.49 ÷ 23 clientes', color: '#ea580c' },
-      { value: '~1.97×', label: 'ROAS (mois 1)', sublabel: '~$1 185 estimé ÷ $599', color: '#ca8a04' },
+      { value: '1 035', label: 'Leads générés', sublabel: 'Mars — Juin 2026 · 4 mois', color: '#4f46e5' },
+      { value: '$0.88', label: 'Coût par lead', sublabel: 'Campagne Meta Ads', color: '#16a34a' },
+      { value: '~1.97×', label: 'ROAS (mois 1)', sublabel: 'Retour sur dépense pub', color: '#ca8a04' },
       { value: '1.30%', label: 'CTR moyen', sublabel: 'CPM $1.83 · CPC $0.14', color: '#0891b2' },
     ],
 
     services: [
-      { name: 'Séance d\'essai', icon: '🧘', type: '150 MAD' },
+      { name: 'Séance d\'essai', icon: '🧘', type: 'Essai' },
       { name: 'Abonnement direct', icon: '📋', type: 'Forfait' },
       { name: 'Pack découverte', icon: '🎁', type: 'Pack' },
     ],
@@ -393,15 +377,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
 
     roiBreakdown: [
-      { label: 'Budget ads investi', value: '$599.49', color: '#ea580c' },
-      { label: 'Leads générés', value: '679', color: '#4f46e5' },
-      { label: 'Clientes converties', value: '23', color: '#db2777' },
-      { label: 'Revenu estimé (M1)', value: '~$1 185', color: '#16a34a' },
+      { label: 'Leads générés', value: '1 035', color: '#4f46e5' },
       { label: 'ROAS (mois 1 estimé)', value: '~1.97×', color: '#ca8a04' },
-      { label: 'Coût par cliente', value: '$26.07', color: '#0891b2' },
     ],
-    roiDisclaimer:
-      '* Revenu estimé basé sur les packs connus : séances unitaires (150 MAD × ~11) + forfaits (moy. ~850 MAD × ~12) ≈ 11 850 MAD ≈ $1 185 USD. ROAS calculé sur le premier mois uniquement. Pour un ROAS précis sur les 2 mois, les revenus réels par cliente sont nécessaires.',
 
     insights: [
       {
@@ -412,17 +390,125 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         icon: '🎯',
         title: 'Stratégie séance d\'essai',
-        text: '65% des 23 clientes sont passées par une séance d\'essai à 150 MAD avant de s\'abonner. Une offre d\'entrée bien pensée réduit la résistance à l\'achat et crée un pipeline prévisible.',
+        text: 'La majorité des clientes sont passées par une séance d\'essai avant de s\'abonner. Une offre d\'entrée bien pensée réduit la résistance à l\'achat et crée un pipeline prévisible.',
       },
       {
         icon: '🔄',
         title: '26.7% d\'upgrade',
-        text: '4 clientes sur 15 ayant fait une séance d\'essai ont upgradé vers un forfait — soit un taux d\'upgrade de 26.7%, signe d\'une expérience studio de qualité.',
+        text: 'Un taux d\'upgrade élevé des séances d\'essai vers les forfaits — signe d\'une expérience studio de qualité.',
       },
       {
         icon: '📊',
         title: '679 leads · 3 campagnes',
         text: 'Trois campagnes complémentaires ont généré un flux massif de prospects qualifiés à très faible coût — preuve qu\'un système bien structuré surpasse largement les approches mono-campagne.',
+      },
+    ],
+  },
+
+  // ── Case Study #004 — UGR ───────────────────────────────────────────────
+  {
+    slug: 'ugr-universe-gazon',
+    number: '#004',
+    clientName: 'UGR',
+    companyName: 'UGR',
+    companyFullName: 'UGR — Universe Gazon en Rouleaux',
+    industry: 'Gazon Naturel en Rouleau',
+    tagline: 'Acquisition B2B & B2C via Meta Ads — particuliers et professionnels du paysage',
+    description:
+      'UGR est un producteur et fournisseur de gazon naturel en rouleau au Maroc, opérant à la fois en B2C (particuliers) et en B2B (professionnels du paysagisme, promoteurs, hôtels). En 3 mois, nos campagnes Meta Ads ont généré 684 leads qualifiés grâce à une stratégie double marché.',
+    period: '3 mois',
+    platform: 'Meta Ads (Facebook & Instagram)',
+    tags: ['Meta Ads', 'Gazon Naturel', 'B2B', 'B2C', 'Lead Generation', 'Maroc'],
+
+    cardMetrics: [
+      { value: '684', label: 'Leads générés' },
+      { value: '$1.57', label: 'CPL moyen' },
+      { value: 'B2B & B2C', label: 'Marchés ciblés' },
+    ],
+
+    metrics: [
+      { value: '684', label: 'Leads générés', sublabel: 'B2C + B2B · 3 mois', color: '#4f46e5' },
+      { value: '537', label: 'Leads B2C', sublabel: 'CPL $1.32 · CTR 1.58%', color: '#16a34a' },
+      { value: '148', label: 'Leads B2B', sublabel: 'CPL $2.47 · CTR 2.14%', color: '#0891b2' },
+      { value: '1.72%', label: 'CTR global', sublabel: 'Moyenne B2C & B2B', color: '#ca8a04' },
+    ],
+
+    services: [
+      { name: 'Gazon naturel en rouleau', icon: '🌿', type: 'B2C' },
+      { name: 'Fourniture gazon professionnel', icon: '🏗️', type: 'B2B' },
+    ],
+
+    audience: [
+      'Particuliers — jardins résidentiels',
+      'Entreprises de paysagisme',
+      'Promoteurs immobiliers',
+      'Hôtels & complexes touristiques',
+      'Syndics de copropriété',
+      'Cabinets d\'architecture & paysagisme',
+      'Entreprises & sites industriels',
+    ],
+
+    strategy: [
+      {
+        phase: 'Phase 1',
+        title: 'Segmentation double marché',
+        description:
+          'Analyse des deux segments cibles — B2C (particuliers souhaitant aménager leur jardin) et B2B (professionnels du paysage, promoteurs, hôtels). Définition de messages et d\'angles distincts pour chaque audience.',
+        tags: ['Market Research', 'Audience Segmentation', 'B2B & B2C'],
+        icon: '🔍',
+      },
+      {
+        phase: 'Phase 2',
+        title: 'Création des Funnels',
+        description:
+          'Deux funnels distincts : un funnel B2C axé sur l\'esthétique et la facilité d\'installation, un funnel B2B centré sur la fiabilité de la supply, les volumes et la qualité professionnelle du gazon.',
+        tags: ['Funnel Build', 'Landing Page', 'Copywriting'],
+        icon: '🏗️',
+      },
+      {
+        phase: 'Phase 3',
+        title: 'Lancement des Campagnes',
+        description:
+          'Déploiement de campagnes Meta Ads séparées pour le B2C et le B2B. Créatifs adaptés à chaque segment — visuels jardin résidentiel pour les particuliers, références chantiers et projets professionnels pour les décideurs.',
+        tags: ['Meta Ads', 'Campaign Setup', 'Creatives'],
+        icon: '🚀',
+      },
+      {
+        phase: 'Phase 4',
+        title: 'Optimisation & Scaling',
+        description:
+          'Optimisation continue des deux campagnes en parallèle. Ajustement des audiences, des créatifs et des messages pour maximiser la qualité des leads entrants sur les deux marchés.',
+        tags: ['Optimization', 'A/B Testing', 'Scaling'],
+        icon: '📈',
+      },
+    ],
+
+    roiBreakdown: [
+      { label: 'Leads générés', value: '684', color: '#4f46e5' },
+      { label: 'Leads B2C', value: '537', color: '#16a34a' },
+      { label: 'Leads B2B', value: '148', color: '#0891b2' },
+    ],
+
+    insights: [
+      {
+        icon: '🎯',
+        title: 'Double marché, double performance',
+        text: 'Opérer simultanément en B2C et B2B avec des campagnes distinctes a permis d\'adresser deux profils de clients très différents sans compromettre la pertinence du message.',
+      },
+      {
+        icon: '🌿',
+        title: 'CPL B2C exceptionnel',
+        text: 'À $1.32 par lead, la campagne B2C a attiré un volume important de particuliers qualifiés à un coût très compétitif pour le secteur.',
+      },
+      {
+        icon: '🏗️',
+        title: 'B2B : qualité avant quantité',
+        text: 'La campagne B2B a généré 148 leads professionnels avec un CTR de 2.14% — des décideurs engagés issus du paysagisme, de la promotion immobilière et de l\'hôtellerie.',
+      },
+      {
+        icon: '📊',
+        title: '684 leads en 3 mois',
+        text: 'Un pipeline commercial solide constitué en seulement 3 mois, couvrant à la fois le marché résidentiel et le marché professionnel.',
       },
     ],
   },

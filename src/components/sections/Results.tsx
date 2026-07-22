@@ -227,10 +227,10 @@ export default function Results() {
                   </p>
                   <p
                     style={{
-                      fontSize: '36px',
-                      fontWeight: 900,
+                      fontSize: 'clamp(16px, 2vw, 24px)',
+                      fontWeight: 800,
                       color: '#0f172a',
-                      lineHeight: 1,
+                      lineHeight: 1.2,
                       margin: 0,
                     }}
                   >

@@ -60,7 +60,7 @@
     "s6Title": "Campaign Setup & Management",
     "s6Text": "We launch, monitor, and optimize your campaigns daily — so your budget works harder every week, not just on day one.",
     "s6Tag": "Meta Ads",
-    "reportNote": "Every 7 days, you receive a detailed performance report — transparent numbers, clear insights, zero fluff.",
+    "reportNote": "Every 30 days, you receive a detailed performance report — transparent numbers, clear insights, zero fluff.",
     "webServiceTitle": "Website Creation",
     "webServiceSubtext": "Fast, professional, and optimized for results.",
     "webServiceDisclaimer": "(Not included in the Lead Gen system — available as a separate service)",
@@ -73,28 +73,28 @@
     "subtext": "These are documented results from real clients — different industries, same system, consistent outcomes",
     "c1Name": "KLUB STUDIO",
     "c1Industry": "Pilates Studio",
-    "c1Stat1Value": "916",
+    "c1Stat1Value": "1035",
     "c1Stat1Label": "Qualified Leads",
-    "c1Stat2Value": "$840",
-    "c1Stat2Label": "Ad Budget",
+    "c1Stat2Value": "4 months",
+    "c1Stat2Label": "Period",
     "c2Name": "UGR",
     "c2Industry": "Natural Lawn Producer",
-    "c2Stat1Value": "283",
+    "c2Stat1Value": "684",
     "c2Stat1Label": "Qualified Leads",
-    "c2Stat2Value": "$460",
-    "c2Stat2Label": "Ad Budget",
+    "c2Stat2Value": "3 months",
+    "c2Stat2Label": "Period",
     "c3Name": "CABINET COSTLESS",
     "c3Industry": "Cost Optimisation Advisory",
     "c3Stat1Value": "242",
     "c3Stat1Label": "Qualified Leads",
-    "c3Stat2Value": "$320",
-    "c3Stat2Label": "Ad Budget",
+    "c3Stat2Value": "35 days",
+    "c3Stat2Label": "Period",
     "c4Name": "CABINET CM2F",
     "c4Industry": "Accounting & Professional Training",
     "c4Stat1Value": "181",
     "c4Stat1Label": "Qualified Leads",
-    "c4Stat2Value": "$370",
-    "c4Stat2Label": "Ad Budget",
+    "c4Stat2Value": "2 months",
+    "c4Stat2Label": "Period",
     "cta": "Get results like these — Book your free call"
   },
   "howItWorks": {
@@ -133,7 +133,7 @@
     "q3": "What type of businesses do you work with?",
     "a3": "We work exclusively with service businesses — gyms, studios, coaches, training centers, consultants, and clinics. If your business depends on a steady flow of clients, this system was built for you.",
     "q4": "What advertising budget do I need to get started?",
-    "a4": "We recommend a minimum of $200/month in ad spend. The budget isn't what drives results — the strategy and funnel behind it do. We've generated hundreds of leads on budgets under $300."
+    "a4": "We recommend a minimum of $3,000/month in ad spend. The budget isn't what drives results — the strategy and funnel behind it do."
   },
   "contact": {
     "headlinePrefix": "Ready to stop guessing and start ",
@@ -170,16 +170,16 @@
   "reviews": {
     "label": "Client Reviews",
     "headline": "What happens after the system goes live",
-    "r1Name": "Mohamed Chorfi",
+    "r1Name": "Mohamed. C",
     "r1Role": "Tax Expert & Trainer",
     "r1Text": "For our seminars and training sessions, we needed a system that could attract genuinely interested professionals, not just generate clicks. ZM Acquisition put in place a clear strategy that helped us get qualified leads and fill our sessions more consistently. Their approach is structured and results-driven.",
-    "r2Name": "Mohamed Rismy",
+    "r2Name": "Mohamed. R",
     "r2Role": "Consultant & Finance Trainer",
     "r2Text": "We were looking for a partner who could promote our training programs with a professional approach. The campaigns delivered qualified registrations for our seminars, with excellent follow-up throughout the project. It's not just advertising — it's a real acquisition strategy.",
-    "r3Name": "Ghita — KLUB Studio",
+    "r3Name": "KLUB Studio",
     "r3Role": "Founder, KLÜB Studio",
     "r3Text": "Before working with ZM Acquisition, we relied mainly on word of mouth. Within a few weeks, we started receiving a steady flow of new enquiries through Meta campaigns. The leads were qualified and matched our ideal client profile perfectly. Our acquisition is now much more predictable.",
-    "r4Name": "UGR Team",
+    "r4Name": "UGR",
     "r4Role": "Universe Gazon en Rouleaux",
     "r4Text": "We needed to grow our visibility and generate more qualified requests. ZM Acquisition built a simple but effective system that helped us get relevant leads and improve our results. Their availability, follow-up, and ability to optimize made all the difference."
   },
@@ -257,7 +257,12 @@
     "klub-studio-ghita": {
       "industry": "Pilates Studio",
       "tagline": "Premium Pilates studio in Morocco — client acquisition via Meta Ads",
-      "period": "March & April 2026"
+      "period": "4 months"
+    },
+    "ugr-universe-gazon": {
+      "industry": "Natural Lawn Producer",
+      "tagline": "B2B & B2C acquisition via Meta Ads — homeowners and landscaping professionals",
+      "period": "3 months"
     },
     "metrics": {
       "leads": "Leads Generated",
