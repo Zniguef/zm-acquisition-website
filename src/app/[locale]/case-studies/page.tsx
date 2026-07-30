@@ -1,3 +1,7 @@
+/* ============================================================
+   CASE STUDIES PAGE — commented out, preserved for future use
+   ============================================================
+
 import { setRequestLocale } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -27,7 +31,7 @@ export default async function CaseStudiesPage({ params }: Props) {
       <Navbar />
       <main style={{ background: "#f8fafc", minHeight: "100vh" }}>
 
-        {/* ── Page Header ──────────────────────────────────────────────────── */}
+        {/* ── Page Header ──────────────────────────────────────────────────── *\/}
         <section
           style={{
             background: "#fff",
@@ -81,7 +85,7 @@ export default async function CaseStudiesPage({ params }: Props) {
               {t("heroSubtext")}
             </p>
 
-            {/* Aggregate stats */}
+            {/* Aggregate stats *\/}
             <div
               style={{
                 display: "flex",
@@ -117,7 +121,7 @@ export default async function CaseStudiesPage({ params }: Props) {
           </div>
         </section>
 
-        {/* ── Cards Grid ───────────────────────────────────────────────────── */}
+        {/* ── Cards Grid ───────────────────────────────────────────────────── *\/}
         <section style={{ padding: "60px 32px 80px 32px" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <div
@@ -134,7 +138,7 @@ export default async function CaseStudiesPage({ params }: Props) {
           </div>
         </section>
 
-        {/* ── Bottom CTA ───────────────────────────────────────────────────── */}
+        {/* ── Bottom CTA ───────────────────────────────────────────────────── *\/}
         <section
           style={{
             background: "#fff",
@@ -188,4 +192,11 @@ export default async function CaseStudiesPage({ params }: Props) {
       <Footer />
     </>
   );
+}
+
+============================================================ */
+
+// Temporary placeholder — page is commented out for future use
+export default function CaseStudiesPage() {
+  return null;
 }

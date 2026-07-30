@@ -81,7 +81,7 @@ export default function Footer() {
         <div className="footer-links" style={{ display: 'flex', flexDirection: 'column', gap: '16px', flex: '1', minWidth: '200px', alignItems: 'center', marginTop: "10px" }}>
           {[
             { label: t('menu_services'), href: '#services', isAnchor: true },
-            { label: t('menu_caseStudies'), href: '/case-studies', isAnchor: false },
+            // { label: t('menu_caseStudies'), href: '/case-studies', isAnchor: false },
             { label: t('menu_faq'), href: '#faq', isAnchor: true },
             { label: t('menu_contact'), href: '#contact', isAnchor: true },
           ].map((link) => (
