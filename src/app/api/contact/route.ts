@@ -30,10 +30,11 @@ function getAuthClient() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, email, businessType, otherService, locale } = body;
+    const { name, phone, email, businessType, otherService, monthlyBudget, locale } = body;
+    const budget = monthlyBudget || body.quel_est_votre_budget_marketing_mensuel_;
 
     // Basic server-side validation
-    if (!name || !phone || !email || !businessType) {
+    if (!name || !phone || !email || !businessType || !budget) {
       return Response.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -70,12 +71,12 @@ export async function POST(request: NextRequest) {
     });
 
     // Row order must match your sheet columns EXACTLY:
-    // A: Timestamp | B: Name | C: Phone | D: Email | E: Business Type | F: Locale
-    const row = [timestamp, name, phone, email, displayedBusinessType, locale ?? ''];
+    // A: Timestamp | B: Name | C: Phone | D: Email | E: Business Type | F: Monthly Budget | G: Locale
+    const row = [timestamp, name, phone, email, displayedBusinessType, budget, locale ?? ''];
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: sheetId,
-      range: `${sheetName}!A:F`,
+      range: `${sheetName}!A:G`,
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [row],

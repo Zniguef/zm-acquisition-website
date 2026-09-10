@@ -219,7 +219,7 @@ export default function Reviews() {
                         fontWeight: 500,
                       }}
                     >
-                      "{t(review.text)}"
+                      &ldquo;{t(review.text)}&rdquo;
                     </p>
 
                     {/* Author */}

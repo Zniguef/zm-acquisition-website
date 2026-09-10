@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter } from '@/i18n/navigation';
 
@@ -12,24 +12,43 @@ export default function Contact() {
     phone: '',
     email: '',
     businessType: '',
-    otherService: '',
+    monthlyBudget: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [selectOpen, setSelectOpen] = useState(false);
+  const [budgetSelectOpen, setBudgetSelectOpen] = useState(false);
 
-  // Close the custom dropdown when clicking outside
+  const businessSelectRef = useRef<HTMLDivElement>(null);
+  const budgetSelectRef = useRef<HTMLDivElement>(null);
+
+  const businessTypeOptions = [
+    { value: 'Centre de formation', label: t('type_training') },
+    { value: 'Cabinet de conseil', label: t('type_consulting') },
+    { value: 'Autre service', label: t('type_other') },
+  ];
+
+  const budgetOptions = [
+    { value: 'Moins 5000dh', label: t('budget_under_5k') },
+    { value: '5000dh to 15 000dh', label: t('budget_5k_15k') },
+    { value: 'above 15 000dh', label: t('budget_above_15k') },
+  ];
+
+  // Close the custom dropdowns when clicking outside
   useEffect(() => {
-    if (!selectOpen) return;
+    if (!selectOpen && !budgetSelectOpen) return;
     const handleOutside = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (!target.closest('.custom-select-trigger') && !target.closest('.custom-select-panel')) {
+      const target = e.target as Node;
+      if (businessSelectRef.current && !businessSelectRef.current.contains(target)) {
         setSelectOpen(false);
+      }
+      if (budgetSelectRef.current && !budgetSelectRef.current.contains(target)) {
+        setBudgetSelectOpen(false);
       }
     };
     document.addEventListener('mousedown', handleOutside);
     return () => document.removeEventListener('mousedown', handleOutside);
-  }, [selectOpen]);
+  }, [selectOpen, budgetSelectOpen]);
 
   const router = useRouter();
 
@@ -190,7 +209,7 @@ export default function Contact() {
             </div>
 
             {/* Business Type — Custom Dropdown */}
-            <div style={{ position: 'relative' }}>
+            <div ref={businessSelectRef} style={{ position: 'relative', zIndex: selectOpen ? 30 : 20 }}>
               <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, marginBottom: '8px', color: '#0f172a' }}>
                 {t('businessType')} <span style={{ color: '#ef4444', marginLeft: '4px' }}>*</span>
               </label>
@@ -209,7 +228,10 @@ export default function Contact() {
               <button
                 type="button"
                 className="custom-select-trigger"
-                onClick={() => setSelectOpen((o) => !o)}
+                onClick={() => {
+                  setBudgetSelectOpen(false);
+                  setSelectOpen((o) => !o);
+                }}
                 style={{
                   width: '100%',
                   padding: '14px 40px 14px 16px',
@@ -231,7 +253,7 @@ export default function Contact() {
               >
                 <span>
                   {formData.businessType
-                    ? t(`type_${formData.businessType}` as Parameters<typeof t>[0])
+                    ? businessTypeOptions.find((o) => o.value === formData.businessType)?.label || formData.businessType
                     : t('businessTypePlaceholder')}
                 </span>
                 <svg
@@ -260,20 +282,13 @@ export default function Contact() {
                     animation: 'dropdownFadeIn 0.15s ease',
                   }}
                 >
-                  {[
-                    { value: 'gym',      label: t('type_gym') },
-                    { value: 'coaching', label: t('type_coaching') },
-                    { value: 'agency',   label: t('type_agency') },
-                    { value: 'training', label: t('type_training') },
-                    { value: 'finance',  label: t('type_finance') },
-                    { value: 'other',    label: t('type_other') },
-                  ].map((opt) => (
+                  {businessTypeOptions.map((opt) => (
                     <button
                       key={opt.value}
                       type="button"
                       className="custom-select-option"
                       onClick={() => {
-                        setFormData({ ...formData, businessType: opt.value, otherService: '' });
+                        setFormData({ ...formData, businessType: opt.value });
                         setSelectOpen(false);
                       }}
                       style={{
@@ -305,31 +320,117 @@ export default function Contact() {
               )}
             </div>
 
+            {/* Monthly Budget — Custom Dropdown */}
+            <div ref={budgetSelectRef} style={{ position: 'relative', zIndex: budgetSelectOpen ? 30 : 10 }}>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, marginBottom: '8px', color: '#0f172a' }}>
+                {t('monthlyBudget')} <span style={{ color: '#ef4444', marginLeft: '4px' }}>*</span>
+              </label>
 
-            {/* Conditional Other Service Input */}
-            {formData.businessType === 'other' && (
-              <div style={{ animation: 'fadeIn 0.3s ease' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: 600, marginBottom: '8px', color: '#0f172a' }}>
-                  {t('otherServiceLabel')} <span style={{ color: '#ef4444', marginLeft: '4px' }}>*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  placeholder={t('otherServicePlaceholder')}
+              {/* Hidden native input for form validation */}
+              <input
+                type="text"
+                required
+                readOnly
+                tabIndex={-1}
+                value={formData.monthlyBudget}
+                style={{ position: 'absolute', opacity: 0, width: '1px', height: '1px', pointerEvents: 'none' }}
+              />
+
+              {/* Trigger button */}
+              <button
+                type="button"
+                className="custom-select-trigger"
+                onClick={() => {
+                  setSelectOpen(false);
+                  setBudgetSelectOpen((o) => !o);
+                }}
+                style={{
+                  width: '100%',
+                  padding: '14px 40px 14px 16px',
+                  borderRadius: '8px',
+                  border: `1px solid ${budgetSelectOpen ? '#0D3EA6' : '#cbd5e1'}`,
+                  background: '#ffffff',
+                  fontSize: '15px',
+                  textAlign: 'left',
+                  cursor: 'pointer',
+                  color: formData.monthlyBudget ? '#0f172a' : '#94a3b8',
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  outline: 'none',
+                  boxShadow: budgetSelectOpen ? '0 0 0 3px rgba(13,62,166,0.12)' : 'none',
+                  transition: 'border-color 0.15s, box-shadow 0.15s',
+                }}
+              >
+                <span>
+                  {formData.monthlyBudget
+                    ? budgetOptions.find((o) => o.value === formData.monthlyBudget)?.label
+                    : t('monthlyBudgetPlaceholder')}
+                </span>
+                <svg
+                  width="12" height="12" viewBox="0 0 12 12" fill="none"
+                  style={{ flexShrink: 0, transition: 'transform 0.2s', transform: budgetSelectOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                >
+                  <path d="M2.5 4.5L6 8L9.5 4.5" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              {/* Dropdown panel */}
+              {budgetSelectOpen && (
+                <div
+                  className="custom-select-panel"
                   style={{
-                    width: '100%',
-                    padding: '14px 16px',
-                    borderRadius: '8px',
-                    border: '1px solid #cbd5e1',
+                    position: 'absolute',
+                    top: 'calc(100% + 6px)',
+                    left: 0,
+                    right: 0,
                     background: '#ffffff',
-                    fontSize: '15px',
-                    outline: 'none',
-                    color: '#0f172a',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '10px',
+                    boxShadow: '0 10px 30px -5px rgba(0,0,0,0.12)',
+                    zIndex: 50,
+                    overflow: 'hidden',
+                    animation: 'dropdownFadeIn 0.15s ease',
                   }}
-                  onChange={(e) => setFormData({ ...formData, otherService: e.target.value })}
-                />
-              </div>
-            )}
+                >
+                  {budgetOptions.map((opt) => (
+                    <button
+                      key={opt.value}
+                      type="button"
+                      className="custom-select-option"
+                      onClick={() => {
+                        setFormData({ ...formData, monthlyBudget: opt.value });
+                        setBudgetSelectOpen(false);
+                      }}
+                      style={{
+                        width: '100%',
+                        padding: '12px 16px',
+                        textAlign: 'left',
+                        background: formData.monthlyBudget === opt.value ? '#f0f5ff' : 'transparent',
+                        border: 'none',
+                        borderBottom: '1px solid #f1f5f9',
+                        fontSize: '15px',
+                        color: formData.monthlyBudget === opt.value ? '#0D3EA6' : '#0f172a',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        fontWeight: formData.monthlyBudget === opt.value ? 600 : 400,
+                        transition: 'background 0.1s',
+                      }}
+                    >
+                      {opt.label}
+                      {formData.monthlyBudget === opt.value && (
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M3 8L6.5 11.5L13 5" stroke="#0D3EA6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {/* Error message */}
             {submitError && (

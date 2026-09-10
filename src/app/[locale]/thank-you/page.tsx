@@ -34,29 +34,29 @@ export default async function ThankYouPage({ params }: Props) {
       ? "Nous avons bien reçu votre demande. Nous vous contacterons dans les 24 heures pour confirmer votre session stratégique."
       : "We've received your request. We'll reach out within 24 hours to confirm your strategy session.",
 
-    step1Title: isAr ? "تحقق من بريدك الإلكتروني" : isFr ? "Vérifiez votre boîte mail" : "Check your inbox",
-    step1Text:  isAr ? "ابحث عن رسالة تأكيد من ZM Acquisition."
-                     : isFr ? "Un email de confirmation de ZM Acquisition est en route."
-                     : "A confirmation email from ZM Acquisition is on its way.",
-
-    step2Title: isAr ? "نحن نراجع طلبك"           : isFr ? "Nous étudions votre dossier" : "We review your request",
-    step2Text:  isAr ? "يقوم فريقنا بمراجعة معلوماتك لتخصيص جلستك الاستراتيجية."
+    step1Title: isAr ? "نحن ندرس ملفك"           : isFr ? "Nous étudions votre dossier" : "We review your request",
+    step1Text:  isAr ? "يقوم فريقنا بمراجعة معلوماتك لتخصيص جلستك الاستراتيجية."
                      : isFr ? "Notre équipe examine vos informations pour personnaliser votre session."
                      : "Our team reviews your info to tailor your strategy session.",
 
-    step3Title: isAr ? "اتصال في غضون 24 ساعة"   : isFr ? "Appel sous 24 heures"       : "Call within 24 hours",
-    step3Text:  isAr ? "سنتصل بك في أقرب وقت ممكن لتحديد موعد مناسب."
-                     : isFr ? "Nous vous appelons dès que possible pour fixer un créneau."
-                     : "We'll call you as soon as possible to set a convenient time.",
+    step2Title: isAr ? "اتصال في غضون 24 ساعة"   : isFr ? "Appel sous 24 heures"       : "Call within 24 hours",
+    step2Text:  isAr ? "سنتصل بك في أقرب وقت ممكن لمناقشة أهدافك ومشروعك."
+                     : isFr ? "Nous vous appelons dès que possible pour échanger sur vos objectifs."
+                     : "We'll call you as soon as possible to discuss your goals.",
+
+    step3Title: isAr ? "احجز تاريخ ووقت اجتماعك" : isFr ? "Book your meeting date and time" : "Book your meeting date and time",
+    step3Text:  isAr ? "سنحدد معاً الموعد الأنسب لتأكيد جلستك الاستراتيجية."
+                     : isFr ? "Nous fixons ensemble la date et l'heure idéales pour votre session stratégique."
+                     : "We'll set the ideal date and time together for your strategy session.",
 
     backHome: isAr ? "← العودة إلى الصفحة الرئيسية" : isFr ? "← Retour à l'accueil" : "← Back to home",
-    caseStudies: isAr ? "اطلع على نتائجنا" : isFr ? "Voir nos études de cas" : "See our results",
+    whatsappText: isAr ? "تحدث عبر واتساب" : isFr ? "Discuter sur WhatsApp" : "Chat on WhatsApp",
 
     socialProof: isAr
-      ? "أكثر من 50 عملاً خدمياً وثق بنا لبناء منظومة اكتساب عملائهم"
+      ? "أكثر من 20 عملاً خدمياً وثق بنا لبناء منظومة اكتساب عملائهم"
       : isFr
-      ? "Plus de 50 entreprises de services nous ont fait confiance pour construire leur système d'acquisition"
-      : "50+ service businesses trusted us to build their client acquisition system",
+      ? "Plus de 20 entreprises de services nous ont fait confiance pour construire leur système d'acquisition"
+      : "20+ service businesses trusted us to build their client acquisition system",
   };
 
   return (
@@ -178,9 +178,9 @@ export default async function ThankYouPage({ params }: Props) {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               {[
-                { step: "1", title: copy.step1Title, text: copy.step1Text, icon: "📧" },
-                { step: "2", title: copy.step2Title, text: copy.step2Text, icon: "🔍" },
-                { step: "3", title: copy.step3Title, text: copy.step3Text, icon: "📞" },
+                { step: "1", title: copy.step1Title, text: copy.step1Text, icon: "🔍" },
+                { step: "2", title: copy.step2Title, text: copy.step2Text, icon: "📞" },
+                { step: "3", title: copy.step3Title, text: copy.step3Text, icon: "📅" },
               ].map((item, idx, arr) => (
                 <div
                   key={item.step}
@@ -266,7 +266,7 @@ export default async function ThankYouPage({ params }: Props) {
           </p>
 
           {/* ── CTAs ──────────────────────────────────────────────────────── */}
-          <ThankYouActions backHome={copy.backHome} caseStudies={copy.caseStudies} />
+          <ThankYouActions backHome={copy.backHome} whatsappText={copy.whatsappText} />
         </div>
       </main>
 
