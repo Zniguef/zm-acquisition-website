@@ -15,7 +15,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "ZM Acquisition — Lead Generation Agency",
+  title: "ZM Acquisition | Lead Generation Agency",
   description:
     "ZM Acquisition helps service businesses generate consistent clients using paid ads, funnel strategy, and high-converting landing pages.",
   icons: {

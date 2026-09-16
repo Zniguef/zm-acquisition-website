@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: Props) {
   const study = getCaseStudyBySlug(slug);
 
   if (!study) {
-    return { title: "Étude de cas introuvable — ZM Acquisition" };
+    return { title: "Étude de cas introuvable | ZM Acquisition" };
   }
 
   return {
-    title: `${study.companyName} — Étude de cas | ZM Acquisition`,
+    title: `${study.companyName} : Étude de cas | ZM Acquisition`,
     description: study.description.slice(0, 155),
   };
 }

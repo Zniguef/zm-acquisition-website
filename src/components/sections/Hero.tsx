@@ -3,21 +3,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-const CHECKS = [
-  'check4',
-  'check2',
-  'check6',
-  'check5',
-  'check3',
-  'check1',
-] as const;
-
-const STATS = [
-  { number: 'stat1Number', label: 'stat1Label' },
-  { number: 'stat2Number', label: 'stat2Label' },
-  { number: 'stat3Number', label: 'stat3Label' },
-] as const;
-
 export default function Hero() {
   const t = useTranslations('hero');
 
@@ -33,220 +18,116 @@ export default function Hero() {
       className="hero-section"
       style={{
         background: 'radial-gradient(100% 100% at 50% 0%, #eef6ff 0%, #ffffff 100%)',
-        padding: '80px 32px 64px',
+        padding: '96px 24px 72px',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
       <div
         style={{
-          maxWidth: '1200px',
+          maxWidth: '900px',
           margin: '0 auto',
           display: 'flex',
           flexDirection: 'column',
-          gap: '56px',
+          alignItems: 'center',
+          textAlign: 'center',
+          gap: '32px',
         }}
       >
-        {/* Top: 2-column Grid */}
+        {/* Main Content */}
         <div
-          className="hero-top-grid"
+          className="hero-content"
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '40px',
+            display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
+            textAlign: 'center',
+            width: '100%',
           }}
         >
-          {/* Left Column */}
-          <div className="hero-content">
-            {/* Headline */}
-            <h1
-              style={{
-                fontSize: 'clamp(35px, 5vw, 60px)',
-                fontWeight: 900,
-                lineHeight: 1.1,
-                color: '#0f172a', /* Dark slate navy color exactly like the image */
-                marginBottom: '24px',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              <span style={{ display: 'block' }}>{t('headline1')}</span>
-              <span style={{ display: 'block' }}>{t('headline2')}</span>
-              <span style={{ display: 'block' }}>{t('headline3')}</span>
-            </h1>
-
-            {/* Subtext */}
-            <p
-              className="hero-description"
-              style={{
-                fontSize: '18px',
-                color: '#475569',
-                lineHeight: 1.6,
-                marginBottom: '32px',
-                maxWidth: '480px',
-              }}
-            >
-              {t('subtext')}
-            </p>
-
-            {/* CTA Button */}
-            <div className="hero-cta-group" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <a
-                href="#contact-form"
-                onClick={scrollToContact}
-                id="hero-cta"
-                style={{
-                  display: 'inline-block',
-                  background: '#0D3EA6', /* Deep blue requested */
-                  color: '#ffffff',
-                  fontSize: '16px',
-                  fontWeight: 700,
-                  padding: '16px 32px',
-                  borderRadius: '12px',
-                  textDecoration: 'none',
-                  marginBottom: '12px',
-                  transition: 'all 0.2s ease',
-                  boxShadow: '0 4px 14px rgba(13, 62, 166, 0.4)',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = '#1e40af';
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = '#0D3EA6';
-                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-                }}
-              >
-                {t('cta')}
-              </a>
-
-              {/* CTA Note */}
-              <p
-                style={{
-                  fontSize: '14px',
-                  color: '#475569',
-                  margin: '0',
-                }}
-              >
-                {t('ctaNote')}
-              </p>
-            </div>
-          </div>
-
-          {/* Right Column (Image Mockup) */}
-          <div className="hero-mockup-wrapper" style={{ width: '100%' }}>
-            <Image
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-              alt="Workspace stats"
-              width={800}
-              height={500}
-              priority
-              style={{
-                width: '100%',
-                height: 'auto',
-                borderRadius: '16px',
-                objectFit: 'cover',
-                display: 'block',
-                boxShadow: '0 20px 40px -10px rgba(0,0,0,0.1)',
-                border: '8px solid white',
-              }}
-              unoptimized
-            />
-          </div>
-        </div>
-
-        {/* Bottom part (Stats + Checks) */}
-        <div className="hero-bottom-section" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-          {/* Stats Row */}
-          <div
-            className="stats-row"
+          {/* Headline */}
+          <h1
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '24px',
+              fontSize: 'clamp(35px, 5vw, 60px)',
+              fontWeight: 900,
+              lineHeight: 1.15,
+              color: '#0f172a',
+              marginBottom: '24px',
+              letterSpacing: '-0.02em',
+              textAlign: 'center',
             }}
           >
-            {STATS.map(({ number, label }) => (
-              <div
-                key={number}
-                style={{
-                  background: '#0000ff',
-                  border: '1px solid #3f3aff',
-                  borderRadius: '16px',
-                  padding: '24px 32px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '12px',
-                  textAlign: 'center',
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: '40px',
-                    fontWeight: 800,
-                    color: '#ffffff',
-                    lineHeight: 1,
-                  }}
-                >
-                  {t(number)}
-                </div>
-                <div
-                  style={{
-                    fontSize: '18px',
-                    fontWeight: 500,
-                    color: '#ffffff',
-                    lineHeight: 1.2,
-                  }}
-                >
-                  {t(label)}
-                </div>
-              </div>
-            ))}
-          </div>
+            <span style={{ display: 'block' }}>{t('headline1')}</span>
+            <span style={{ display: 'block' }}>{t('headline2')}</span>
+            <span style={{ display: 'block' }}>{t('headline3')}</span>
+          </h1>
 
-          {/* Checklist Row */}
+          {/* Subtext */}
+          <p
+            className="hero-description"
+            style={{
+              fontSize: '18px',
+              color: '#475569',
+              lineHeight: 1.6,
+              marginBottom: '32px',
+              maxWidth: '680px',
+              marginInline: 'auto',
+              textAlign: 'center',
+            }}
+          >
+            {t('subtext')}
+          </p>
+
+          {/* CTA Button */}
           <div
-            className="checklist-row"
+            className="hero-cta-group"
             style={{
               display: 'flex',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-              gap: '32px',
+              flexDirection: 'column',
+              alignItems: 'center',
+              textAlign: 'center',
             }}
           >
-            {CHECKS.map((key) => (
-              <div
-                key={key}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  fontSize: '16px',
-                  fontWeight: 500,
-                  color: '#334155',
-                }}
-              >
-                <span
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '24px',
-                    height: '24px',
-                    borderRadius: '50%',
-                    border: '2px solid #0f172a',
-                    color: '#0f172a',
-                    fontWeight: 800,
-                    fontSize: '14px',
-                  }}
-                >
-                  ✓
-                </span>
-                {t(key)}
-              </div>
-            ))}
+            <a
+              href="#contact-form"
+              onClick={scrollToContact}
+              id="hero-cta"
+              style={{
+                display: 'inline-block',
+                background: '#0D3EA6',
+                color: '#ffffff',
+                fontSize: '16px',
+                fontWeight: 700,
+                padding: '16px 32px',
+                borderRadius: '12px',
+                textDecoration: 'none',
+                marginBottom: '12px',
+                transition: 'all 0.2s ease',
+                boxShadow: '0 4px 14px rgba(13, 62, 166, 0.4)',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.background = '#1e40af';
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.background = '#0D3EA6';
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+              }}
+            >
+              {t('cta')}
+            </a>
+
+            {/* CTA Note */}
+            <p
+              style={{
+                fontSize: '14px',
+                color: '#475569',
+                margin: '0',
+                textAlign: 'center',
+              }}
+            >
+              {t('ctaNote')}
+            </p>
           </div>
         </div>
 
@@ -257,53 +138,9 @@ export default function Hero() {
       </div>
 
       <style>{`
-        @media (max-width: 1024px) {
-          .hero-section {
-            padding: 64px 24px 48px !important;
-          }
-          .hero-top-grid {
-            gap: 32px !important;
-          }
-          .stats-row {
-            gap: 16px !important;
-          }
-          .stats-row > div {
-            padding: 20px 16px !important;
-            flex-direction: column;
-            align-items: center;
-          }
-        }
         @media (max-width: 768px) {
           .hero-section {
-            padding: 48px 16px !important;
-          }
-          .hero-top-grid {
-            grid-template-columns: 1fr !important;
-            gap: 48px !important;
-            text-align: center;
-          }
-          .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-          .hero-description {
-            text-align: center !important;
-            margin-inline: auto !important;
-          }
-          .hero-cta-group {
-            align-items: center !important;
-            text-align: center !important;
-          }
-          .stats-row {
-            grid-template-columns: 1fr !important;
-            gap: 12px !important;
-          }
-          .checklist-row {
-            gap: 16px !important;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left !important;
+            padding: 56px 16px 48px !important;
           }
         }
       `}</style>

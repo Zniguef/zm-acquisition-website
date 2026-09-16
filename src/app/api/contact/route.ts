@@ -42,7 +42,8 @@ export async function POST(request: NextRequest) {
     }
 
     const sheetId = process.env.GOOGLE_SHEET_ID;
-    const sheetName = process.env.GOOGLE_SHEET_NAME ?? 'Contact_Form_Data';
+    const isUnder5k = budget?.trim() === 'Moins 5000dh' || budget?.toLowerCase().includes('moins');
+    const sheetName = isUnder5k ? 'NotQualified' : (process.env.GOOGLE_SHEET_NAME ?? 'Contact_Form_Data');
 
     if (!sheetId) {
       console.error('GOOGLE_SHEET_ID is not set');

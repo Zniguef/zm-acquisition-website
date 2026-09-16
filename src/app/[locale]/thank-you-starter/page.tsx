@@ -1,7 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import { routing } from "@/i18n/routing";
-import ThankYouActions from "@/components/ThankYouActions";
+import { Link } from "@/i18n/navigation";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -14,11 +14,11 @@ export async function generateStaticParams() {
 export async function generateMetadata() {
   return {
     title: "Merci | ZM Acquisition",
-    description: "Votre demande a bien été reçue. Nous vous contacterons dans les 24 heures.",
+    description: "Votre demande a bien été reçue. Notre équipe examine vos informations.",
   };
 }
 
-export default async function ThankYouPage({ params }: Props) {
+export default async function ThankYouStarterPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
@@ -26,31 +26,29 @@ export default async function ThankYouPage({ params }: Props) {
   const isFr = locale === "fr";
 
   const copy = {
-    badge:   isAr ? "تم الاستلام ✓" : isFr ? "Reçu ✓"            : "Received ✓",
-    heading: isAr ? "شكراً لك!"      : isFr ? "Merci !"            : "Thank you!",
-    sub:     isAr
-      ? "لقد تلقينا طلبك وسنتواصل معك خلال 24 ساعة لتأكيد موعد جلستك الاستراتيجية."
+    badge: isAr ? "تم الاستلام ✓" : isFr ? "Reçu ✓" : "Received ✓",
+    heading: isAr ? "شكراً لك!" : isFr ? "Merci !" : "Thank you!",
+    sub: isAr
+      ? "لقد تلقينا طلبك بنجاح. يقوم فريقنا بمراجعة معلوماتك وسنتواصل معك قريباً."
       : isFr
-      ? "Nous avons bien reçu votre demande. Nous vous contacterons dans les 24 heures pour confirmer votre session stratégique."
-      : "We've received your request. We'll reach out within 24 hours to confirm your strategy session.",
+      ? "Nous avons bien reçu votre demande. Notre équipe examine vos informations et reviendra vers vous très prochainement."
+      : "We have received your request. Our team is reviewing your information and will get back to you shortly.",
 
-    step1Title: isAr ? "نحن ندرس ملفك"           : isFr ? "Nous étudions votre dossier" : "We review your request",
-    step1Text:  isAr ? "يقوم فريقنا بمراجعة معلوماتك لتخصيص جلستك الاستراتيجية."
-                     : isFr ? "Notre équipe examine vos informations pour personnaliser votre session."
-                     : "Our team reviews your info to tailor your strategy session.",
+    step1Title: isAr ? "نحن ندرس طلبك" : isFr ? "Nous étudions votre dossier" : "We review your request",
+    step1Text: isAr
+      ? "يقوم فريقنا بمراجعة التفاصيل لتحديد أفضل الحلول المناسبة لمشروعك."
+      : isFr
+      ? "Notre équipe analyse les détails de votre demande pour évaluer votre projet."
+      : "Our team examines your details to assess the best solutions for your business.",
 
-    step2Title: isAr ? "اتصال في غضون 24 ساعة"   : isFr ? "Appel sous 24 heures"       : "Call within 24 hours",
-    step2Text:  isAr ? "سنتصل بك في أقرب وقت ممكن لمناقشة أهدافك ومشروعك."
-                     : isFr ? "Nous vous appelons dès que possible pour échanger sur vos objectifs."
-                     : "We'll call you as soon as possible to discuss your goals.",
-
-    step3Title: isAr ? "احجز تاريخ ووقت اجتماعك" : isFr ? "Book your meeting date and time" : "Book your meeting date and time",
-    step3Text:  isAr ? "سنحدد معاً الموعد الأنسب لتأكيد جلستك الاستراتيجية."
-                     : isFr ? "Nous fixons ensemble la date et l'heure idéales pour votre session stratégique."
-                     : "We'll set the ideal date and time together for your strategy session.",
+    step2Title: isAr ? "متابعة مخصصة" : isFr ? "Retour sous 24 à 48 heures" : "Follow-up within 24-48 hours",
+    step2Text: isAr
+      ? "سنتواصل معك عبر البريد الإلكتروني أو الهاتف مع الخطوات والتوصيات المناسبة."
+      : isFr
+      ? "Nous reviendrons vers vous par e-mail ou téléphone avec les prochaines étapes adaptées."
+      : "We will get back to you via email or phone with the next recommended steps.",
 
     backHome: isAr ? "← العودة إلى الصفحة الرئيسية" : isFr ? "← Retour à l'accueil" : "← Back to home",
-    whatsappText: isAr ? "تحدث عبر واتساب" : isFr ? "Discuter sur WhatsApp" : "Chat on WhatsApp",
 
     socialProof: isAr
       ? "أكثر من 20 عملاً خدمياً وثق بنا لبناء منظومة اكتساب عملائهم"
@@ -179,8 +177,7 @@ export default async function ThankYouPage({ params }: Props) {
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               {[
                 { step: "1", title: copy.step1Title, text: copy.step1Text, icon: "🔍" },
-                { step: "2", title: copy.step2Title, text: copy.step2Text, icon: "📞" },
-                { step: "3", title: copy.step3Title, text: copy.step3Text, icon: "📅" },
+                { step: "2", title: copy.step2Title, text: copy.step2Text, icon: "📋" },
               ].map((item, idx, arr) => (
                 <div
                   key={item.step}
@@ -265,8 +262,28 @@ export default async function ThankYouPage({ params }: Props) {
             <span>{copy.socialProof}</span>
           </p>
 
-          {/* ── CTAs ──────────────────────────────────────────────────────── */}
-          <ThankYouActions backHome={copy.backHome} whatsappText={copy.whatsappText} />
+          {/* ── Only ONE redirect button to home ───────────────────────────── */}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <Link
+              href="/"
+              className="starter-home-btn"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                background: "#1d4ed8",
+                color: "#ffffff",
+                fontWeight: 700,
+                fontSize: "15px",
+                padding: "14px 32px",
+                borderRadius: "10px",
+                textDecoration: "none",
+                boxShadow: "0 4px 14px rgba(29, 78, 216, 0.3)",
+              }}
+            >
+              {copy.backHome}
+            </Link>
+          </div>
         </div>
       </main>
 
@@ -278,6 +295,14 @@ export default async function ThankYouPage({ params }: Props) {
         @keyframes drawCheck {
           from { stroke-dashoffset: 40; opacity: 0; }
           to   { stroke-dashoffset: 0;  opacity: 1; }
+        }
+        .starter-home-btn {
+          transition: all 0.2s ease !important;
+        }
+        .starter-home-btn:hover {
+          background: #1e40af !important;
+          transform: translateY(-2px) !important;
+          box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4) !important;
         }
       `}</style>
     </>

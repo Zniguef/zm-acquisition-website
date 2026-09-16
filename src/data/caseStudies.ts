@@ -110,12 +110,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       { name: 'Formations offline', icon: '🏛️', type: 'Présentiel' },
       { name: 'Séminaires', icon: '🎤', type: 'Évènementiel' },
     ],
-    priceRange: '1 000 DH — 10 000 DH',
+    priceRange: '1 000 DH à 10 000 DH',
     priceNote: 'Variable selon le programme',
 
     audience: [
-      'RAF — Responsable Administratif et Financier',
-      'DAF — Directeur Administratif et Financier',
+      'RAF : Responsable Administratif et Financier',
+      'DAF : Directeur Administratif et Financier',
       'Chef Comptable',
       'Comptable Agréé',
       'Expert Comptable',
@@ -195,7 +195,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     number: '#002',
     clientName: 'Mohamed Rismy',
     companyName: 'Cabinet Costless',
-    companyFullName: 'Costless – Conseiller en Optimisation de Coûts',
+    companyFullName: 'Costless : Conseiller en Optimisation de Coûts',
     industry: 'Conseil Financier & Formation',
     tagline: 'Conseil en optimisation des coûts et formation professionnelle',
     description:
@@ -238,7 +238,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         phase: 'Phase 1',
         title: 'Positionnement & Recherche',
         description:
-          'Analyse du profil de Mohamed Rismy — ancien cadre bancaire 30+ ans d\'expérience — comme élément différenciateur clé. Définition du message autour de la crédibilité et de l\'expertise terrain.',
+          'Analyse du profil de Mohamed Rismy, ancien cadre bancaire avec plus de 30 ans d\'expérience, comme élément différenciateur clé. Définition du message autour de la crédibilité et de l\'expertise terrain.',
         tags: ['Positioning', 'Market Research', 'Messaging'],
         icon: '🔍',
       },
@@ -278,7 +278,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         icon: '⚡',
         title: 'CPL record : $1.32',
-        text: 'Le coût par lead de $1.32 est l\'un des meilleurs résultats de notre portefeuille — obtenu grâce à un message hyper-ciblé et un funnel optimisé.',
+        text: 'Le coût par lead de $1.32 compte parmi les meilleurs résultats de notre portefeuille, obtenu grâce à un message hyper-ciblé et un funnel optimisé.',
       },
       {
         icon: '🧑‍💼',
@@ -293,7 +293,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         icon: '💡',
         title: 'Système performant',
-        text: 'Un système bien construit génère des résultats mesurables sans nécessiter un budget massif — preuve que la stratégie prime sur la dépense.',
+        text: 'Un système bien construit génère des résultats mesurables sans nécessiter un budget massif, confirmant que la stratégie prime sur le montant dépensé.',
       },
     ],
   },
@@ -304,9 +304,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     number: '#003',
     clientName: 'Ghita',
     companyName: 'KLÜB Studio',
-    companyFullName: 'KLÜB Studio — Studio de Pilates',
+    companyFullName: 'KLÜB Studio : Studio de Pilates',
     industry: 'Studio de Pilates',
-    tagline: 'Studio Pilates premium au Maroc — acquisition de clientes via Meta Ads',
+    tagline: 'Studio Pilates premium au Maroc : acquisition de clientes via Meta Ads',
     description:
       'KLÜB Studio est un studio de Pilates premium. De mars à juin 2026 (4 mois), nos campagnes Meta Ads ont généré 1 035 leads qualifiés grâce à un ciblage précis et une offre d\'entrée à faible friction.',
     period: '4 mois',
@@ -320,7 +320,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
 
     metrics: [
-      { value: '1 035', label: 'Leads générés', sublabel: 'Mars — Juin 2026 · 4 mois', color: '#4f46e5' },
+      { value: '1 035', label: 'Leads générés', sublabel: 'Mars à Juin 2026 · 4 mois', color: '#4f46e5' },
       { value: '$0.88', label: 'Coût par lead', sublabel: 'Campagne Meta Ads', color: '#16a34a' },
       { value: '~1.97×', label: 'ROAS (mois 1)', sublabel: 'Retour sur dépense pub', color: '#ca8a04' },
       { value: '1.30%', label: 'CTR moyen', sublabel: 'CPM $1.83 · CPC $0.14', color: '#0891b2' },
@@ -331,11 +331,11 @@ export const CASE_STUDIES: CaseStudy[] = [
       { name: 'Abonnement direct', icon: '📋', type: 'Forfait' },
       { name: 'Pack découverte', icon: '🎁', type: 'Pack' },
     ],
-    priceRange: '150 MAD — ~850 MAD',
+    priceRange: '150 MAD à ~850 MAD',
     priceNote: 'Séance essai 150 MAD · Forfait moy. ~850 MAD',
 
     audience: [
-      'Femmes actives 25–45 ans',
+      'Femmes actives 25-45 ans',
       'Intérêt bien-être & fitness',
       'Milieu urbain au Maroc',
       'Profil premium / lifestyle',
@@ -354,7 +354,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         phase: 'Phase 2',
         title: 'Funnel & Offre d\'essai',
         description:
-          'Construction d\'un funnel basé sur une offre d\'entrée à friction nulle — la séance d\'essai à 150 MAD. Landing page optimisée pour maximiser les conversions et qualifier les prospects avant le contact.',
+          'Construction d\'un funnel basé sur une offre d\'essai accessible à 150 MAD, avec une landing page optimisée pour convertir et qualifier les prospects.',
         tags: ['Landing Page', 'Funnel Build', 'Offre d\'essai'],
         icon: '🏗️',
       },
@@ -385,7 +385,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         icon: '💎',
         title: '$0.88 par lead',
-        text: 'Un CPL de $0.88 pour un studio de Pilates premium est exceptionnel — obtenu grâce à un ciblage précis et une offre d\'entrée à faible friction (séance d\'essai 150 MAD).',
+        text: 'Un CPL de $0.88 pour un studio de Pilates premium est remarquable, obtenu grâce à un ciblage précis et une séance d\'essai attractive à 150 MAD.',
       },
       {
         icon: '🎯',
@@ -395,12 +395,12 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         icon: '🔄',
         title: '26.7% d\'upgrade',
-        text: 'Un taux d\'upgrade élevé des séances d\'essai vers les forfaits — signe d\'une expérience studio de qualité.',
+        text: 'Un taux d\'upgrade élevé des séances d\'essai vers les forfaits, reflétant la qualité de l\'expérience proposée au studio.',
       },
       {
         icon: '📊',
         title: '679 leads · 3 campagnes',
-        text: 'Trois campagnes complémentaires ont généré un flux massif de prospects qualifiés à très faible coût — preuve qu\'un système bien structuré surpasse largement les approches mono-campagne.',
+        text: 'Trois campagnes complémentaires ont généré un flux régulier de prospects qualifiés à faible coût, démontrant la supériorité d\'un dispositif multi-angles.',
       },
     ],
   },
@@ -411,9 +411,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     number: '#004',
     clientName: 'UGR',
     companyName: 'UGR',
-    companyFullName: 'UGR — Universe Gazon en Rouleaux',
+    companyFullName: 'UGR : Universe Gazon en Rouleaux',
     industry: 'Gazon Naturel en Rouleau',
-    tagline: 'Acquisition B2B & B2C via Meta Ads — particuliers et professionnels du paysage',
+    tagline: 'Acquisition B2B & B2C via Meta Ads pour particuliers et professionnels du paysage',
     description:
       'UGR est un producteur et fournisseur de gazon naturel en rouleau au Maroc, opérant à la fois en B2C (particuliers) et en B2B (professionnels du paysagisme, promoteurs, hôtels). En 3 mois, nos campagnes Meta Ads ont généré 684 leads qualifiés grâce à une stratégie double marché.',
     period: '3 mois',
@@ -439,7 +439,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
 
     audience: [
-      'Particuliers — jardins résidentiels',
+      'Particuliers : jardins résidentiels',
       'Entreprises de paysagisme',
       'Promoteurs immobiliers',
       'Hôtels & complexes touristiques',
@@ -453,7 +453,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         phase: 'Phase 1',
         title: 'Segmentation double marché',
         description:
-          'Analyse des deux segments cibles — B2C (particuliers souhaitant aménager leur jardin) et B2B (professionnels du paysage, promoteurs, hôtels). Définition de messages et d\'angles distincts pour chaque audience.',
+          'Analyse des deux segments cibles, B2C (particuliers souhaitant aménager leur jardin) et B2B (professionnels du paysage, promoteurs, hôtels), avec des messages distincts pour chaque audience.',
         tags: ['Market Research', 'Audience Segmentation', 'B2B & B2C'],
         icon: '🔍',
       },
@@ -469,7 +469,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         phase: 'Phase 3',
         title: 'Lancement des Campagnes',
         description:
-          'Déploiement de campagnes Meta Ads séparées pour le B2C et le B2B. Créatifs adaptés à chaque segment — visuels jardin résidentiel pour les particuliers, références chantiers et projets professionnels pour les décideurs.',
+          'Déploiement de campagnes Meta Ads séparées pour le B2C et le B2B avec des créatifs adaptés à chaque segment : visuels résidentiels pour les particuliers, références chantiers pour les professionnels.',
         tags: ['Meta Ads', 'Campaign Setup', 'Creatives'],
         icon: '🚀',
       },
@@ -503,7 +503,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         icon: '🏗️',
         title: 'B2B : qualité avant quantité',
-        text: 'La campagne B2B a généré 148 leads professionnels avec un CTR de 2.14% — des décideurs engagés issus du paysagisme, de la promotion immobilière et de l\'hôtellerie.',
+        text: 'La campagne B2B a généré 148 leads professionnels avec un CTR de 2.14%, touchant des décideurs qualifiés du paysagisme, de l\'immobilier et de l\'hôtellerie.',
       },
       {
         icon: '📊',

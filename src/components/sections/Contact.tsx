@@ -69,7 +69,11 @@ export default function Contact() {
         throw new Error(data.error ?? 'Submission failed. Please try again.');
       }
 
-      router.push('/thank-you');
+      if (formData.monthlyBudget === 'Moins 5000dh') {
+        router.push('/thank-you-starter');
+      } else {
+        router.push('/thank-you');
+      }
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : 'Something went wrong.');
       setIsSubmitting(false);

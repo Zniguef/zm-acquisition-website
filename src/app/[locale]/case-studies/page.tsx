@@ -15,7 +15,7 @@ type Props = {
 
 export async function generateMetadata() {
   return {
-    title: "Études de cas — ZM Acquisition",
+    title: "Études de cas | ZM Acquisition",
     description:
       "Résultats documentés de campagnes réelles. Leads générés, coûts, ROAS et ROI pour chaque client.",
   };
