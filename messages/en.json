@@ -126,14 +126,12 @@
     "label": "FAQ",
     "headline": "Questions worth answering",
     "subtext": "The most common things service business owners ask us before getting started",
-    "q1": "What makes you different from a regular ad agency?",
-    "a1": "Most agencies simply create ads. We implement the complete acquisition framework: market research, conversion funnel, landing page, creatives, and daily campaign management.",
-    "q2": "How long before I start seeing results?",
-    "a2": "The system takes 7 to 14 days to build and launch. Most clients see qualified leads within the first week of going live. Results improve significantly over the first 30 days as we optimize.",
-    "q3": "What type of businesses do you work with?",
-    "a3": "We work exclusively with service-based businesses: gyms, studios, coaches, training centers, consultants, and clinics. If your model depends on a steady client flow, this system is built for you.",
-    "q4": "What advertising budget do I need to get started?",
-    "a4": "We recommend establishing a sufficient monthly ad budget to generate actionable data. Long-term performance stems from targeted audience alignment, strong positioning, and an efficient funnel structure."
+    "q1": "How long before I start seeing results?",
+    "a1": "The system takes 7 to 14 days to build and launch. Most clients see qualified leads within the first week of going live. Results improve significantly over the first 30 days as we optimize.",
+    "q2": "What type of businesses do you work with?",
+    "a2": "We work exclusively with service-based businesses: gyms, studios, coaches, training centers, consultants, and clinics. If your model depends on a steady client flow, this system is built for you.",
+    "q3": "What advertising budget do I need to get started?",
+    "a3": "We recommend establishing a sufficient monthly ad budget to generate actionable data. Long-term performance stems from targeted audience alignment, strong positioning, and an efficient funnel structure."
   },
   "contact": {
     "headlinePrefix": "Ready to stop guessing and start ",

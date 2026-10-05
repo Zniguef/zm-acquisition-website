@@ -126,14 +126,12 @@
     "label": "FAQ",
     "headline": "Des questions qui méritent des réponses",
     "subtext": "Les questions les plus fréquentes que nous posent les propriétaires d'entreprises de services avant de commencer",
-    "q1": "Quelle est votre différence avec une agence publicitaire classique ?",
-    "a1": "La plupart des agences s'arrêtent à la création d'annonces. Nous mettons en place l'ensemble du dispositif : étude de marché, tunnel de conversion, page de destination, créatifs et optimisation quotidienne des campagnes.",
-    "q2": "Combien de temps avant de voir des résultats ?",
-    "a2": "Le système prend 7 à 14 jours à construire et lancer. La plupart de nos clients voient des leads qualifiés dès la première semaine de mise en ligne. Les résultats s'améliorent significativement durant les 30 premiers jours grâce à l'optimisation.",
-    "q3": "Avec quels types d'entreprises travaillez-vous ?",
-    "a3": "Nous accompagnons exclusivement les entreprises de services : salles de sport, studios, coachs, centres de formation, consultants et cliniques. Si votre activité repose sur un flux régulier de clients, cette solution est conçue pour vous.",
-    "q4": "Quel budget publicitaire faut-il pour démarrer ?",
-    "a4": "Nous recommandons de prévoir un budget publicitaire mensuel adapté pour générer un volume représentatif de données. La rentabilité découle de la qualité du ciblage, de la pertinence de l'offre et de l'efficacité du funnel mis en place."
+    "q1": "Combien de temps avant de voir des résultats ?",
+    "a1": "Le système prend 7 à 14 jours à construire et lancer. La plupart de nos clients voient des leads qualifiés dès la première semaine de mise en ligne. Les résultats s'améliorent significativement durant les 30 premiers jours grâce à l'optimisation.",
+    "q2": "Avec quels types d'entreprises travaillez-vous ?",
+    "a2": "Nous accompagnons exclusivement les entreprises de services : salles de sport, studios, coachs, centres de formation, consultants et cliniques. Si votre activité repose sur un flux régulier de clients, cette solution est conçue pour vous.",
+    "q3": "Quel budget publicitaire faut-il pour démarrer ?",
+    "a3": "Nous recommandons de prévoir un budget publicitaire mensuel adapté pour générer un volume représentatif de données. La rentabilité découle de la qualité du ciblage, de la pertinence de l'offre et de l'efficacité du funnel mis en place."
   },
   "contact": {
     "headlinePrefix": "Prêt à arrêter de tâtonner et à commencer à ",

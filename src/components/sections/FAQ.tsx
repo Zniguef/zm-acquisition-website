@@ -10,9 +10,8 @@ const FAQS = [
     a: 'a1',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5"></path>
-        <path d="M9 18h6"></path>
-        <path d="M10 22h4"></path>
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
       </svg>
     )
   },
@@ -22,17 +21,6 @@ const FAQS = [
     a: 'a2',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"></circle>
-        <polyline points="12 6 12 12 16 14"></polyline>
-      </svg>
-    )
-  },
-  {
-    id: 3,
-    q: 'q3',
-    a: 'a3',
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 13h4l5-5c1.66-1.66 4.34-1.66 6 0s1.66 4.34 0 6l-5 5H6l-3-3v-3z"></path>
         <path d="M14 8l6 6"></path>
         <path d="M9 13l6 6"></path>
@@ -40,9 +28,9 @@ const FAQS = [
     )
   },
   {
-    id: 4,
-    q: 'q4',
-    a: 'a4',
+    id: 3,
+    q: 'q3',
+    a: 'a3',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
