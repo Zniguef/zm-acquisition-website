@@ -57,9 +57,9 @@ export default function Hero() {
               textAlign: 'center',
             }}
           >
-            <span style={{ display: 'block' }}>{t('headline1')}</span>
-            <span style={{ display: 'block' }}>{t('headline2')}</span>
-            <span style={{ display: 'block' }}>{t('headline3')}</span>
+            {t('headline1') ? <span style={{ display: 'block' }}>{t('headline1')}</span> : null}
+            {t('headline2') ? <span style={{ display: 'block' }}>{t('headline2')}</span> : null}
+            {t('headline3') ? <span style={{ display: 'block' }}>{t('headline3')}</span> : null}
           </h1>
 
           {/* Subtext */}

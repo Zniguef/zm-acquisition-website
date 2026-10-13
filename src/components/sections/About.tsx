@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
-const TAGS = ['tag1', 'tag2', 'tag3'];
+const TAGS = ['tag1', 'tag2', 'tag3', 'tag4'];
 
 export default function About() {
   const t = useTranslations('about');
