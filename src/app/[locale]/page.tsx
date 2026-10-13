@@ -10,6 +10,7 @@ import About from "@/components/sections/About";
 import FAQ from "@/components/sections/FAQ";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -23,6 +24,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
+      <StructuredData locale={locale} />
       <Navbar />
       <main>
         <Hero />

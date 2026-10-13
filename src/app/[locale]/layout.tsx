@@ -14,19 +14,106 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "ZM Acquisition | Lead Generation Agency",
-  description:
-    "ZM Acquisition helps service businesses generate consistent clients using paid ads, funnel strategy, and high-converting landing pages.",
-  icons: {
-    icon: "/images/iconLogo.png",
-  },
-  verification: {
-    other: {
-      "facebook-domain-verification": ["az4vro2biaf27iqbb4tcrit3obdzqv"],
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://zm-acquisition.com";
+
+  const metaByLocale: Record<
+    string,
+    { title: string; description: string; ogLocale: string }
+  > = {
+    fr: {
+      title: "ZM Acquisition | Développez votre activité commerciale",
+      description:
+        "Générer un flux régulier d’opportunités commerciales grâce à l’acquisition digitale, sans dépendre de sources traditionnelles incontrôlables et imprévisibles.",
+      ogLocale: "fr_MA",
     },
-  },
-};
+    en: {
+      title: "ZM Acquisition | Scale and Grow Your Business",
+      description:
+        "Generate a steady stream of sales opportunities through digital acquisition, without relying on unpredictable and uncontrollable traditional sources.",
+      ogLocale: "en_US",
+    },
+    ar: {
+      title: "ZM Acquisition | طوّر نشاطك التجاري",
+      description:
+        "توليد تدفق منتظم من الفرص التجارية بفضل الاكتساب الرقمي، دون الاعتماد على المصادر التقليدية غير القابلة للتحكم وغير المتوقعة.",
+      ogLocale: "ar_MA",
+    },
+  };
+
+  const meta = metaByLocale[locale] || metaByLocale.fr;
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: meta.title,
+    description: meta.description,
+    applicationName: "ZM Acquisition",
+    authors: [{ name: "ZM Acquisition" }],
+    creator: "ZM Acquisition",
+    publisher: "ZM Acquisition",
+    formatDetection: {
+      telephone: true,
+      email: true,
+    },
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        fr: "/fr",
+        en: "/en",
+        ar: "/ar",
+        "x-default": "/fr",
+      },
+    },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      url: `/${locale}`,
+      siteName: "ZM Acquisition",
+      locale: meta.ogLocale,
+      type: "website",
+      images: [
+        {
+          url: "/images/Logo.png",
+          width: 1200,
+          height: 630,
+          alt: "ZM Acquisition",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.title,
+      description: meta.description,
+      images: ["/images/Logo.png"],
+    },
+    icons: {
+      icon: "/images/iconLogo.png",
+      apple: "/images/iconLogo.png",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      google: "google1e5c98f12096387e",
+      other: {
+        "facebook-domain-verification": ["az4vro2biaf27iqbb4tcrit3obdzqv"],
+      },
+    },
+  };
+}
 
 // Required for static export: pre-render a page for each locale at build time.
 export function generateStaticParams() {
@@ -54,6 +141,12 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={dir} className={poppins.variable} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
+        {/* Preconnect & DNS prefetch for speed */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0TQ1TQD3JC"
