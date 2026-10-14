@@ -95,6 +95,16 @@
     "c4Stat1Label": "عميل محتمل مؤهّل",
     "c4Stat2Value": "شهران",
     "c4Stat2Label": "الفترة",
+    "c5Name": "المدرسة المركزية بالدار البيضاء",
+    "c5Industry": "مدرسة عليا للهندسة والتعليم العالي",
+    "c5Stat1Value": "518",
+    "c5Stat2Value": "شهر واحد",
+    "c5Stat2Label": "الفترة",
+    "c6Name": "AGV VERT",
+    "c6Industry": "العشب ومعدات المساحات الخضراء",
+    "c6Stat1Value": "126",
+    "c6Stat2Value": "شهر واحد",
+    "c6Stat2Label": "الفترة",
     "cta": "للحصول على نتائج مشابهة: احجز مكالمتك"
   },
   "howItWorks": {

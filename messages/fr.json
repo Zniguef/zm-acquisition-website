@@ -95,6 +95,16 @@
     "c4Stat1Label": "Leads qualifiés",
     "c4Stat2Value": "2 mois",
     "c4Stat2Label": "Période",
+    "c5Name": "ÉCOLE CENTRALE CASABLANCA",
+    "c5Industry": "Grande École d'Ingénieurs",
+    "c5Stat1Value": "518",
+    "c5Stat2Value": "1 mois",
+    "c5Stat2Label": "Période",
+    "c6Name": "AGV VERT",
+    "c6Industry": "Gazon & Matériel Paysager",
+    "c6Stat1Value": "126",
+    "c6Stat2Value": "1 mois",
+    "c6Stat2Label": "Période",
     "cta": "Obtenir des résultats similaires : réserver mon appel"
   },
   "howItWorks": {
